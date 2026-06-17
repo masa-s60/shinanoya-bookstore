@@ -1,0 +1,49 @@
+/* ---------- Handwritten SVG ---------- */
+#sample {
+  width: 40%;
+  position: absolute;
+  z-index: 3;
+  top: 80%;
+  left: 53%;
+  transform: translate(-50%,-50%);
+}
+
+#base path {
+  fill:#000; /* 塗りの色 */
+}
+
+#mask path {
+  fill:none; /* 塗りの色 */
+  stroke:#ffffff; /* 線の色 */
+  stroke-width: 10px; /* 線幅 */
+  stroke-linecap:round; /* 線端の形状 */
+  stroke-linejoin:round; /* 角の形状 */
+}
+
+/* ---------- Opening White Layer ---------- */
+.p-opening {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../img/wood.jpg);
+  background-repeat: repeat;
+}
+
+/* 初期状態ではメイン画面を非表示 */
+.l-body {
+  display: none;
+}
+
+.p-opening-white {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 999999;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.p-opening-white.is-hide {
+  opacity: 0;
+}

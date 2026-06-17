@@ -1,0 +1,291 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* コンテナ */
+.l-container {
+  box-sizing: border-box;
+  max-width: 80%;
+  margin: 3% auto;
+  background: white;
+  padding: 2% 4%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 左側（フォーム部分） */
+.l-left {
+  width: 70%;
+  padding-right: 10%;
+}
+
+/* 右側（最新情報表示） */
+.l-right {
+  width: 28%;
+  background: #e3fffe;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 2%;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.c-title {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 1.3px;
+  margin-bottom: 5%;
+}
+
+.c-form {
+  box-sizing: border-box;
+  line-height: 1.1;
+}
+
+.c-form-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.p-img-group {
+  display: flex;
+}
+
+.p-form-img {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: white;
+  padding: 1%;
+}
+
+.u-form-input {
+  margin-top: 1%;
+  margin-bottom: 4%;
+}
+
+.c-form-title {
+  height: 3vw;
+  line-height: 1.2;
+}
+
+.c-form-textarea {
+  width: 30%;
+  height: 7rem;
+  resize: vertical;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+
+.c-form-title,
+.c-form-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  line-height: 1.2;
+  font-size: 1rem;
+}
+
+.p-submit {
+  text-align: center;
+}
+
+.p-form-button {
+  width: 50%;
+  padding: 2%; 
+  background: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.p-form-button:hover {
+  background: #94f9aa;
+  color: black;
+}
+
+/* 投稿情報 */
+.c-info-item {
+  background: white;
+  padding: 4%;
+  margin-bottom: 2%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  line-height: 1.2;
+}
+
+.c-info-title {
+  width: 100%;
+  overflow-wrap: break-word;
+  margin-bottom: 3%;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.c-info-date {
+  font-size: .8rem;
+  margin-bottom: 5%;
+  color: #414141;
+}
+
+.c-info-item__flex {
+  display: flex;
+  margin-bottom: 3%;
+}
+
+.c-info-image {
+  width: 25%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5%;
+}
+
+.c-info-text {
+  font-size: .6rem;
+  color: #414141;
+  overflow-wrap: break-word;
+  word-break: break-all; /* ← 追加 */
+  white-space: normal;   /* ← 念のため追加 */
+}
+
+.p-delete-form {
+  text-align: right;
+}
+
+.c-delete-button {
+  background-color: #dc3545;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 1% 3%;
+  margin-right: 2%;
+}
+
+.c-delete-button:hover {
+  background-color: #c82333;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .l-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .l-left, .l-right {
+    width: 100%;
+    margin-bottom: 2%;  /* marginを%単位に変更 */
+  }
+
+  .c-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 430px) {
+
+  .l-container {
+    display: block;
+    max-width: none;
+    width: 100%;
+    border-radius: 0;
+    margin: auto;
+    padding: 5% 8%;
+    background-color: #fef6ee;
+  }
+
+/* 左側（フォーム部分） */
+  .l-left {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0%;
+    margin-bottom: 15%;
+  }
+
+  .c-title {
+    font-size: 2rem;
+    border-bottom: 1.5px solid rgb(147, 147, 147);
+    padding-bottom: 5%;
+    margin-top: 3%;
+    margin-bottom: 12%;
+  }
+
+  .c-form-title {
+    width: 95%;
+    height: 10vw;
+  }
+
+  .u-form-input {
+    margin-bottom: 10%;
+  }
+
+  .c-form-textarea {
+    width: 95%;
+    height: 10rem;
+    margin-bottom: 10%;
+  }
+
+  .p-form-button {
+    padding: 4% 6%;
+    border-radius: 10px;
+  }
+
+  /* 右側（最新情報表示） */
+  .l-right {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    height: 80vh;
+    background-color: #f1ffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 2%;
+  }
+
+  /* 投稿情報 */
+  .c-info {
+    padding: 0 5% 3% 5%;
+  }
+
+  .c-info-item {
+    margin-bottom: 10%;
+    line-height: 1.1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .c-info-title {
+    width: 100%;
+    overflow-wrap: break-word;
+    font-size: 1.5em;
+  }
+  
+  .c-info-date {
+    font-size: .9rem;
+    color: #434343;
+  }
+  
+  .c-info-image {
+    width: 30%;
+  }
+  
+  .c-info-text {
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .c-delete-button {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,123 @@
+/* 投稿 or 削除ボタンクリック時、表示モーダル ----------------------*/
+
+/* モーダルの基本スタイル（初期状態） */
+.c-confirm-modal {
+  display: flex; /* `none` だと `transition` が効かないため `flex` に */
+  opacity: 0; /* 透明にする */
+  visibility: hidden; /* 初期状態では非表示 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* モーダルを表示するクラス */
+.c-confirm-modal.is-active {
+  opacity: 1; /* 表示時は透明度を100%に */
+  visibility: visible; /* 表示可能に */
+}
+
+/* モーダルのコンテンツ（表示時にアニメーション） */
+.c-confirm-modal__content {
+  background: white;
+  padding: 3%;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 300px;
+  width: 90%;
+  transform: scale(0.8); /* 初期状態は少し縮小 */
+  transition: transform 0.3s ease-in-out;
+}
+
+.c-modal__button {
+  padding: 5% 10%;
+  margin: 5%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: .3s;
+}
+
+.c-modal__button:hover {
+  opacity: .5;
+}
+
+.c-modal__button--yes {
+  background: red;
+  color: white;
+  font-weight: bold;
+}
+
+.c-modal__button--no {
+  background: #ccc;
+  color: black;
+  font-weight: bold;
+}
+
+/* モーダルがアクティブになった時の拡大アニメーション */
+.c-confirm-modal.is-active .c-confirm-modal__content {
+  transform: scale(1);
+}
+
+.c-status-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.c-status-modal__content {
+  background: white;
+  padding: 2rem;
+  margin: 15% auto;
+  width: 300px;
+  text-align: center;
+}
+
+/* 投稿画像クリック時、拡大モーダル ---------------------- */
+
+.c-modal-img {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  cursor: pointer;
+}
+
+.c-modal-img.is-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.c-modal-targetImg-for-upload_form {
+  max-width: 90%;
+  max-height: 90%;  
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.c-modal-targetImg-for-index {
+  max-width: 80%;
+  max-height: 80%;  
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(6%);
+}

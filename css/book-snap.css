@@ -1,0 +1,68 @@
+/* Booklet jQuery Plugin Style*/
+
+.booklet .b-counter {
+	bottom:10px;
+	position:absolute;
+	display:block;
+	width:90%;
+	height:20px;
+	border-top:1px solid #ddd;
+	color:#222;
+	text-align:center;
+	font-size:12px;
+	padding:5px 0 0;
+	background:transparent;
+	-moz-box-shadow:0px -1px 1px #fff;
+	-webkit-box-shadow:0px -1px 1px #fff;
+	box-shadow:0px -1px 1px #fff;
+	opacity:0.8;
+}
+
+/* book 表示位置調整箇所 */
+
+.book_wrapper {
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 905px;
+  height: 540px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent url(../img/book-wrapper.png) no-repeat 9px 27px;
+}
+
+.p-book__img-sinanoyashoten {
+	margin: 10% 50%;
+	width: 10%;
+}
+
+.p-book__page5 {
+	text-align: center;
+}
+
+.p-book__img-TOContents {
+	width: 75%;
+	margin-top: 20%;
+}
+
+/* ---------------- SP ----------------- */
+
+@media(max-width: 430px){
+
+	.book_wrapper{
+		position: absolute; /* 親要素に対して絶対配置 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.4);
+    transform-origin: center 40%;
+    margin: 0;	
+	}	
+
+	.p-book__img-sinanoyashoten {
+		width: 13%;
+	}
+
+	.p-book__img-TOContents {
+		width: 82%;
+	}
+}

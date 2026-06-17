@@ -1,0 +1,136 @@
+.l-header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  border-bottom: solid .1vh;
+  background-color: white;
+  font-family: serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.l-header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.u-header {
+  padding: 1% 2% .5% .8%;
+}
+
+.l-header > * {
+  display: inline-block;
+}
+
+.c-logo {
+  vertical-align: middle;
+  margin-right: 3%;
+  color: inherit;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.c-logo:hover{
+  opacity: .5;
+}
+
+.c-logo-img {
+  display: inline-block;
+  width: 2.5em;
+  transform: translateY(-10%);
+}
+
+.c-logo-name {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+}
+
+.p-breadcrumb {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+.p-breadcrumb-list {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.u-breadcrumb-list {
+  margin-right: 3%;
+}
+
+.p-breadcrumb-link {
+  text-decoration: none;
+}
+
+.p-header-tel {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  font-size: 1.2em;
+}
+
+.p-header-tel-number {
+  color: rgb(1, 1, 196);
+  text-decoration: none;
+  transition: .3s;
+}
+
+.p-header-tel-number:hover {
+  color: rgb(106, 106, 255);
+}
+
+@media(max-width: 430px){
+
+  .l-header{
+    height: 11vh;
+  }
+
+  .u-header {
+    padding: 2% 3%;
+  }
+
+  .c-logo {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .c-logo-img {
+    width: 2.5em;
+  }
+  
+  .c-logo-name {
+    font-size: 2em;
+    letter-spacing: 1px;
+  }
+
+  .c-nav {
+    margin-top: 2%;
+  }
+  
+  .p-breadcrumb {
+    font-size: .9rem;
+  }
+
+  .p-header-tel {
+    top: auto;
+    right: 3%;
+    margin-top: 2%;
+    font-size: .9em;
+  }
+}
+
+@media(max-width: 376px){
+
+  .u-header {
+    padding: 2% 2%;
+  }
+
+}
