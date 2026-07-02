@@ -32,9 +32,9 @@
     <link rel="stylesheet" href="./css/jquery.booklet.1.1.0.css" type="text/css"  media="screen" />
     <link rel="stylesheet" href="./css/book-snap.css">
 		<link rel="stylesheet" href="./css/openingAnimation.css">
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/header.css?v=1">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.css?v=1">
     <link rel="stylesheet" href="./css/modal.css">
   </head>
 	

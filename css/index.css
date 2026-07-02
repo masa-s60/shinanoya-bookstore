@@ -70,7 +70,7 @@ html {
   height: 100%;
   opacity: 0;
   animation: overlay-fadeIn .6s ease-in forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .p-hero__overlay {
@@ -81,7 +81,7 @@ html {
   left: 10%;
   color: white;
   animation: overlay-fadeIn .6s ease-out forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 @keyframes overlay-fadeIn {
@@ -95,7 +95,7 @@ html {
 
 .p-hero__overlay * {
   animation: slide-in 1s ease-in forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 @keyframes slide-in {
@@ -168,7 +168,7 @@ html {
   opacity: 0;
   visibility: hidden;
   animation: slide-in 1s ease-in forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
   border-left: solid 3px white;
 }
 
