@@ -428,7 +428,7 @@ html {
   font-size: 5rem;
   letter-spacing: .05em;
   opacity: .8;
-  transform: translate(-8%, -100%) rotate(90deg);
+  transform: translate(-4%, -100%) rotate(90deg);
   transform-origin: left bottom;
 }
 
@@ -511,7 +511,7 @@ html {
   font-size: 5rem;
   letter-spacing: .05em;
   opacity: .1;
-  transform: translate(-8%, -100%) rotate(90deg);
+  transform: translate(-5%, -100%) rotate(90deg);
   transform-origin: left bottom;
 }
 
