@@ -27,7 +27,7 @@ const playAnimation = async () => {
   await wait(500);
 }
 
-window.addEventListener('DOMContentLoaded', async () => {
+window.addEventListener('load', async () => {
   if (localStorage.getItem('visited')) {
     opening.style.display = 'none';
     mainBody.style.display = 'block';
@@ -43,4 +43,10 @@ window.addEventListener('DOMContentLoaded', async () => {
   mainBody.style.display = 'block';
   localStorage.setItem('visited', 'true');
   whiteLayer.classList.add('is-hide');
+});
+
+window.addEventListener('load', () => {
+  document.querySelector('.l-hero__image').classList.add('is-active');
+  document.querySelector('.p-hero__nav').classList.add('is-active');
+  document.querySelector('.p-hero__overlay').classList.add('is-active');
 });
