@@ -17,14 +17,6 @@
   will-change: transform;
 }
 
-/* ---------header----------- */
-
-.p-breadcrumb-list:first-child::after {
-  content: ">";
-  display: inline-block;
-  margin-left: 3%;
-}
-
 /* ---------main----------- */
 
 .p-main {

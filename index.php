@@ -95,26 +95,29 @@
 
     <div class="l-body">
       <div class="l-layer"></div>
-      <header class="l-header u-header">
+
+      <header class="l-header p-header u-header">
         <a href="index.php" class="c-logo u-logo">
-          <img class="c-logo-img" src="./img/rogo-sinanoya.png" alt="">
+          <img class="c-logo-img" src="./img/rogo-sinanoya.png" alt="信濃屋書店ロゴ">
           <h1 class="c-logo-name">信濃屋書店</h1>
         </a>
-        <nav class="c-nav">
-          <ul class="p-breadcrumb">
-            <li class="p-breadcrumb-list">Topページ</li>
-          </ul>
-        </nav>
-        <p class="p-header-tel">
-          <a href="tel:046-822-0405" class="p-header-tel-number">
-            <i class="fas fa-phone-alt"></i> TEL：046-822-0405
-          </a>
-        </p>  
+        <div class="c-header-sub">
+          <nav class="c-nav">
+            <ul class="p-breadcrumb">
+              <li class="p-breadcrumb-list">Topページ</li>
+            </ul>
+          </nav>
+          <p class="p-header-tel">
+            <a href="tel:046-822-0405" class="p-header-tel-number">
+              <i class="fas fa-phone-alt"></i> TEL：046-822-0405
+            </a>
+          </p>  
+        </div>
       </header>
       
       <main class="p-main u-main">
         <section class="p-hero u-hero">
-          <img class="p-hero__image u-hero__image" src="./img/hero-image.png" alt="信濃屋書店　ヒーローイメージ">
+          <img class="p-hero__image u-hero__image" src="./img/hero-image.png" alt="信濃屋書店 ヒーローイメージ">
           <div class="l-hero__image"></div>
           <nav class="p-hero__nav u-hero__nav">
             <p class="p-hero__nav-header u-hero__nav-header">Menu</p>

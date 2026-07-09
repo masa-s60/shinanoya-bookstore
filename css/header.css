@@ -2,30 +2,28 @@
   position: fixed;
   z-index: 2;
   width: 100%;
-  border-bottom: solid .1vh;
+  border-bottom: solid .4px;
   background-color: white;
-  font-family: serif;
-  font-weight: bold;
   box-sizing: border-box;
 }
 
-.l-header::after {
-  content: "";
-  display: table;
-  clear: both;
+.p-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: serif;
+  font-weight: bold;
 }
 
 .u-header {
-  padding: 1% 2% .5% .8%;
-}
-
-.l-header > * {
-  display: inline-block;
+  padding: .75rem 1.5rem;
 }
 
 .c-logo {
-  vertical-align: middle;
-  margin-right: 3%;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin-right: 3rem;
   color: inherit;
   text-decoration: none;
   transition: .3s;
@@ -36,23 +34,28 @@
 }
 
 .c-logo-img {
-  display: inline-block;
+  margin-right: .3em;
   width: 2.5em;
-  transform: translateY(-10%);
 }
 
 .c-logo-name {
   display: inline-block;
-  vertical-align: top;
-  font-size: 1.8em;
+  font-size: 1.8rem;
   letter-spacing: 2px;
+}
+
+.c-header-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
 }
 
 .p-breadcrumb {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 1em;
+  font-size: 1rem;
   letter-spacing: 1px;
 }
 
@@ -62,7 +65,7 @@
 }
 
 .u-breadcrumb-list {
-  margin-right: 3%;
+  margin-right: 1rem;
 }
 
 .p-breadcrumb-link {
@@ -70,10 +73,7 @@
 }
 
 .p-header-tel {
-  position: absolute;
-  top: 30%;
-  right: 5%;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .p-header-tel-number {
@@ -98,18 +98,20 @@
 
 @media(max-width: 430px){
 
-  .l-header{
-    height: 11vh;
+  .p-header {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .u-header {
-    padding: 2% 3%;
+    padding: .75rem 1rem;
   }
 
   .c-logo {
-    display: block;
+    justify-content: center;
     width: 100%;
-    text-align: center;
+    margin-right: 0;
+    margin-bottom: .5rem;
   }
 
   .c-logo-img {
@@ -117,31 +119,20 @@
   }
   
   .c-logo-name {
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 1px;
   }
 
-  .c-nav {
-    margin-top: 2%;
-  }
-  
   .p-breadcrumb {
     display: flex;
+    justify-content: flex-start;
     font-size: .9rem;
   }
 
   .p-header-tel {
-    top: auto;
-    right: 3%;
-    margin-top: 2%;
-    font-size: .9em;
+    width: auto;
+    margin: 0;
+    font-size: .85rem;
+    white-space: nowrap;
   }
-}
-
-@media(max-width: 376px){
-
-  .u-header {
-    padding: 2% 2%;
-  }
-
 }
