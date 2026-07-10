@@ -32,15 +32,14 @@
     <link rel="stylesheet" href="./css/jquery.booklet.1.1.0.css" type="text/css"  media="screen" />
     <link rel="stylesheet" href="./css/book-snap.css">
 		<link rel="stylesheet" href="./css/openingAnimation.css">
-    <link rel="stylesheet" href="./css/header.css?v=1">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/index.css?v=1">
+    <link rel="stylesheet" href="./css/header.css?v=2">
+    <link rel="stylesheet" href="./css/footer.css?v=2">
+    <link rel="stylesheet" href="./css/index.css?v=2">
     <link rel="stylesheet" href="./css/modal.css">
   </head>
 	
   <body id="body">
     <div class="p-opening-white"></div>
-    
     <div class="p-opening">
       <div class="book_wrapper">
         <a id="next_page_button"></a>
@@ -95,7 +94,6 @@
 
     <div class="l-body">
       <div class="l-layer"></div>
-
       <header class="l-header p-header u-header">
         <a href="index.php" class="c-logo u-logo">
           <img class="c-logo-img" src="./img/rogo-sinanoya.png" alt="信濃屋書店ロゴ">
@@ -117,7 +115,10 @@
       
       <main class="p-main u-main">
         <section class="p-hero u-hero">
-          <img class="p-hero__image u-hero__image" src="./img/hero-image.png" alt="信濃屋書店 ヒーローイメージ">
+          <picture>
+            <source media="(max-width: 430px)" srcset="./img/hero-image-sp.jpg">
+            <img class="p-hero__image u-hero__image" src="./img/hero-image.jpg" alt="信濃屋書店 ヒーローイメージ">
+          </picture>
           <div class="l-hero__image"></div>
           <nav class="p-hero__nav u-hero__nav">
             <p class="p-hero__nav-header u-hero__nav-header">Menu</p>
@@ -129,7 +130,7 @@
                 <a  href="#textbook_store" class="p-hero__nav-link u-hero__nav-link">教科書取扱い</a>
               </li>
               <li  class="p-hero__nav-list-item u-hero__nav-list-item">
-                <a href="#map" class="p-hero__nav-link u-hero__nav-link">アクセスマップ</a>
+                <a href="#map" class="p-hero__nav-link u-hero__nav-link">アクセス</a>
               </li>
               <li  class="p-hero__nav-list-item u-hero__nav-list-item">
                 <a href="./page/privacy-policy.html" class="p-hero__nav-link u-hero__nav-link">個人情報保護</a>
@@ -196,7 +197,7 @@
               <a href="./page/about-textbook.html" class="p-textbook__store-about__link u-textbook__store-about__link">詳細はこちら >></a>
             </div>
             <div class="p-work__textbook-image u-work__textbook-image">
-              <img class="p-img-zoom" src="./img/text-book.JPEG" alt="">
+              <img class="p-img-zoom" src="./img/text-book.jpg" alt="">
             </div>
           </div>
         </section>
@@ -258,7 +259,6 @@
 		<script src="./js/jquery.booklet.1.1.0.js" type="text/javascript"></script>
 		<script src="./js/snap.js"></script>
     <script src="./js/openingAnimation.js"></script>
-    <script src="./js/image-resize-handler.js"></script>
     <script src="./js/scroll-animations.js"></script>
     <script src="./js/parallax.js"></script>
     <script src="./js/accordion.js"></script>

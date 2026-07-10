@@ -6,7 +6,7 @@
 }
 
 .p-footer-info {
-  font-size: 1rem;
+  font-size: 1.2w;
 }
 
 .p-footer-details {
@@ -16,7 +16,7 @@
 
 .p-footer-info-name {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2.2vw;
 }
 
 .u-footer-info-name {
@@ -27,14 +27,15 @@
   font-style: normal;
 }
 
-.p-footer-info-tel {
+.p-footer-info-address,
+.p-footer-info-tel,
+.p-footer-info-hours,
+.p-footer-info-holiday {
+  font-size: 1.2vw;
 }
 
 .u-footer-info-tel {
   margin-bottom: 2%;
-}
-
-.p-footer-info-hours {
 }
 
 .p-footer-social {
@@ -65,7 +66,7 @@
 }
 
 .p-footer-copylight {
-  font-size: .7rem;
+  font-size: .8vw;
   text-align: right;
 }
 
@@ -94,7 +95,11 @@
     font-size: 1.2rem;
   }
 
-  .p-footer-info-address {
+  .p-footer-info-address,
+  .p-footer-info-tel,
+  .p-footer-info-hours,
+  .p-footer-info-holiday {
+    font-size: .8rem;
   }
 
   .u-footer-info-tel {
