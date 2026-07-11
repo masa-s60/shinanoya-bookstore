@@ -1,7 +1,6 @@
 .l-body {
   position: relative;
   width: 100%;
-  /* height: 500%; */
 }
  
 .l-layer {
@@ -11,7 +10,7 @@
   z-index: -1; /* 背景を背面に配置 */
   width: 100%;
   height: 300%;
-  background-image: url('../img/body-bgi1.png');
+  background-image: url('../img/body-bgi1.jpg');
   background-size: 40% 64%;
   opacity: .7;
   will-change: transform;
@@ -39,12 +38,12 @@
 .p-hero {
   position: relative;
   width: 100%;
-  height: 30vh;
+  height: 14vw;
   box-shadow: 0 0 10px black;
 }
 
 .u-hero {
-  margin-bottom: 5rem;
+  margin-bottom: 5vw;
 }
 
 .p-hero__image {
@@ -56,16 +55,13 @@
 }
 
 .l-hero__image {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  animation: overlay-fadeIn .6s ease-in forwards;
-  animation-delay: 1s;
 }
 
 .p-hero__overlay {
@@ -74,13 +70,32 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  opacity: 0;
   color: white;
-  animation: overlay-fadeIn .6s ease-out forwards;
-  animation-delay: 1s;
+  opacity: 0;
 }
 
-@keyframes overlay-fadeIn {
+.p-hero__overlay-title {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(1vw);
+  font-size: 3.5vw;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.js-hero.is-active .l-hero__image {
+  animation: overlay-fade-in .6s ease-in forwards;
+}
+
+.js-hero.is-active .p-hero__overlay {
+  animation: overlay-fade-in .6s ease-out forwards;
+}
+
+.js-hero.is-active .p-hero__overlay-title {
+  animation: slide-in 1s cubic-bezier(.19, .46, .25, .87) forwards;
+}
+
+@keyframes overlay-fade-in {
   0% {
     opacity:0;
   }
@@ -88,11 +103,6 @@
     opacity:1;
   }
 } 
-
-.p-hero__overlay * {
-  animation: slide-in 1s cubic-bezier(.19,.46,.25,.87) forwards;
-  animation-delay: 1s;
-}
 
 @keyframes slide-in {
   0% {
@@ -107,17 +117,11 @@
   }
 } 
 
-.p-hero__overlay-title {
-  font-size: 3rem;
-  text-align: center;
-  letter-spacing: 3px;
-} 
-
 /* ------------section textbook--------------- */
 
 .p-order {
   width: 80%;
-  font-size: 1rem;
+  font-size: 1.2vw;
   text-align: left;
   letter-spacing: 1px;
 }
@@ -125,12 +129,12 @@
 .u-order {
   line-height: 1.2;
   margin: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 4vw;
 }
 
 .p-order-header {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2.2vw;
   letter-spacing: 2px;
 }
 
@@ -139,79 +143,70 @@
   content: "";
   display: inline-block;
   width: 20%;
-  height: .2vh;
+  height: .1vw;
   background-color: black;
   vertical-align: middle;
 }
 
 .u-order-header {
-  margin-bottom: 3.5rem;
-}
-
-.u-school:nth-of-type(2)::before {
-  content: "";
-  display: block;
-  height: .3vh;
-  width: 100%;
-  background-color: rgb(186, 186, 186);
-  border-radius: 5px;
-  margin: 10% auto; 
+  margin-bottom: 4.5vw;
 }
 
 .u-school {
-  margin-bottom: 5rem;
+  margin-bottom: 6vw;
 }
 
 .c-textbook-order__school {
-  font-size: 1.5rem;
+  font-size: 2vw;
+  color: rgb(0, 2, 107);
   text-align: left;
   transform: translateX(-5%);
 }
 
 .u-textbook-order__school {
-  margin-bottom: 2rem;
+  margin-bottom: 2.4vw;
 }
 
 .u-sale-start {
-  margin-bottom: 2rem;
+  margin-bottom: 2.4vw;
 }
 
 .p-textbook-release {
-  font-size: 1.2rem;
+  font-size: 1.5vw;
   font-weight: bold;
   list-style: disc;
 }
 
 .u-textbook-release {
-  margin-bottom: 1rem;
+  margin-bottom: 1.4vw;
 }
 
 .p-textbook-release__date {
-  font-size: 1rem;
+  font-size: 1.2vw;
   font-weight: normal;
 }
 
 .p-textbook-release__text {
   display: inline-block;
-  border-bottom: solid 1.5px red;
+  border-bottom: solid .1vw red;
 }
 
 .u-textbook-release__text {
-  margin-bottom: .3rem;
+  margin-bottom: .5vw;
 }
 
 .u-textbook-supplement {
-  margin-bottom: 2rem;
+  margin-bottom: 2.4vw;
 }
 
 .c-textbook-supplement__header {
-  font-size: 1.3rem;
+  font-size: 1.6vw;
   font-weight: bold;
   transform: translateX(-4%);
 }
 
 .u-textbook-supplement__header {
-  margin-bottom: .5rem;
+  margin-bottom: .6vw;
 }
 
 .c-textbook-supplement__detail {
@@ -219,30 +214,19 @@
 }
 
 .u-textbook-supplement__detail {
-  margin-bottom: .5rem;
+  margin-bottom: .6vw;
 }
 
 .c-style__inline-block {
   display: inline-block;
 }
 
-.p-textbooks-available {
-  font-size: 1.3rem;
-}
-
-.p-textbooks-available__list {
-  display: inline-block;
-}
-
 .u-margin__top-sm {
-  margin-top: 1%;
+  margin-top: .8vw;
 }
 
 .p-textbook-info {
   line-height: 1.5;
-}
-
-.p-contact {
 }
 
 /* ============= sp ============== */
@@ -265,11 +249,11 @@
   }
 
   .u-main{
-    padding-top: 13vh; /* header height: 5vh(fix)のため、同じ高さで位置調整*/
+    padding-top: 87px;
   }
 
   .p-hero {
-    height: 13vh;
+    height: 100px;
   }
 
   .u-hero {
@@ -277,7 +261,7 @@
   }  
   
   .p-hero__overlay-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
     letter-spacing: 2px;
   }
@@ -286,6 +270,10 @@
 
   .p-order {
     width: 90%;
+  }
+
+  .u-order {
+    margin-bottom: 3rem;
   }
 
   .p-order-header {
@@ -302,7 +290,7 @@
     content: "";
     display: inline-block;
     width: 10%;
-    height: .1vh;
+    height: 1px;
     background-color: black;
     vertical-align: middle;
   }
@@ -310,18 +298,11 @@
   .c-textbook-order__school {
     text-align: center;
     font-size: 1.1rem;
-    color: rgb(0, 2, 107);
     transform: translateX(0);
   }
 
   .u-school {
-    margin-bottom: 3rem;
-  }
-
-  .u-school:nth-of-type(2)::before {
-    width: 90%;
-    height: .2vh;
-    margin: 10% auto; 
+    margin-bottom: 2.5rem;
   }
 
   .u-list-position__sift-right {
@@ -334,7 +315,7 @@
   }
   
   .u-textbook-release {
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
   }
 
   .p-textbook-release__text {
@@ -346,26 +327,27 @@
   }
 
   .p-textbook-release__date {
-    font-size: .9rem;
+    font-size: .8rem;
     letter-spacing: normal;
   }
 
   .u-textbook-supplement {
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
   }
 
   .c-textbook-supplement__header {
     font-size: 1rem;
-    transform: translateX(0%);
+    transform: translateX(4%);
   }
 
   .c-textbook-supplement__detail {
+    font-size: .8rem;
     letter-spacing: normal;
   }
 
   .p-contact-guide {
     letter-spacing: normal;
-    font-size: 1rem;
+    font-size: .8rem;
     transform: translateX(4%);
   }
 }

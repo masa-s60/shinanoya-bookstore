@@ -1,7 +1,6 @@
 .l-body {
   position: relative;
   width: 100%;
-  /* height: 500%; */
 }
  
 .l-layer {
@@ -11,7 +10,7 @@
   z-index: -1; /* 背景を背面に配置 */
   width: 100%;
   height: 300%;
-  background-image: url('../img/body-bgi1.png');
+  background-image: url('../img/body-bgi1.jpg');
   background-size: 40% 64%;
   opacity: .7;
   will-change: transform;
@@ -39,8 +38,12 @@
 .p-hero {
   position: relative;
   width: 100%;
-  height: 30vh;
+  height: 14vw;
   box-shadow: 0 0 10px black;
+}
+
+.u-hero {
+  margin-bottom: 5vw;
 }
 
 .p-hero__image {
@@ -52,16 +55,13 @@
 }
 
 .l-hero__image {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  animation: overlay-fadeIn .6s ease-in forwards;
-  animation-delay: 1s;
 }
 
 .p-hero__overlay {
@@ -70,13 +70,32 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  opacity: 0;
   color: white;
-  animation: overlay-fadeIn .6s ease-out forwards;
-  animation-delay: 1s;
+  opacity: 0;
 }
 
-@keyframes overlay-fadeIn {
+.p-hero__overlay-title {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(1vw);
+  font-size: 3.5vw;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.js-hero.is-active .l-hero__image {
+  animation: overlay-fade-in .6s ease-in forwards;
+}
+
+.js-hero.is-active .p-hero__overlay {
+  animation: overlay-fade-in .6s ease-out forwards;
+}
+
+.js-hero.is-active .p-hero__overlay-title {
+  animation: slide-in 1s cubic-bezier(.19, .46, .25, .87) forwards;
+}
+
+@keyframes overlay-fade-in {
   0% {
     opacity:0;
   }
@@ -84,11 +103,6 @@
     opacity:1;
   }
 } 
-
-.p-hero__overlay * {
-  animation: slide-in 1s cubic-bezier(.19,.46,.25,.87) forwards;
-  animation-delay: 1s;
-}
 
 @keyframes slide-in {
   0% {
@@ -101,55 +115,32 @@
     visibility: visible;
     transform: translateX(0);
   }
-} 
-
-.p-hero__overlay-title {
-  font-size: 3.5vw;
-  text-align: center;
-  letter-spacing: 3px;
-} 
-
-.u-section {
-  margin-bottom: 10%;
-}
-
-/* ------------section hero--------------- */
-
-.p-section__heading {
-  display: flex;
-  width: 25%;
-  font-size: 150%;
-  border-bottom: solid 1.5px;
-}
-
-.p-section__title {
-  height: 1em;
 }
 
 /* ------------section privacy policy--------------- */
 
 .p-priv-pol {
   width: 80%;
-  font-size: 1rem;
+  font-size: 1.4vw;
 }
 
 .u-priv-pol {
   line-height: 1.2;
   margin: auto;
-  padding-bottom: 5vh;
+  padding-bottom: 3vw;
 }
 
 .u-priv-pol__overview {
-  margin-bottom: 2rem;
+  margin-bottom: 2.4vw;
 }
 
 .p-priv-pol__header {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2vw;
 }
 
 .u-priv-pol__header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.6vw;
 }
 
 .p-priv-pol-lists {
@@ -157,16 +148,16 @@
 }
 
 .u-priv-pol-lists {
-  margin-bottom: 2rem;
+  margin-bottom: 3.5vw;
 }
 
-.u-priv-pol-lists-title {
-  margin-bottom: 1rem;
+.p-priv-pol-lists-header {
+  font-size: 1.7vw;
 }
 
-.u-priv-pol-lists-header,
+.p-priv-pol-lists-header,
 .u-priv-pol-lists-description {
-  margin-bottom: 1rem;
+  margin-bottom: 1.6vw;
 }
 
 .p-priv-pol-items {
@@ -202,17 +193,27 @@
   }
 
   .u-main{
-    padding-top: 13vh; /* header height: 5vh(fix)のため、同じ高さで位置調整*/
+    padding-top: 87px;
   }
 
   .p-hero {
-    height: 13vh;
+    height: 100px;
+  }
+
+  .u-hero {
+    margin-bottom: 3rem;
   }
   
   .p-hero__overlay-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-align: center;
     letter-spacing: 2px;
+  }
+
+  /* contents */
+
+  .p-priv-pol {
+    font-size: .8rem;
   }
 
   .u-priv-pol__overview {
@@ -222,4 +223,21 @@
   .p-priv-pol__header {
     font-size: 1.3rem;
   }
+
+  .u-priv-pol__header {
+    margin-bottom: 1.6rem;
+  }
+
+  .p-priv-pol__explanation {
+    font-size: .8rem;
+  }
+
+  .u-priv-pol-lists {
+    margin-bottom: 1.6rem;
+  }
+
+  .p-priv-pol-lists-header {
+    font-size: .9rem;
+  }
+
 }
