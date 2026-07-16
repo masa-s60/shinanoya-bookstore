@@ -1,0 +1,7 @@
+:root {
+  --color-primary: #fcf1dc;
+}
+
+html {
+  scroll-behavior: smooth;
+}

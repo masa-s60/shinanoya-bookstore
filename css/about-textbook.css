@@ -26,12 +26,9 @@
   background-color: #fffaf0;
   background-repeat: repeat;
   box-shadow: 0 0 10px #333;
-} 
-
-.u-main{
   margin: auto;
   padding-top: 6vw;
-}
+} 
 
 /* ---------hero----------- */
 
@@ -40,9 +37,6 @@
   width: 100%;
   height: 14vw;
   box-shadow: 0 0 10px black;
-}
-
-.u-hero {
   margin-bottom: 5vw;
 }
 
@@ -80,7 +74,7 @@
   transform: translateX(1vw);
   font-size: 3.5vw;
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: .3vw;
 }
 
 .js-hero.is-active .l-hero__image {
@@ -120,13 +114,10 @@
 /* ------------section textbook--------------- */
 
 .p-order {
-  width: 80%;
+  width: 85%;
   font-size: 1.2vw;
   text-align: left;
-  letter-spacing: 1px;
-}
-
-.u-order {
+  letter-spacing: .07vw;
   line-height: 1.2;
   margin: auto;
   margin-bottom: 4vw;
@@ -135,7 +126,8 @@
 .p-order-header {
   text-align: center;
   font-size: 2.2vw;
-  letter-spacing: 2px;
+  letter-spacing: .1vw;
+  margin-bottom: 4.5vw;
 }
 
 .p-order-header::before,
@@ -148,26 +140,17 @@
   vertical-align: middle;
 }
 
-.u-order-header {
-  margin-bottom: 4.5vw;
-}
-
-.u-school {
-  margin-bottom: 6vw;
+.p-school {
+  margin-bottom: 5vw;
 }
 
 .c-textbook-order__school {
   font-size: 2vw;
   color: rgb(0, 2, 107);
-  text-align: left;
-  transform: translateX(-5%);
-}
-
-.u-textbook-order__school {
   margin-bottom: 2.4vw;
 }
 
-.u-sale-start {
+.p-sale-start {
   margin-bottom: 2.4vw;
 }
 
@@ -175,9 +158,6 @@
   font-size: 1.5vw;
   font-weight: bold;
   list-style: disc;
-}
-
-.u-textbook-release {
   margin-bottom: 1.4vw;
 }
 
@@ -189,40 +169,22 @@
 .p-textbook-release__text {
   display: inline-block;
   border-bottom: solid .1vw red;
-}
-
-.u-textbook-release__text {
   margin-bottom: .5vw;
 }
 
-.u-textbook-supplement {
+.p-textbook-supplement {
   margin-bottom: 2.4vw;
 }
 
 .c-textbook-supplement__header {
   font-size: 1.6vw;
   font-weight: bold;
-  transform: translateX(-4%);
-}
-
-.u-textbook-supplement__header {
   margin-bottom: .6vw;
 }
 
 .c-textbook-supplement__detail {
   list-style: disc;
-}
-
-.u-textbook-supplement__detail {
   margin-bottom: .6vw;
-}
-
-.c-style__inline-block {
-  display: inline-block;
-}
-
-.u-margin__top-sm {
-  margin-top: .8vw;
 }
 
 .p-textbook-info {
@@ -231,7 +193,7 @@
 
 /* ============= sp ============== */
 
-@media(max-width: 430px){
+@media(max-width: 430px) {
 
   body {
     overflow-x: hidden; /* 横スクロールを無効化 */
@@ -246,19 +208,13 @@
 
   .p-main {
     width: 100%;
-  }
-
-  .u-main{
     padding-top: 87px;
   }
 
   .p-hero {
     height: 100px;
-  }
-
-  .u-hero {
     margin-bottom: 3rem;
-  }  
+  }
   
   .p-hero__overlay-title {
     font-size: 1.6rem;
@@ -269,85 +225,65 @@
   /* contents */
 
   .p-order {
-    width: 90%;
-  }
-
-  .u-order {
+    letter-spacing: .8px;
     margin-bottom: 3rem;
   }
 
   .p-order-header {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
-  }
-
-  .u-order-header {
     margin-bottom: 2rem;
   }
-  
+
   .p-order-header::before,
   .p-order-header::after {
     content: "";
     display: inline-block;
-    width: 10%;
+    width: 12%;
     height: 1px;
     background-color: black;
     vertical-align: middle;
   }
 
   .c-textbook-order__school {
-    text-align: center;
     font-size: 1.1rem;
-    transform: translateX(0);
+    margin-bottom: 1rem;
   }
 
-  .u-school {
+  .p-school {
     margin-bottom: 2.5rem;
-  }
-
-  .u-list-position__sift-right {
-    width: 85%;
-    margin-left: 8%;
   }
 
   .p-textbook-release {
     font-size: 1rem;
-  }
-  
-  .u-textbook-release {
     margin-bottom: 1.4rem;
   }
-
+  
   .p-textbook-release__text {
     border-bottom: solid 1px red;
-  }
-
-  .u-textbook-release__text {
     margin-bottom: .2rem;
   }
-
+  
   .p-textbook-release__date {
-    font-size: .8rem;
-    letter-spacing: normal;
+    font-size: .9rem;
   }
 
-  .u-textbook-supplement {
+  .p-textbook-supplement {
     margin-bottom: 1.4rem;
   }
 
   .c-textbook-supplement__header {
     font-size: 1rem;
-    transform: translateX(4%);
+    margin-bottom: .4rem;
   }
 
   .c-textbook-supplement__detail {
-    font-size: .8rem;
-    letter-spacing: normal;
+    font-size: .9rem;
+    margin-bottom: .4rem;
   }
 
   .p-contact-guide {
-    letter-spacing: normal;
-    font-size: .8rem;
-    transform: translateX(4%);
+    font-size: .9rem;
   }
+
 }

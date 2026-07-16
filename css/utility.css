@@ -1,0 +1,13 @@
+.u-margin__top-sm {
+  margin-top: .8vw;
+}
+
+.u-list-indent {
+  padding: 0 2.4vw;
+}
+
+@media(max-width: 430px) {
+  .u-list-indent {
+    padding: 0 1.2rem;
+  }
+}

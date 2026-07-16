@@ -16,8 +16,6 @@
   will-change: transform;
 }
 
-/* ---------main----------- */
-
 .p-main {
   position: relative;
   z-index: 1;
@@ -26,12 +24,9 @@
   background-color: #fffaf0;
   background-repeat: repeat;
   box-shadow: 0 0 10px #333;
-} 
-
-.u-main{
   margin: auto;
   padding-top: 6vw;
-}
+} 
 
 /* ---------hero----------- */
 
@@ -40,9 +35,6 @@
   width: 100%;
   height: 14vw;
   box-shadow: 0 0 10px black;
-}
-
-.u-hero {
   margin-bottom: 5vw;
 }
 
@@ -80,7 +72,7 @@
   transform: translateX(1vw);
   font-size: 3.5vw;
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: .3vw;
 }
 
 .js-hero.is-active .l-hero__image {
@@ -120,34 +112,25 @@
 /* ------------section privacy policy--------------- */
 
 .p-priv-pol {
-  width: 80%;
+  width: 85%;
   font-size: 1.4vw;
-}
-
-.u-priv-pol {
+  letter-spacing: .07vw;
   line-height: 1.2;
   margin: auto;
   padding-bottom: 3vw;
 }
 
-.u-priv-pol__overview {
+.p-priv-pol__overview {
   margin-bottom: 2.4vw;
 }
 
 .p-priv-pol__header {
   text-align: center;
   font-size: 2vw;
-}
-
-.u-priv-pol__header {
   margin-bottom: 2.6vw;
 }
 
 .p-priv-pol-lists {
-  list-style: square;
-}
-
-.u-priv-pol-lists {
   margin-bottom: 3.5vw;
 }
 
@@ -156,16 +139,11 @@
 }
 
 .p-priv-pol-lists-header,
-.u-priv-pol-lists-description {
+.p-priv-pol-lists-description {
   margin-bottom: 1.6vw;
 }
 
-.p-priv-pol-items {
-  list-style-type: disc;
-  transform: translateX(1.5vw);
-}
-
-.p-priv-pol-items__disc li {
+.p-priv-pol-items li {
   list-style-type: disc;
 }
 
@@ -190,17 +168,11 @@
 
   .p-main {
     width: 100%;
-  }
-
-  .u-main{
     padding-top: 87px;
   }
 
   .p-hero {
     height: 100px;
-  }
-
-  .u-hero {
     margin-bottom: 3rem;
   }
   
@@ -214,17 +186,16 @@
 
   .p-priv-pol {
     font-size: .8rem;
+    letter-spacing: .4px;
   }
 
-  .u-priv-pol__overview {
-    margin-bottom: 10%;
+  .p-priv-pol__overview {
+    margin-bottom: 1.8rem;
   }
 
   .p-priv-pol__header {
     font-size: 1.3rem;
-  }
-
-  .u-priv-pol__header {
+    letter-spacing: 1px;
     margin-bottom: 1.6rem;
   }
 
@@ -232,7 +203,7 @@
     font-size: .8rem;
   }
 
-  .u-priv-pol-lists {
+  .p-priv-pol-lists {
     margin-bottom: 1.6rem;
   }
 
@@ -240,4 +211,7 @@
     font-size: .9rem;
   }
 
+  .p-priv-pol-lists-description {
+    margin-bottom: .6rem;
+  }
 }

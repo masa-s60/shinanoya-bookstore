@@ -32,9 +32,10 @@
     <link rel="stylesheet" href="./css/jquery.booklet.1.1.0.css" type="text/css"  media="screen" />
     <link rel="stylesheet" href="./css/book-snap.css">
 		<link rel="stylesheet" href="./css/openingAnimation.css">
-    <link rel="stylesheet" href="./css/header.css?v=2">
-    <link rel="stylesheet" href="./css/footer.css?v=2">
-    <link rel="stylesheet" href="./css/index.css?v=2">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/header.css?v=3">
+    <link rel="stylesheet" href="./css/footer.css?v=3">
+    <link rel="stylesheet" href="./css/index.css?v=3">
     <link rel="stylesheet" href="./css/modal.css">
   </head>
 	
@@ -81,8 +82,7 @@
                 </g>
               </svg>
             </div>
-            <div class="p-book__page4">
-            </div>
+            <div class="p-book__page4"></div>
             <div class="p-book__page5">
               <img class="p-book__img-TOContents" src="./img/table-of-contents.png" alt=""/>
             </div>
@@ -94,8 +94,8 @@
 
     <div class="l-body">
       <div class="l-layer"></div>
-      <header class="l-header p-header u-header">
-        <a href="index.php" class="c-logo u-logo">
+      <header class="l-header p-header">
+        <a href="index.php" class="c-logo">
           <img class="c-logo-img" src="./img/rogo-sinanoya.png" alt="信濃屋書店ロゴ">
           <h1 class="c-logo-name">信濃屋書店</h1>
         </a>
@@ -113,61 +113,60 @@
         </div>
       </header>
       
-      <main class="p-main u-main">
-        <section class="p-hero u-hero">
+      <main class="p-main p-section__bgc-brown">
+        <div class="p-hero">
           <picture>
             <source media="(max-width: 430px)" srcset="./img/hero-image-sp.jpg">
-            <img class="p-hero__image u-hero__image" src="./img/hero-image.jpg" alt="信濃屋書店 ヒーローイメージ">
+            <img class="p-hero__image" src="./img/hero-image.jpg" alt="信濃屋書店 ヒーローイメージ" fetchpriority="high">
           </picture>
           <div class="l-hero__image"></div>
-          <nav class="p-hero__nav u-hero__nav">
-            <p class="p-hero__nav-header u-hero__nav-header">Menu</p>
+          <nav class="p-hero__nav">
+            <p class="p-hero__nav-header">Menu</p>
             <ul class="p-hero__nav-list">
-              <li class="p-hero__nav-list-item u-hero__nav-list-item">
-                <a href="#latest_infomation" class="p-hero__nav-link u-hero__nav-link">最新情報</a>
+              <li class="p-hero__nav-list-item">
+                <a href="#latest_infomation" class="p-hero__nav-link">最新情報</a>
               </li>
-              <li  class="p-hero__nav-list-item u-hero__nav-list-item">
-                <a  href="#textbook_store" class="p-hero__nav-link u-hero__nav-link">教科書取扱い</a>
+              <li  class="p-hero__nav-list-item">
+                <a  href="#textbook_store" class="p-hero__nav-link">教科書取扱い</a>
               </li>
-              <li  class="p-hero__nav-list-item u-hero__nav-list-item">
-                <a href="#map" class="p-hero__nav-link u-hero__nav-link">アクセス</a>
+              <li  class="p-hero__nav-list-item">
+                <a href="#map" class="p-hero__nav-link">アクセス</a>
               </li>
-              <li  class="p-hero__nav-list-item u-hero__nav-list-item">
-                <a href="./page/privacy-policy.html" class="p-hero__nav-link u-hero__nav-link">個人情報保護</a>
+              <li  class="p-hero__nav-list-item">
+                <a href="./page/privacy-policy.html" class="p-hero__nav-link">個人情報保護</a>
               </li>
             </ul>
           </nav>
           <div class="p-hero__overlay">
-            <p class="p-hero__overlay-subtitle__first u-hero__overlay-subtitle__first">
+            <p class="p-hero__overlay-subtitle__first">
               大正から時代を超えて<br>
               今も愛され続ける街の本屋
             </p>
-            <h2 class="p-hero__overlay-title__Shinanoya u-hero__overlay-title__Shinanoya">信濃屋書店</h2>
-            <h2 class="p-hero__overlay-title__Bookstore u-hero__overlay-title__Bookstore">-Bookstore-</h2>
-            <p class="p-hero__overlay-subtitle__end u-hero__overlay-subtitle__end">創業1922年
-            </p>
+            <h2 class="p-hero__overlay-title__Shinanoya">信濃屋書店</h2>
+            <p class="p-hero__overlay-title__Bookstore">-Bookstore-</p>
+            <p class="p-hero__overlay-subtitle__end">創業1922年</p>
           </div>
-        </section>
+        </div>
 
-        <section id="latest_infomation" class="p-section u-section">
-          <div class="p-section__heading u-section__heading">
-            <h2 class="p-section__title u-section__title">
+        <section id="latest_infomation" class="p-section">
+          <div class="p-section__heading">
+            <h2 class="p-section__title">
               <span class="p-section__title-first">・</span><span>最</span><span>新</span><span>情</span><span>報</span>
             </h2>
           </div>
           
-          <div class="p-info__list u-info__list">
+          <div class="p-info__list">
             <?php foreach ($postList as $post): ?>
-              <div class="p-info__item u-info__item">
+              <article class="p-info__item">
                 <?php if (!empty($post['img'])): ?>
-                  <img src="<?= htmlspecialchars($post['img']) ?>" alt="" class="c-info__item-img u-info__item-img">
+                  <img src="<?= htmlspecialchars($post['img']) ?>" alt="" class="c-info__item-img">
                   <div class="c-modal-img">
                     <img src="" class="c-modal-targetImg-for-index">
                   </div>
                 <?php endif; ?>
                 <div class="p-info__item-detail">
-                  <h3 class="p-info__item-title u-info__item-text"><?= htmlspecialchars($post['title']) ?></h3>
-                  <p class="p-info__item-date u-info__item-text">投稿日：<?= htmlspecialchars($post['date']) ?></p>
+                  <h3 class="p-info__item-title"><?= htmlspecialchars($post['title']) ?></h3>
+                  <p class="p-info__item-date">投稿日：<?= htmlspecialchars($post['date']) ?></p>
                   <div class="p-info__item-text">
                     <?= nl2br(htmlspecialchars($post['text'])) ?>
                   </div>
@@ -177,39 +176,39 @@
                     </div>
                   <?php endif; ?>
                 </div>
-              </div>
+              </article>
             <?php endforeach; ?>
           </div>
         </section>
 
-        <section id="textbook_store" class="p-section__bgc-brown u-section">
-          <div class="p-section__heading u-section__heading">
-            <h2 class="p-section__title u-section__title">
+        <section id="textbook_store" class="p-section p-section__bgc-brown">
+          <div class="p-section__heading">
+            <h2 class="p-section__title">
               <span class="p-section__title-first">・</span><span>教</span><span>科</span><span>書</span><span>取</span><span>扱</span><span>い</span><span>店</span>
             </h2>
           </div>
-          <div class="l-textbook u-textbook">
+          <div class="l-textbook">
             <div class="p-textbook__store-about">
-              <p class="u-textbook__store-about__text">
+              <p class="p-textbook__store-about__text">
                 当店では市内の小学校から高等学校まで、幅広い教科書を取り扱っており、お取り置き・お取り寄せが可能です。<br><br>
                 各種ご注文方法や詳細については、以下リンクからご確認ください。
               </p>
-              <a href="./page/about-textbook.html" class="p-textbook__store-about__link u-textbook__store-about__link">詳細はこちら >></a>
+              <a href="./page/about-textbook.html" class="p-textbook__store-about__link">詳細はこちら >></a>
             </div>
-            <div class="p-work__textbook-image u-work__textbook-image">
-              <img class="p-img-zoom" src="./img/text-book.jpg" alt="">
+            <div class="p-work__textbook-image">
+              <img class="p-img-zoom" src="./img/text-book.jpg" alt="教科書画像">
             </div>
           </div>
         </section>
 
-        <section id="map" class="p-section u-section">
-          <div class="p-section__heading u-section__heading">
-            <h2 class="p-section__title u-section__title">
+        <section id="map" class="p-section">
+          <div class="p-section__heading">
+            <h2 class="p-section__title">
               <span class="p-section__title-first">・</span><span>ア</span><span>ク</span><span>セ</span><span>ス</span><span>マ</span><span>ッ</span><span>プ</span>
             </h2>
           </div>
           <div class="l-map">
-            <div class="p-map u-map">
+            <div class="p-map">
               <div class="p-company__map">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3257.09302387103!2d139.66920247454942!3d35.278813351977114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60183ff53dd1dbf5%3A0x29f2034b0b8e9910!2z44CSMjM4LTAwMDcg56We5aWI5bed55yM5qiq6aCI6LOA5biC6Iul5p2-55S677yT5LiB55uu77yR77yS!5e0!3m2!1sja!2sjp!4v1781149770647!5m2!1sja!2sjp" 
@@ -219,7 +218,7 @@
                 </iframe>
               </div>
             </div>
-            <div class="p-map__text u-map__text">
+            <div class="p-map__text">
               <p id="mapTextWalk" class="c-access-info">横須賀中央駅 東口 徒歩1分</p>
               <p id="mapTextPlace" class="c-access-info">Yデッキ りそな銀行の隣</p>
             </div>
@@ -227,27 +226,27 @@
         </section>
 
         <footer class="l-footer">
-          <div class="p-footer-info u-footer-info">
-            <div class="p-footer-details u-footer-details">
-              <h2 class="p-footer-info-name u-footer-info-name">有限会社　信濃屋書店</h2>
+          <div class="p-footer-info">
+            <div class="p-footer-details">
+              <h2 class="p-footer-info-name">有限会社　信濃屋書店</h2>
               <address class="p-footer-info-address">〒238-0007　神奈川県横須賀市若松町３－１２</address>
-              <p class="p-footer-info-tel u-footer-info-tel">TEL：046-822-0405</p>
+              <p class="p-footer-info-tel">TEL：046-822-0405</p>
               <p class="p-footer-info-hours">営業時間：10:00～19:00</p>
               <p class="p-footer-info-holiday">休業日：日曜・祝日</p>
             </div>
-            <div class="p-footer-social u-footer-social">
+            <div class="p-footer-social">
               <div class="p-footer-social-group">
                 <a href="https://twitter.com/ExGmz?ref_src=twsrc%5Etfw" class="p-footer-social-link">
-                  <img src="./img/x-logo.png" alt="" class="p-footer-social-img">
+                  <img src="./img/x-logo.png" alt="Xロゴ" class="p-footer-social-img">
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61569472234993&mibextid=wwXIfr" class="p-footer-social-link">
-                  <img src="./img/facebook-logo.png" alt="" class="p-footer-social-img">
+                  <img src="./img/facebook-logo.png" alt="フェイスブックロゴ" class="p-footer-social-img">
                 </a>  
               </div>
             </div>
           </div>
           <div>
-            <p class="p-footer-copylight u-footer-copylight">&copy; 2024 信濃屋書店. All Rights Reserved.</p>
+            <p class="p-footer-copylight">&copy; 2024 信濃屋書店. All Rights Reserved.</p>
           </div>
         </footer>
       </main>
