@@ -11,16 +11,18 @@
   will-change: transform;
 }
 
+.l-content {
+  width: 75%;
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px #333;
+  margin: auto;
+}
+
 .p-main {
   position: relative;
   z-index: 1;
-  width: 75%;
-  font-family: serif;
-  background-repeat: repeat;
-  box-shadow: 0 0 10px #333;
-  margin: auto;
   padding-top: 7vw;
-} 
+}
 
 /* ---------hero----------- */
 
@@ -188,7 +190,7 @@
 /* ------------section--------------- */
 
 .p-section {
-  background-color: #fff;
+  background-color: var(--color-white);
   padding: 4.5vw 2.2vw 10vw;
 }
 
@@ -504,8 +506,11 @@
     background-position: center;
   }
 
-  .p-main {
+  .l-content {
     width: 100%;
+  }
+
+  .p-main {
     padding-top: 87px;
   }
 

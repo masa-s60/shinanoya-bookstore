@@ -1,7 +1,12 @@
 :root {
   --color-primary: #fcf1dc;
+  --color-white: #ffffff;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: serif;
 }

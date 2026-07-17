@@ -1,5 +1,4 @@
 body {
-  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
 
@@ -8,7 +7,7 @@ body {
   box-sizing: border-box;
   max-width: 80%;
   margin: 3% auto;
-  background: white;
+  background-color: var(--color-white);
   padding: 2% 4%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;

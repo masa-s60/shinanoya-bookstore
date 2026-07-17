@@ -1,13 +1,8 @@
-.l-body {
-  position: relative;
-  width: 100%;
-}
- 
 .l-layer {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* 背景を背面に配置 */
+  z-index: -1;
   width: 100%;
   height: 300%;
   background-image: url('../img/body-bgi1.jpg');
@@ -16,19 +11,18 @@
   will-change: transform;
 }
 
-/* ---------main----------- */
+.l-content {
+  width: 75%;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 10px #333;
+  margin: auto;
+}
 
 .p-main {
   position: relative;
   z-index: 1;
-  width: 75%;
-  font-family: serif;
-  background-color: #fffaf0;
-  background-repeat: repeat;
-  box-shadow: 0 0 10px #333;
-  margin: auto;
-  padding-top: 6vw;
-} 
+  padding-top: 7vw;
+}
 
 /* ---------hero----------- */
 
@@ -206,8 +200,11 @@
     background-position: center;
   }
 
-  .p-main {
+  .l-content {
     width: 100%;
+  }
+
+  .p-main {
     padding-top: 87px;
   }
 
@@ -237,12 +234,7 @@
 
   .p-order-header::before,
   .p-order-header::after {
-    content: "";
-    display: inline-block;
     width: 12%;
-    height: 1px;
-    background-color: black;
-    vertical-align: middle;
   }
 
   .c-textbook-order__school {

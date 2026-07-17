@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>最新情報の投稿</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/upload_form.css">
     <link rel="stylesheet" href="../css/modal.css">
   </head>
