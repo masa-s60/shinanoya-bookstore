@@ -1,4 +1,4 @@
-.l-layer {
+.p-page-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -193,7 +193,7 @@
     overflow-x: hidden; /* 横スクロールを無効化 */
   }
 
-  .l-layer {
+  .p-page-background {
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;

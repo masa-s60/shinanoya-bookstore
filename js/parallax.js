@@ -1,4 +1,4 @@
-const layer = document.querySelector('.l-layer');
+const layer = document.querySelector('.p-page-background');
 
 // スクロールイベント
 window.addEventListener('scroll', function() {
