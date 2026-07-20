@@ -1,4 +1,4 @@
-.p-page-background {
+.p-page__background {
   position: fixed;
   top: 0;
   left: 0;
@@ -38,7 +38,7 @@
   width: 100%;
 }
 
-.l-hero__image {
+.p-hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,7 +48,7 @@
   opacity: 0;
 }
 
-.l-hero__image.is-active {
+.p-hero__overlay.is-active {
   animation: overlay-fade-in 1s ease-out forwards;
   animation-delay: 1s;
 }
@@ -108,7 +108,7 @@
   background-color: white;
 }
 
-.p-hero__overlay {
+.p-hero__content {
   position: absolute;
   top: 12%;
   left: 10%;
@@ -119,13 +119,13 @@
   transform: translateX(1vw);
 }
 
-.p-hero__overlay.is-active {
+.p-hero__content.is-active {
   animation: slide-in 1s ease-out forwards;
   animation-delay: 1s;
 }
 
-.p-hero__overlay::before,
-.p-hero__overlay::after {
+.p-hero__content::before,
+.p-hero__content::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -137,8 +137,8 @@
   transform: translateX(1vw);
 }
 
-.p-hero__overlay.is-active::before,
-.p-hero__overlay.is-active::after {
+.p-hero__content.is-active::before,
+.p-hero__content.is-active::after {
   animation: slide-in 1s ease-out forwards;
   animation-delay: 1s;
 }
@@ -156,31 +156,31 @@
   }
 }
 
-.p-hero__overlay-subtitle__first {
+.p-hero__lead {
   margin-top: 4vw;
   margin-bottom: 3vw;
 }
 
-.p-hero__overlay-subtitle__end {
+.p-hero__founded {
   margin-bottom: 4vw;
 }
 
-.p-hero__overlay-subtitle__first,
-.p-hero__overlay-subtitle__end {
+.p-hero__lead,
+.p-hero__founded {
   font-size: 1.6vw;
   text-align: center;
   letter-spacing: .3vw;
   line-height: 1.5;
 }
 
-.p-hero__overlay-title__Shinanoya {
+.p-hero__title {
   font-size: 4vw;
   text-align: center;
   letter-spacing: .7vw;
   margin-bottom: 1vw;
 }
 
-.p-hero__overlay-title__Bookstore {
+.p-hero__subtitle {
   font-size: 2.2vw;
   text-align: center;
   letter-spacing: .2vw;
@@ -206,8 +206,8 @@
 }
 
 /* section title background text 共通 */
-#latest_infomation .p-section__title:first-of-type::after,
-#textbook_store .p-section__title:first-of-type::after,
+#latest-information .p-section__title:first-of-type::after,
+#textbook-store .p-section__title:first-of-type::after,
 #map .p-section__title:first-of-type::after {
   position: absolute;
   top: 0;
@@ -220,16 +220,15 @@
 }
 
 /* 最新情報 */
-#latest_infomation .p-section__title:first-of-type::after {
+#latest-information .p-section__title:first-of-type::after {
   content: "News";
   color: var(--color-primary);
 }
 
 /* 教科書取扱い店 */
-#textbook_store .p-section__title:first-of-type::after {
+#textbook-store .p-section__title:first-of-type::after {
   content: "Textbook";
   color: #fff;
-  opacity: .8;
 }
 
 /* アクセスマップ */
@@ -306,7 +305,7 @@
   margin: auto;
 }
 
-.c-info__item-img {
+.p-info__item-image {
   width: 17%;
   min-width: 30px;
   height: auto;
@@ -347,38 +346,33 @@
 }
 
 .c-read-more {
-  text-align: right;
-}
-
-.c-read-more__button {
+  display: block;
   background-color: #2400a6;
   font-size: 1vw;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: .5s ease-out;
+  transition: background-color .3s ease-out;
+  margin-top: .6vw;
+  margin-left: auto;
   padding: .2vw .8vw;
 }
 
-.c-read-more__button:hover {
+.c-read-more:hover {
   background-color: #0056b3;
-}
-
-.p-section__bgc-brown {
-  background-color: var(--color-primary);
 }
 
 /* 教科書取扱い店 */
 
-.l-textbook {
+.p-textbook {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   margin: 0 2vw;
 }
 
-.p-textbook__store-about {
+.p-textbook__content {
   width: 43%;
   font-size: 1.4vw;
   color: #43331f;
@@ -388,19 +382,19 @@
   text-align: center;
 }
 
-.p-textbook__store-about__text {
+.p-textbook__content-text {
   text-align: left;
   margin-bottom: 5vw;
 }
 
-.p-textbook__store-about__link {
+.p-textbook__content-link {
   display: inline-block;
   font-size: 1.4vw;
   font-weight: bold;
   color: white;
   background-color: rgb(0, 60, 211);
   border: solid 2px white;
-  border-radius: 50px; 
+  border-radius: 9999px; 
   box-shadow: 1px 1px 7px black;
   text-align: center;
   text-decoration: none;
@@ -408,13 +402,13 @@
   padding: .8vw 1vw;
 }
 
-.p-textbook__store-about__link:hover {
+.p-textbook__content-link:hover {
   color: #1e0076;
   background-color: #ddedff;
   border: solid 2px rgb(0, 12, 174);
 }
 
-.p-work__textbook-image {
+.p-textbook__image {
   width: 40%;
   height: 22vw;
   box-shadow: 1px 1px 7px black;
@@ -423,7 +417,7 @@
   border-radius: 2px;
 }
 
-.p-img-zoom {
+.p-textbook__image-item {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -448,11 +442,11 @@
   width: 100%;
   height: 32vw;
   border: solid 2px rgba(96, 33, 1, 0.824);
-  border-radius: 5%;
+  border-radius: 8px;
   box-shadow: 5px 5px 7px rgb(71, 67, 67);
 }
 
-.p-map__text {
+.p-map__info {
   width: 35%;
   color: #511f15;
   font-size: 1.6vw;
@@ -460,14 +454,14 @@
   text-align: center;
 }
 
-.c-access-info {
+.p-map__info-text {
   display: inline-block;
   position: relative;
   line-height: 1.2;
   margin-bottom: 1vw;
 }
 
-.c-access-info::before {
+.p-map__info-text::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -478,8 +472,8 @@
   transition: width 0.6s ease-out;
 }
 
-#mapTextWalk.active::before,
-#mapTextPlace.active::before {
+#map-text-walk.active::before,
+#map-text-place.active::before {
   width: 100%;
 }
 
@@ -495,11 +489,8 @@
 /* ============= sp ============== */
 
 @media(max-width: 430px) {
-  body {
-    overflow-x: hidden; /* 横スクロールを無効化 */
-  }
 
-  .p-page-background {
+  .p-page__background {
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
@@ -540,45 +531,45 @@
     font-weight: bold;
   }
 
-  .p-hero__nav-list-item {
+  .p-hero__nav-item {
     flex: 1;
     border: solid 1px white;
     padding: 30px 0;
   }
 
-  .p-hero__overlay {
+  .p-hero__content {
     top: 45%;
     width: 80%;
   }
 
-  .p-hero__overlay::before,
-  .p-hero__overlay::after {
+  .p-hero__content::before,
+  .p-hero__content::after {
     height: 1px;
   }
 
-  .p-hero__overlay-subtitle__first,
-  .p-hero__overlay-subtitle__end {
+  .p-hero__lead,
+  .p-hero__founded {
     font-size: 1rem;
     text-align: center;
     letter-spacing: 2px;
   }
 
-  .p-hero__overlay-subtitle__first {
+  .p-hero__lead {
     margin-top: 30px;
     margin-bottom: 25px;
   }
 
-  .p-hero__overlay-subtitle__end {
+  .p-hero__founded {
     margin-bottom: 25px;
   }
 
-  .p-hero__overlay-title__Shinanoya {
+  .p-hero__title {
     font-size: 3rem;
     letter-spacing: 3px;
     margin-bottom: 20px;
   }
 
-  .p-hero__overlay-title__Bookstore {
+  .p-hero__subtitle {
     font-size: 1.4rem;
     letter-spacing: 1.8px;
     margin-bottom: 20px;
@@ -586,8 +577,8 @@
 
   /* ------------section--------------- */
  
-  #latest_infomation,
-  #textbook_store,
+  #latest-information,
+  #textbook-store,
   #map {
     scroll-margin-top: 85px;
   }
@@ -602,8 +593,8 @@
     margin-bottom: 35px;
   }
 
-  #latest_infomation .p-section__title:first-of-type::after,
-  #textbook_store .p-section__title:first-of-type::after,
+  #latest-information .p-section__title:first-of-type::after,
+  #textbook-store .p-section__title:first-of-type::after,
   #map .p-section__title:first-of-type::after {
     top: 50%;
     left: 5px;
@@ -624,7 +615,7 @@
     padding: 10px 0;
   }
 
-  .c-info__item-img {
+  .p-info__item-image {
     width: 130px;
     margin-right: 10px;
   }
@@ -644,23 +635,24 @@
     letter-spacing: .5px;
   }
   
-  .c-read-more__button {
+  .c-read-more {
     font-size: .7rem;
     border-radius: 3px;
-    margin-top: 2%;
-    margin-right: 6%;
-    padding: .5% 2%;
-  }  
+    margin-top: .4rem;
+    margin-right: 10px;
+    margin-left: auto;
+    padding: 2px 5px;
+  }
 
   /* textbook */
   
-  .l-textbook {
+  .p-textbook {
     display: block;
     justify-content: flex-start;
     align-items: stretch;
   } 
 
-  .p-textbook__store-about {
+  .p-textbook__content {
     width: 90%;
     font-size: 1rem;
     font-weight: normal;
@@ -670,17 +662,17 @@
     margin: auto;
   }
 
-  .p-textbook__store-about__text {
+  .p-textbook__content-text {
     margin-bottom: 30px;
   }
 
-  .p-textbook__store-about__link {
+  .p-textbook__content-link {
     font-size: 1rem;
     margin-bottom: 55px;
     padding: 10px 12px;
   } 
 
-  .p-work__textbook-image {
+  .p-textbook__image {
     width: 80%;
     height: 220px;
     margin: auto;
@@ -703,7 +695,7 @@
     height: 300px;
   }
 
-  .p-map__text {
+  .p-map__info {
     all: unset;
     display: inline-block;
     position: static;

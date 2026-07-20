@@ -9,28 +9,24 @@
     <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/header.css?v=2">
-    <link rel="stylesheet" href="../css/footer.css?v=2">
-    <link rel="stylesheet" href="../css/about-textbook.css?v=4">
-    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/base.css?v=3">
+    <link rel="stylesheet" href="../css/header.css?v=3">
+    <link rel="stylesheet" href="../css/footer.css?v=3">
+    <link rel="stylesheet" href="../css/about-textbook.css?v=3">
+    <link rel="stylesheet" href="../css/utility.css?v=3">
   </head>
 	
-  <body id="body">
-    <div class="p-page-background"></div>
-    <header class="l-header p-header">
-      <a href="../index.php" class="c-logo">
-        <img class="c-logo-img" src="../img/rogo-sinanoya.png" alt="信濃屋書店ロゴ">
-        <h1 class="c-logo-name">信濃屋書店</h1>
+  <body>
+    <div class="p-page__background"></div>
+    <header class="p-header">
+      <a href="../index.php" class="p-header__logo">
+        <img class="p-header__logo-image" src="../img/rogo-sinanoya.png" alt="信濃屋書店ロゴ">
+        <h1 class="p-header__logo-name">信濃屋書店</h1>
       </a>
-      <div class="c-header-sub">
-        <nav class="c-nav">
-          <ul class="p-breadcrumb">
-            <li class="p-breadcrumb-list">教科書取扱い店</li>
-          </ul>
-        </nav>
-        <p class="p-header-tel">
-          <a href="tel:046-822-0405" class="p-header-tel-number">
+      <div class="p-header__info">
+        <p class="p-header__page-name">教科書取扱い</p>
+        <p class="p-header__tel">
+          <a href="tel:046-822-0405" class="p-header__tel-number">
             <i class="fas fa-phone-alt"></i> TEL：046-822-0405
           </a>
         </p>
@@ -41,59 +37,59 @@
       <main class="p-main">
         <section class="p-hero js-hero">
           <img class="p-hero__image" src="../img/text-book-hero.jpg" alt="信濃屋書店　ヒーローイメージ">
-          <div class="l-hero__image"></div>
-          <div class="p-hero__overlay">
-            <h2 class="p-hero__overlay-title">教科書取扱店</h2>
+          <div class="p-hero__overlay"></div>
+          <div class="p-hero__content">
+            <h2 class="p-hero__content-title">教科書取扱店</h2>
           </div>
         </section>
         <section class="p-order">
-          <h3 class="p-order-header"> ご注文に関するご案内 </h3>   
+          <h3 class="p-order__header"> ご注文に関するご案内 </h3>   
           <div class="p-school">
-            <h4 class="c-textbook-order__school">小・中学校教科書をご注文のお客様へ</h4>
-            <div class="p-sale-start">
+            <h4 class="p-school__header">小・中学校教科書をご注文のお客様へ</h4>
+            <div class="p-school__sale">
               <ul class="u-list-indent">
-                <li class="p-textbook-release">
-                  <span class="p-textbook-release__text">新年度用教科書の販売開始日</span>
-                  <p class="p-textbook-release__date"><span class="p-textbook-release__text">◦4月16日以降</span>より販売いたします。</p>
+                <li class="p-school__release">
+                  <span class="p-school__release-emphasis">新年度用教科書の販売開始日</span>
+                  <p class="p-school__release-date"><span class="p-school__release-emphasis">◦4月16日以降</span>より販売いたします。</p>
                 </li>
-                <li class="p-textbook-release">
-                  <span class="p-textbook-release__text">後期用教科書の販売開始日</span>
-                  <p class="p-textbook-release__date"><span class="p-textbook-release__text">◦9月16日以降</span>より販売いたします。</p>
+                <li class="p-school__release">
+                  <span class="p-school__release-emphasis">後期用教科書の販売開始日</span>
+                  <p class="p-school__release-date"><span class="p-school__release-emphasis">◦9月16日以降</span>より販売いたします。</p>
                 </li>
               </ul>
             </div>
-            <div class="p-textbook-supplement">
-              <p class="c-textbook-supplement__header">※注意事項</p>
+            <div class="p-school__supplement">
+              <p class="p-school__supplement-header">※注意事項</p>
               <ul class="u-list-indent">
-                <li class="c-textbook-supplement__detail">
+                <li class="p-school__supplement-detail">
                   横須賀市内の公立小・中学校の教科書：在庫がある場合、すぐにお買い求めいただけます。
                 </li>
-                <li class="c-textbook-supplement__detail">
+                <li class="p-school__supplement-detail">
                   横須賀市内以外の教科書、または在庫がない場合：ご注文頂いてから入荷まで約1週間かかります。
-                  <p class="u-margin__top-sm">◦事前にお電話で在庫状況をご確認ください。</p>
+                  <p class="u-margin-top-sm">◦事前にお電話で在庫状況をご確認ください。</p>
                 </li>
               </ul>  
             </div>
           </div>
           <div class="p-school">
-            <div class="p-sale-start">
-              <h4 class="c-textbook-order__school">高等学校教科書をご注文のお客様へ</h4>
+            <h4 class="p-school__header">高等学校教科書をご注文のお客様へ</h4>
+            <div class="p-school__sale">
               <ul class="u-list-indent">
-                <li class="p-textbook-release">
-                  <span class="p-textbook-release__text">新年度用教科書の受付開始日</span>
-                  <p class="p-textbook-release__date">◦4月1日よりご注文を受け付けておりますが、販売は生徒用の販売終了後（例年4月10日以降）から開始いたします。</p>
+                <li class="p-school__release">
+                  <span class="p-school__release-emphasis">新年度用教科書の受付開始日</span>
+                  <p class="p-school__release-date">◦4月1日よりご注文を受け付けておりますが、販売は生徒用の販売終了後（例年4月10日以降）から開始いたします。</p>
                 </li>
               </ul>
             </div>
-            <div class="p-textbook-supplement">
-              <p class="c-textbook-supplement__header">※注意事項</p>
+            <div class="p-school__supplement">
+              <p class="p-school__supplement-header">※注意事項</p>
               <ul class="u-list-indent">
-                <li class="c-textbook-supplement__detail">
+                <li class="p-school__supplement-detail">
                   在庫がある場合：すぐお買い求めいただけます。
                 </li>
-                <li class="c-textbook-supplement__detail">
+                <li class="p-school__supplement-detail">
                   在庫がない場合：ご注文時に以下の情報をお知らせください。
-                  <ul class="p-textbook-info u-margin__top-sm">
+                  <ul class="u-line-height-md u-margin-top-sm">
                     <li>◦発行所</li>
                     <li>◦書名</li>
                     <li>◦教科書番号</li>
@@ -101,42 +97,40 @@
                 </li>
               </ul>
             </div>
-            <div class="p-textbook-supplement">
-              <p class="c-textbook-supplement__header">参考情報</p>
+            <div class="p-school__supplement">
+              <p class="p-school__supplement-header">参考情報</p>
               <ul class="u-list-indent">
-                <li class="c-textbook-supplement__detail">文部科学省のホームページに教科書目録が掲載されていますので、ご確認ください。</li>
-                <li class="c-textbook-supplement__detail">ご注文後、入荷までに1週間から10日ほどかかります。入荷次第ご連絡いたします。</li>
+                <li class="p-school__supplement-detail">文部科学省のホームページに教科書目録が掲載されていますので、ご確認ください。</li>
+                <li class="p-school__supplement-detail">ご注文後、入荷までに1週間から10日ほどかかります。入荷次第ご連絡いたします。</li>
               </ul>
             </div>
           </div>
           <div class="p-contact">
-            <h4 class="c-textbook-supplement__header">お問い合わせ</h4>
-            <p class="p-contact-guide">詳細はお電話にてお問い合わせください。</p>
+            <h4 class="p-contact__header">お問い合わせ</h4>
+            <p class="p-contact__guide">詳細はお電話にてお問い合わせください。</p>
           </div>  
         </section>
       </main>
 
-      <footer class="l-footer">
-        <div class="p-footer-info">
-          <div class="p-footer-details">
-            <h2 class="p-footer-info-name">有限会社　信濃屋書店</h2>
-            <address class="p-footer-info-address">〒238-0007　神奈川県横須賀市若松町３－１２</address>
-            <p class="p-footer-info-tel">TEL：046-822-0405</p>
-            <p class="p-footer-info-hours">営業時間：10:00～19:00</p>
-            <p class="p-footer-info-holiday">休業日：日曜・祝日</p>
+      <footer class="p-footer">
+        <div class="p-footer__info">
+          <div class="p-footer__info-details">
+            <h2 class="p-footer__info-name">有限会社　信濃屋書店</h2>
+            <address class="p-footer__info-address">〒238-0007　神奈川県横須賀市若松町３－１２</address>
+            <p class="p-footer__info-tel">TEL：046-822-0405</p>
+            <p class="p-footer__info-hours">営業時間：10:00～19:00</p>
+            <p class="p-footer__info-holiday">休業日：日曜・祝日</p>
           </div>
-          <div class="p-footer-social">
-            <a href="https://twitter.com/ExGmz?ref_src=twsrc%5Etfw" class="p-footer-social-link">
-              <img src="../img/x-logo.png" alt="Xロゴ" class="p-footer-social-img">
+          <div class="p-footer__social">
+            <a href="https://twitter.com/ExGmz?ref_src=twsrc%5Etfw" class="p-footer__social-link">
+              <img src="../img/x-logo.png" alt="Xロゴ" class="p-footer__social-image">
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61569472234993&mibextid=wwXIfr" class="p-footer-social-link">
-              <img src="../img/facebook-logo.png" alt="フェイスブックロゴ" class="p-footer-social-img">
+            <a href="https://www.facebook.com/profile.php?id=61569472234993&mibextid=wwXIfr" class="p-footer__social-link">
+              <img src="../img/facebook-logo.png" alt="フェイスブックロゴ" class="p-footer__social-image">
             </a>
           </div>
         </div>
-        <div>
-          <p class="p-footer-copylight">&copy; 2024 信濃屋書店. All Rights Reserved.</p>
-        </div>
+        <p class="p-footer__copyright">&copy; 2024 信濃屋書店. All Rights Reserved.</p>
       </footer>
     </div>
 

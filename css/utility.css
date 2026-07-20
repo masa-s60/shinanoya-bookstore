@@ -1,9 +1,17 @@
-.u-margin__top-sm {
+.u-line-height-md {
+  line-height: 1.5;
+}
+
+.u-margin-top-sm {
   margin-top: .8vw;
 }
 
 .u-list-indent {
   padding: 0 2.4vw;
+}
+
+.u-bg-brown {
+  background-color: var(--color-primary);
 }
 
 @media(max-width: 430px) {

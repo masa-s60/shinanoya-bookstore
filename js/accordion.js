@@ -1,15 +1,16 @@
-document.querySelectorAll('.c-read-more__button').forEach(button => {
+document.querySelectorAll('.c-read-more').forEach(button => {
   button.addEventListener('click', () => {
-    const parentDiv = button.closest('div'); // クリックされたボタンの親 div を取得
-    const grandParentDiv = parentDiv?.parentElement; // さらにその上の div に移動
-    const textDetail = grandParentDiv?.querySelector('div.p-info__item-text'); // その中から対象のテキスト部分を取得
+    const infoItem = button.closest('.p-info__item');
+    const textDetail = infoItem?.querySelector('.p-info__item-text');
 
-    if (button.classList.contains('open')) {
-      button.classList.remove('open');
-      textDetail.style.maxHeight = 'calc(1.3em * 3)'; 
+    if (!textDetail) return;
+
+    if (button.classList.contains('is-open')) {
+      button.classList.remove('is-open');
+      textDetail.style.maxHeight = 'calc(1.3em * 3)';
       button.textContent = '続きを読む';
     } else {
-      button.classList.add('open');
+      button.classList.add('is-open');
       textDetail.style.maxHeight = '500px';
       button.textContent = '閉じる';
     }

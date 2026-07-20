@@ -17,62 +17,73 @@
     <title>最新情報の投稿</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/upload_form.css">
-    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/upload_form.css?v=1">
+    <link rel="stylesheet" href="../css/modal.css?v=1">
   </head>
 
   <body>
-    <div class="l-container">
-
+    <div class="p-post">
     <!-- 投稿フォーム -->
-      <div class="l-left">
-        <h2 class="c-title">投稿</h2>
-
-        <form action="../src/upload_process.php" method="POST" enctype="multipart/form-data" id="uploadForm" class="c-form">
+      <div class="p-upload">
+        <h1 class="p-post__title">投稿</h1>
+        <form action="../src/upload_process.php" method="POST" enctype="multipart/form-data" id="upload-form" class="p-form">
           <!-- 画像 -->
-          <label for="image" class="c-form-label">【画像】<br></label>
-          <div class="p-img-group">
-            <input type="file" name="image" id="image" accept="image/*" class="p-form-img u-form-input">
+          <label for="image" class="p-form__label">【画像】</label>
+          <div class="p-form__file">
+            <input 
+              type="file"
+              id="image" 
+              name="image" 
+              class="p-form__image"
+              accept="image/*">
           </div>
-
           <!-- タイトル入力 -->
-          <label for="title" class="c-form-label">【タイトル】*<br></label>
-          <textarea type="text" name="title" id="title" class="c-form-title u-form-input" maxlength="150" required></textarea>
-
+          <label for="title" class="p-form__label">【タイトル】*</label>
+          <input 
+            type="text"
+            id="title" 
+            name="title" 
+            class="p-form__title" 
+            maxlength="150" 
+            required>
           <!-- 文章入力 -->
-          <label for="text" class="c-form-label">【内容】*<br></label>
-          <textarea name="text" id="text" class="c-form-textarea" maxlength="1000" required></textarea>
-          
+          <label for="text" class="p-form__label">【内容】*</label>
+          <textarea 
+            id="text" 
+            name="text" 
+            class="p-form__content" 
+            maxlength="1000" 
+            required></textarea>
           <!-- 送信ボタン -->
-          <div class="p-submit">
-            <button type="button" id="openConfirmModal" class="p-form-button">アップロード</button>
+          <div class="p-form__submit">
+            <button type="button" id="open-confirm-modal" class="p-form__submit-button">アップロード</button>
           </div>
         </form>
       </div>
 
       <!-- 現在の投稿一覧 -->
-      <div class="l-right">
-        <h2 class="c-title">現在の投稿</h2>
-        <div class="c-info">
-          <?php foreach ($postList as $post):?>
-            <div class="c-info-item">
-              <p class="c-info-title"><?= htmlspecialchars($post['title']) ?></p>
-              <p class="c-info-date">投稿日：<?= htmlspecialchars($post['date']) ?></p>
-              <div class="c-info-item__flex">
+      <div class="p-current-post">
+        <h2 class="p-post__title">現在の投稿</h2>
+        <div class="p-current-post__list">
+          <?php foreach ($postList as $post): ?>
+            <div class="p-current-post__item">
+              <p class="p-current-post__title"><?= htmlspecialchars($post['title']) ?></p>
+              <p class="p-current-post__date">投稿日：<?= htmlspecialchars($post['date']) ?></p>
+              <div class="p-current-post__body">
                 <?php if (!empty($post['img'])): ?>
-                  <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="c-info-image">
-                  <div class="c-modal-img">
-                    <img src="" class="c-modal-targetImg-for-upload_form">
+                  <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-current-post__body-image">
+                  <div class="c-image-modal">
+                    <img src="" alt="投稿画像の拡大" class="c-image-modal__image">
                   </div>
                 <?php endif; ?>
-                <p class="c-info-text">
+                <p class="p-current-post__body-text">
                   <?= htmlspecialchars(mb_strlen($post['text']) > 100 ? mb_substr($post['text'], 0, 100) . '...' : $post['text']) ?>
                 </p>
               </div>
 
-              <form action="../src/delete_post.php" method="POST" class="p-delete-form">
+              <form action="../src/delete_post.php" method="POST" class="p-current-post__delete">
                 <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
-                <button type="button" class="c-delete-button js-open-delete-modal">削除</button>
+                <button type="button" class="p-current-post__delete-button js-open-delete-modal">削除</button>
               </form>
             </div>
           <?php endforeach; ?>
@@ -81,17 +92,17 @@
     </div>
 
     <!-- モーダルウィンドウ -->
-    <div id="confirmModal" class="c-confirm-modal">
+    <div id="confirm-modal" class="c-confirm-modal">
       <div class="c-confirm-modal__content">
-        <p id="confirmMessage">この内容で送信してもよろしいですか？</p>
-        <button id="confirmYes" class="c-modal__button c-modal__button--yes">はい</button>
-        <button id="confirmNo" class="c-modal__button c-modal__button--no">いいえ</button>
+        <p id="confirm-message" class="c-confirm-modal__message">この内容を投稿しますか？</p>
+        <button id="confirm-yes" class="c-modal__button c-modal__button--yes">はい</button>
+        <button id="confirm-no" class="c-modal__button c-modal__button--no">いいえ</button>
       </div>
     </div>
 
-    <div id="statusModal" class="c-status-modal" style="display: none;">
+    <div id="status-modal" class="c-status-modal">
       <div class="c-status-modal__content">
-        <p id="statusMessage"></p>
+        <p id="status-message"></p>
       </div>
     </div>
 

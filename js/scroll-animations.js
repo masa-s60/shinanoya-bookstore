@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
   const titleInfoActiveHeight = titleInfoRectTop - windowHeight; 
 
   if (titleInfoActiveHeight <= -100 ) {
-    if(!titleInfoCharacters[1].classList.contains(".is-active__first-char")) {
+    if(!titleInfoCharacters[1].classList.contains("is-active__first-char")) {
       if(infoFirst === true) {
         infoFirst = false;
         titleInfoCharacters.forEach((character, index) => {
@@ -28,7 +28,7 @@ window.addEventListener('scroll', () => {
   const titleWorkActiveHeight = titleWorkRectTop - windowHeight;
 
   if (titleWorkActiveHeight <= -100 ) {
-    if(!titleWorkCharacters[1].classList.contains(".is-active__first-char")) {
+    if(!titleWorkCharacters[1].classList.contains("is-active__first-char")) {
       if(workFirst === true) {
         workFirst = false;
         titleWorkCharacters.forEach((character, index) => {
@@ -47,7 +47,7 @@ window.addEventListener('scroll', () => {
     const titleMapActiveHeight = titleMapRectTop - windowHeight;
 
     if (titleMapActiveHeight <= -100 ) {
-      if(!titleMapCharacters[2].classList.contains(".is-active__first-char")) {
+      if(!titleMapCharacters[2].classList.contains("is-active__first-char")) {
         if(mapFirst === true) {
           mapFirst = false;
           titleMapCharacters.forEach((character, index) => {
@@ -59,13 +59,13 @@ window.addEventListener('scroll', () => {
       }
     }
 
-    // mapTextWalk
-    const mapTextWalk = document.getElementById('mapTextWalk');
+    // map-text-walk
+    const mapTextWalk = document.getElementById('map-text-walk');
     let firstMapTextWalkTrigger = true;
     const mapTextWalkRectTop = mapTextWalk.getBoundingClientRect().top;
     const mapTextWalkActiveHeight = mapTextWalkRectTop - windowHeight;
     if (mapTextWalkActiveHeight <= -120 ) {
-      if(!mapTextWalk.classList.contains(".active")) {
+      if(!mapTextWalk.classList.contains("active")) {
         if(firstMapTextWalkTrigger === true) {
           firstMapTextWalkTrigger = false;
           mapTextWalk.classList.add('active');
@@ -73,13 +73,13 @@ window.addEventListener('scroll', () => {
       }
     }
 
-    // mapTextPlace
-    const mapTextPlace = document.getElementById('mapTextPlace');
+    // map-text-place
+    const mapTextPlace = document.getElementById('map-text-place');
     let firstMapTextPlaceTrigger = true;
     const mapTextPlaceRectTop = mapTextPlace.getBoundingClientRect().top;
     const mapTextPlaceActiveHeight = mapTextPlaceRectTop - windowHeight;
     if (mapTextPlaceActiveHeight <= -150 ) {
-      if(!mapTextPlace.classList.contains(".active")) {
+      if(!mapTextPlace.classList.contains("active")) {
         if(firstMapTextPlaceTrigger === true) {
           firstMapTextPlaceTrigger = false;
           mapTextPlace.classList.add('active');

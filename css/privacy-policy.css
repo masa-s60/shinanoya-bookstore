@@ -1,4 +1,4 @@
-.p-page-background {
+.p-page__background {
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@
   object-position: 50% 30%;
 }
 
-.l-hero__image {
+.p-hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -52,7 +52,7 @@
   opacity: 0;
 }
 
-.p-hero__overlay {
+.p-hero__content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -62,7 +62,7 @@
   opacity: 0;
 }
 
-.p-hero__overlay-title {
+.p-hero__content-title {
   opacity: 0;
   visibility: hidden;
   transform: translateX(1vw);
@@ -71,15 +71,15 @@
   letter-spacing: .3vw;
 }
 
-.js-hero.is-active .l-hero__image {
+.js-hero.is-active .p-hero__overlay {
   animation: overlay-fade-in .6s ease-in forwards;
 }
 
-.js-hero.is-active .p-hero__overlay {
+.js-hero.is-active .p-hero__content {
   animation: overlay-fade-in .6s ease-out forwards;
 }
 
-.js-hero.is-active .p-hero__overlay-title {
+.js-hero.is-active .p-hero__content-title {
   animation: slide-in 1s cubic-bezier(.19, .46, .25, .87) forwards;
 }
 
@@ -116,46 +116,50 @@
   padding-bottom: 3vw;
 }
 
-.p-priv-pol__overview {
-  margin-bottom: 2.4vw;
+.p-priv-pol__intro {
+  margin-bottom: 2.8vw;
 }
 
-.p-priv-pol__header {
+.p-priv-pol__intro-title {
   text-align: center;
   font-size: 2vw;
   margin-bottom: 2.6vw;
 }
 
-.p-priv-pol-lists {
+.p-priv-pol__list {
   margin-bottom: 3.5vw;
 }
 
-.p-priv-pol-lists-header {
+.p-priv-pol__list-title {
   font-size: 1.7vw;
 }
 
-.p-priv-pol-lists-header,
-.p-priv-pol-lists-description {
+.p-priv-pol__list-title,
+.p-priv-pol__list-description {
   margin-bottom: 1.6vw;
 }
 
-.p-priv-pol-items li {
+.p-priv-pol__list-items li {
   list-style-type: disc;
 }
 
-.p-priv-pol-list__style-none {
-  list-style: none;
+.p-priv-pol__list-info {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: .2vw;
+  column-gap: .5vw;
+}
+
+.p-priv-pol__list-info dt,
+.p-priv-pol__list-info dd {
+  margin: 0;
 }
 
 /* ============= sp ============== */
 
 @media(max-width: 430px){
 
-  body {
-    overflow-x: hidden; /* 横スクロールを無効化 */
-  }
-
-  .p-page-background {
+  .p-page__background {
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
@@ -175,7 +179,7 @@
     margin-bottom: 3rem;
   }
   
-  .p-hero__overlay-title {
+  .p-hero__content-title {
     font-size: 1.6rem;
     text-align: center;
     letter-spacing: 2px;
@@ -188,29 +192,29 @@
     letter-spacing: .4px;
   }
 
-  .p-priv-pol__overview {
+  .p-priv-pol__intro {
     margin-bottom: 1.8rem;
   }
 
-  .p-priv-pol__header {
+  .p-priv-pol__intro-title {
     font-size: 1.3rem;
     letter-spacing: 1px;
     margin-bottom: 1.6rem;
   }
 
-  .p-priv-pol__explanation {
+  .p-priv-pol__intro-text {
     font-size: .8rem;
   }
 
-  .p-priv-pol-lists {
+  .p-priv-pol__list {
     margin-bottom: 1.6rem;
   }
 
-  .p-priv-pol-lists-header {
+  .p-priv-pol__list-title {
     font-size: .9rem;
   }
 
-  .p-priv-pol-lists-description {
+  .p-priv-pol__list-description {
     margin-bottom: .6rem;
   }
 }

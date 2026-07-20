@@ -1,7 +1,7 @@
 const nextButton = document.getElementById('next_page_button');
 const whiteLayer = document.querySelector('.p-opening-white');
 const opening = document.querySelector('.p-opening');
-const mainBody = document.querySelector('.l-body');
+const mainBody = document.querySelector('.p-page');
 
 const wait = (ms) => {
   return new Promise((resolve) => {
@@ -46,7 +46,7 @@ window.addEventListener('load', async () => {
 });
 
 window.addEventListener('load', () => {
-  document.querySelector('.l-hero__image').classList.add('is-active');
-  document.querySelector('.p-hero__nav').classList.add('is-active');
   document.querySelector('.p-hero__overlay').classList.add('is-active');
+  document.querySelector('.p-hero__nav').classList.add('is-active');
+  document.querySelector('.p-hero__content').classList.add('is-active');
 });

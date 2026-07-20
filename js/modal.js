@@ -1,13 +1,13 @@
 // 投稿 or 削除ボタンクリック時、表示モーダル ----------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
-  const openModalButton = document.getElementById("openConfirmModal");
+  const openModalButton = document.getElementById("open-confirm-modal");
   const deleteButtons = document.querySelectorAll(".js-open-delete-modal");
-  const modal = document.getElementById("confirmModal");
-  const confirmYes = document.getElementById("confirmYes");
-  const confirmNo = document.getElementById("confirmNo");
-  const uploadForm = document.getElementById("uploadForm");
-  const confirmMessage = document.getElementById("confirmMessage");
+  const modal = document.getElementById("confirm-modal");
+  const confirmYes = document.getElementById("confirm-yes");
+  const confirmNo = document.getElementById("confirm-no");
+  const uploadForm = document.getElementById("upload-form");
+  const confirmMessage = document.getElementById("confirm-message");
 
   let mode = ""; // 'upload' or 'delete'
   let deletePostId = ""; // 削除対象のID
@@ -16,18 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (openModalButton && modal && confirmYes && confirmNo && uploadForm && confirmMessage) {
     openModalButton.addEventListener("click", () => {
       mode = "upload";
-      confirmMessage.textContent = "この内容で送信してもよろしいですか？";
+      confirmMessage.textContent = "この内容を投稿しますか？";
       modal.classList.add("is-active");
     });
 
     // 削除用：各削除ボタンにイベントを付ける（.js-open-delete-modal はあとでHTMLにつける）
     deleteButtons.forEach((deleteButton) => {
       deleteButton.addEventListener("click", (e) => {
-        const form = e.currentTarget.closest(".p-delete-form");
+        const form = e.currentTarget.closest(".p-current-post__delete");
         const postId = form.querySelector("input[name='post_id']").value;
         deletePostId = postId;
         mode = "delete";
-        confirmMessage.textContent = "この投稿を削除してもよろしいですか？";
+        confirmMessage.textContent = "この投稿を削除しますか？";
         modal.classList.add("is-active");
       });
     });
@@ -72,8 +72,8 @@ const params = new URLSearchParams(window.location.search);
 const resultStatus = params.get('status');
 
 if (['success', 'error', 'deleted'].includes(resultStatus)) {
-  const modal = document.getElementById('statusModal');
-  const message = document.getElementById('statusMessage');
+  const modal = document.getElementById('status-modal');
+  const message = document.getElementById('status-message');
   modal.style.display = 'block';
 
   if (resultStatus === 'success') {
@@ -91,22 +91,16 @@ if (['success', 'error', 'deleted'].includes(resultStatus)) {
 
 // 投稿画像クリック時、拡大モーダル -------------------------------------
 
-document.querySelectorAll('.c-info__item-img, .c-info-image').forEach( img => {
+document.querySelectorAll('.p-info__item-image, .p-current-post__body-image').forEach(img => {
   img.addEventListener('click', () => {
     const modal = img.nextElementSibling;
-    if(img.classList.contains('c-info__item-img')) {
-      const modalImg = modal.querySelector('.c-modal-targetImg-for-index');
-      modalImg.src = img.src;
-      modal.classList.add('is-active');
-    } else if(img.classList.contains('c-info-image')) {
-      const modalImg = modal.querySelector('.c-modal-targetImg-for-upload_form');
-      modalImg.src = img.src;
-      modal.classList.add('is-active');
-    }
+    const modalImg = modal.querySelector('.c-image-modal__image');
+    modalImg.src = img.src;
+    modal.classList.add('is-active');
   });
 });
 
-document.querySelectorAll('.c-modal-img').forEach(modal => {
+document.querySelectorAll('.c-image-modal').forEach(modal => {
   modal.addEventListener('click', () => {
     modal.classList.remove('is-active');
   });

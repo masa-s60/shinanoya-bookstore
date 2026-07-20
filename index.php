@@ -30,15 +30,16 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./css/jquery.booklet.1.1.0.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/header.css?v=3">
-    <link rel="stylesheet" href="./css/footer.css?v=3">
-    <link rel="stylesheet" href="./css/index.css?v=3">
-    <link rel="stylesheet" href="./css/openingAnimation.css">
-    <link rel="stylesheet" href="./css/modal.css">  
+    <link rel="stylesheet" href="./css/base.css?v=4">
+    <link rel="stylesheet" href="./css/header.css?v=4">
+    <link rel="stylesheet" href="./css/footer.css?v=4">
+    <link rel="stylesheet" href="./css/index.css?v=4">
+    <link rel="stylesheet" href="./css/utility.css?v=4">
+    <link rel="stylesheet" href="./css/openingAnimation.css?v=4">
+    <link rel="stylesheet" href="./css/modal.css?v=4">
   </head>
 	
-  <body id="body">
+  <body>
     <div class="p-opening-white"></div>
     <div class="p-opening">
       <div class="book_wrapper">
@@ -52,7 +53,7 @@
               <img class="p-book__img-sinanoyashoten" src="./img/sinanoyasiten.png" alt="信濃屋書店"/>
               <svg version="1.1" id="sample" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1184.24 224.35">
                 <defs>
-                  <mask id="svgMask">
+                  <mask id="svg-mask">
                     <g id="mask">
                       <!-- Since -->
                       <path d="M145.7,56.91c.03,1.68.72,21.64,17.65,31.5,18.08,10.53,42.91,2.68,53.46-11.75,5.99-8.19,6.07-16.7,6.05-19.27-.1-18.78-16.42-35.96-35.81-40.9-16.25-4.14-29.88,1.54-32.78,2.82-3.62,1.6-14.97,7.13-21.69,19.27-3.96,7.16-4.67,13.67-5.04,17.39-.52,5.22-.16,9.96,2.02,20.21,4.51,21.25,11.03,38.89,11.6,40.43,2.2,5.88,4.07,10.33,6.05,17.86,1.63,6.21,2.91,11.19,3.03,17.86.08,4.58.14,11.35-3.03,19.27-4.2,10.52-11.53,16.72-14.63,19.27-6.85,5.66-13.27,8.14-20.17,10.81-5.76,2.23-15.12,5.26-27.24,6.58-10.49,1.14-22.47,2.45-36.31-2.35-4.28-1.48-13.15-4.66-21.18-12.69-3.27-3.27-10.06-10.23-12.1-21.15-2.1-11.22,2.02-20.05,4.54-25.38,5.65-11.97,14.43-18.86,18.66-22.09,6.98-5.35,13.72-8.36,18.16-10.34,2.15-.96,7.89-3.44,15.64-5.64,4.99-1.42,9.07-2.23,12.1-2.82,4.56-.89,8.51-1.48,11.6-1.88"/>
@@ -67,7 +68,7 @@
                     </g>
                   </mask>
                 </defs>
-                <g id="base" mask="url(#svgMask)">
+                <g id="base" mask="url(#svg-mask)">
                   <path d="M159.66,14.77c9.16-2.51,17.98-3.14,26.44-1.88,8.46,1.26,16.04,4.4,22.74,9.42,3.88,2.93,7.23,6.32,10.05,10.16,2.82,3.84,4.98,7.85,6.48,12.04,1.5,4.19,2.29,8.48,2.38,12.88.09,4.4-.57,8.69-1.98,12.88-2.47,6.7-6.66,12.22-12.56,16.54-5.91,4.33-13.35,7.26-22.35,8.8-12.16,1.82-22.39.21-30.68-4.82-4.23-2.65-7.58-5.83-10.05-9.53-2.47-3.7-4.36-7.26-5.69-10.68-1.32-3.42-2.16-6.39-2.51-8.9-.36-2.51-.53-3.91-.53-4.19,0-1.12.44-2.02,1.32-2.72.88-.7,1.94-1.12,3.17-1.26,1.41-.14,2.6.14,3.57.84.97.7,1.45,1.61,1.45,2.72.53,4.33,1.32,7.96,2.38,10.89,1.06,2.93,2.55,5.97,4.5,9.11,1.94,3.14,4.67,5.76,8.2,7.85,5.99,3.77,13.66,4.82,23.01,3.14,4.4-.7,8.24-1.78,11.5-3.25,3.26-1.47,5.99-3.11,8.2-4.92,2.2-1.81,3.92-3.73,5.16-5.76,1.23-2.02,2.2-4.01,2.91-5.97,1.23-3.35,1.76-6.91,1.59-10.68-.18-3.77-.88-7.43-2.12-10.99-1.24-3.56-3.04-6.94-5.42-10.16-2.38-3.21-5.25-6.07-8.59-8.59-1.94-1.39-4.14-2.72-6.61-3.98-2.47-1.26-5.38-2.27-8.73-3.04-3.35-.77-7.01-1.08-10.97-.94-3.97.14-8.33.84-13.09,2.09-8.99,2.51-15.69,6.25-20.1,11.2-4.41,4.96-7.36,10.61-8.86,16.96-1.5,6.35-1.76,13.09-.79,20.21.97,7.12,2.42,14.14,4.36,21.05,1.94,6.91,4.05,13.4,6.35,19.48,2.29,6.07,4.14,11.14,5.55,15.18l1.06,3.14c3.7,12.29,5.02,23.21,3.97,32.77-1.06,9.57-4.67,17.84-10.84,24.82-12.16,13.96-33.76,22.34-64.79,25.13-1.41.28-2.87.42-4.36.42h-4.36c-8.64,0-16.26-1.15-22.87-3.46-6.61-2.3-12.3-5.31-17.06-9.01-4.76-3.7-8.55-7.96-11.37-12.77-2.82-4.82-4.67-9.74-5.55-14.76-1.23-7.54-.57-15.22,1.98-23.04,2.55-7.82,7.14-15.04,13.75-21.68,6.61-6.63,15.25-12.36,25.92-17.17,10.66-4.82,23.4-8.13,38.21-9.95,1.23-.14,2.38.1,3.44.73,1.06.63,1.67,1.43,1.85,2.41.35,1.12.13,2.06-.66,2.83-.79.77-1.9,1.29-3.31,1.57-13.22,1.54-24.64,4.47-34.25,8.8-9.61,4.33-17.37,9.42-23.27,15.29-5.91,5.86-10.01,12.18-12.3,18.95-2.29,6.77-2.91,13.51-1.85,20.21.7,4.75,2.42,9.29,5.16,13.61,2.73,4.33,6.39,8.06,10.97,11.2,4.58,3.14,10.09,5.51,16.53,7.12,6.43,1.6,13.88,2.06,22.35,1.36,28.03-2.65,47.34-9.98,57.91-21.99,10.58-12.15,12.43-29.32,5.55-51.52l-1.06-3.14c-1.41-4.33-3.35-9.74-5.82-16.23-2.47-6.49-4.67-13.47-6.61-20.94-1.94-7.47-3.31-15.08-4.1-22.83s-.22-15.08,1.72-21.99c1.94-6.91,5.59-13.09,10.97-18.53,5.38-5.45,13.18-9.63,23.4-12.57Z"/>
                   <path d="M154.1,194.04c-2.47-3.63-3.13-8.48-1.98-14.55,1.15-6.07,3.4-12.63,6.74-19.69,3.35-7.05,7.36-14.27,12.03-21.68,4.67-7.4,9.26-14.27,13.75-20.63,4.5-6.35,8.55-11.8,12.16-16.34,3.61-4.54,5.95-7.5,7.01-8.9.7-.84,1.72-1.39,3.04-1.68,1.32-.28,2.51-.07,3.57.63,1.06.56,1.76,1.33,2.12,2.3.35.98.09,1.96-.79,2.93-3.88,4.89-8.02,10.26-12.43,16.13-4.41,5.86-8.73,11.9-12.96,18.12-4.23,6.21-8.11,12.43-11.64,18.64-3.52,6.21-6.48,11.97-8.86,17.28-2.38,5.31-3.92,10.02-4.63,14.14-.7,4.12-.26,7.3,1.32,9.53.36.7,1.1,1.36,2.25,1.99,1.15.63,3.04.94,5.69.94,3.7,0,8.33-1.92,13.88-5.76,5.55-3.84,11.37-8.66,17.45-14.45,6.08-5.79,12.07-12.04,17.98-18.74,5.9-6.7,11.06-12.91,15.47-18.64.7-.84,1.67-1.39,2.91-1.68,1.23-.28,2.38-.14,3.44.42,1.23.56,1.98,1.33,2.25,2.3.26.98.04,1.96-.66,2.93-1.41,1.68-3.57,4.37-6.48,8.06-2.91,3.7-6.39,7.82-10.45,12.36-4.06,4.54-8.46,9.21-13.22,14.03-4.76,4.82-9.61,9.21-14.54,13.19-4.94,3.98-9.83,7.23-14.68,9.74-4.85,2.51-9.3,3.77-13.35,3.77-4.93,0-8.64-.73-11.11-2.2-2.47-1.47-4.23-2.97-5.29-4.5ZM231.32,52.88c-1.41,0-2.56-.35-3.44-1.05-.88-.7-1.32-1.6-1.32-2.72,0-1.81.79-3.94,2.38-6.39,1.59-2.44,3.61-4.78,6.08-7.02,1.41-1.26,2.2-2.37,2.38-3.35.17-.98.26-1.53.26-1.68-.18-.97.13-1.85.93-2.62.79-.77,1.89-1.22,3.31-1.36,1.23-.14,2.33.07,3.31.63.97.56,1.54,1.4,1.72,2.51.17.28.13,1.54-.13,3.77-.26,2.23-1.9,4.61-4.89,7.12-2.12,1.96-3.62,3.74-4.5,5.34-.88,1.61-1.32,2.62-1.32,3.04,0,1.12-.44,2.03-1.32,2.72-.88.7-2.03,1.05-3.44,1.05Z"/>
                   <path d="M370.68,134.35c2.82.98,3.61,2.65,2.38,5.03-4.94,9.5-10.49,17.94-16.66,25.34-6.17,7.4-12.52,13.72-19.04,18.95-6.52,5.24-12.87,9.29-19.04,12.15-6.17,2.86-11.73,4.5-16.66,4.92h-1.59c-4.94,0-8.46-1.39-10.58-4.19-4.94-6.28-1.59-17.31,10.05-33.09,7.23-9.91,12.56-18.32,16-25.24,3.44-6.91,5.64-12.67,6.61-17.28.97-4.61,1.06-8.24.26-10.89-.79-2.65-1.81-4.61-3.04-5.86-2.29-2.37-5.16-3.73-8.59-4.08-3.44-.35-6.31-.31-8.59.1-5.47,1.12-11.02,3.35-16.66,6.7-5.64,3.35-11.24,7.37-16.79,12.04-5.55,4.68-11.02,9.81-16.4,15.39-5.38,5.59-10.45,11.2-15.21,16.86-4.76,5.65-9.16,11.2-13.22,16.65-4.05,5.44-7.58,10.26-10.58,14.45l-10.05,15.29c-.7.84-1.67,1.43-2.91,1.78-1.23.35-2.38.25-3.44-.31-1.23-.42-2.07-1.12-2.51-2.09-.44-.98-.31-1.95.4-2.93.36-.42,1.5-2.16,3.44-5.24,1.94-3.07,4.59-7.05,7.93-11.94l56.33-83.56c.7-.98,1.67-1.6,2.91-1.89,1.23-.28,2.38-.21,3.44.21,2.64,1.26,3.35,3,2.12,5.24l-15.07,22.2c7.23-6.42,14.5-12.01,21.82-16.75,7.31-4.75,14.68-7.89,22.08-9.42,2.12-.42,4.36-.63,6.74-.63s4.8.25,7.27.73c2.47.49,4.85,1.26,7.14,2.3,2.29,1.05,4.32,2.48,6.08,4.29,11.46,11.73,5.02,34.28-19.3,67.64-3.53,4.89-6.04,8.9-7.54,12.04-1.5,3.14-2.47,5.65-2.91,7.54-.44,1.88-.53,3.25-.26,4.08.26.84.4,1.33.4,1.47.17.14.44.35.79.63.35.28,1.23.35,2.64.21,3.52-.28,7.93-1.68,13.22-4.19,5.29-2.51,10.84-6.11,16.66-10.78,5.82-4.68,11.68-10.5,17.59-17.49,5.9-6.98,11.24-15.08,16-24.29.53-.97,1.41-1.68,2.64-2.09,1.23-.42,2.47-.42,3.7,0Z"/>
@@ -82,7 +83,7 @@
             </div>
             <div class="p-book__page4"></div>
             <div class="p-book__page5">
-              <img class="p-book__img-TOContents" src="./img/table-of-contents.png" alt=""/>
+              <img class="p-book__img-TOContents" src="./img/table-of-contents.png" alt="見出し"/>
             </div>
             <div class="p-book__page6"></div>
           </div>
@@ -90,21 +91,17 @@
       </div>
     </div>
 
-    <div class="l-body">
-      <div class="p-page-background"></div>
-      <header class="l-header p-header">
-        <a href="index.php" class="c-logo">
-          <img class="c-logo-img" src="./img/rogo-sinanoya.png" alt="信濃屋書店ロゴ">
-          <h1 class="c-logo-name">信濃屋書店</h1>
+    <div class="p-page">
+      <div class="p-page__background"></div>
+      <header class="p-header">
+        <a href="index.php" class="p-header__logo">
+          <img class="p-header__logo-image" src="./img/rogo-sinanoya.png" alt="信濃屋書店ロゴ">
+          <h1 class="p-header__logo-name">信濃屋書店</h1>
         </a>
-        <div class="c-header-sub">
-          <nav class="c-nav">
-            <ul class="p-breadcrumb">
-              <li class="p-breadcrumb-list">Topページ</li>
-            </ul>
-          </nav>
-          <p class="p-header-tel">
-            <a href="tel:046-822-0405" class="p-header-tel-number">
+        <div class="p-header__info">
+          <p class="p-header__page-name">Topページ</p>
+          <p class="p-header__tel">
+            <a href="tel:046-822-0405" class="p-header__tel-number">
               <i class="fas fa-phone-alt"></i> TEL：046-822-0405
             </a>
           </p>  
@@ -112,53 +109,50 @@
       </header>
       
       <div class="l-content">
-        <main class="p-main p-section__bgc-brown">
+        <main class="p-main u-bg-brown">
           <div class="p-hero">
             <picture>
               <source media="(max-width: 430px)" srcset="./img/hero-image-sp.jpg">
               <img class="p-hero__image" src="./img/hero-image.jpg" alt="信濃屋書店 ヒーローイメージ" fetchpriority="high">
             </picture>
-            <div class="l-hero__image"></div>
+            <div class="p-hero__overlay"></div>
             <nav class="p-hero__nav">
               <p class="p-hero__nav-header">Menu</p>
               <ul class="p-hero__nav-list">
-                <li class="p-hero__nav-list-item">
-                  <a href="#latest_infomation" class="p-hero__nav-link">最新情報</a>
+                <li class="p-hero__nav-item">
+                  <a href="#latest-information" class="p-hero__nav-link">最新情報</a>
                 </li>
-                <li  class="p-hero__nav-list-item">
-                  <a  href="#textbook_store" class="p-hero__nav-link">教科書取扱い</a>
+                <li class="p-hero__nav-item">
+                  <a  href="#textbook-store" class="p-hero__nav-link">教科書取扱い</a>
                 </li>
-                <li  class="p-hero__nav-list-item">
+                <li  class="p-hero__nav-item">
                   <a href="#map" class="p-hero__nav-link">アクセス</a>
                 </li>
-                <li  class="p-hero__nav-list-item">
+                <li  class="p-hero__nav-item">
                   <a href="./page/privacy-policy.html" class="p-hero__nav-link">個人情報保護</a>
                 </li>
               </ul>
             </nav>
-            <div class="p-hero__overlay">
-              <p class="p-hero__overlay-subtitle__first">
-                大正から時代を超えて<br>
-                今も愛され続ける街の本屋
-              </p>
-              <h2 class="p-hero__overlay-title__Shinanoya">信濃屋書店</h2>
-              <p class="p-hero__overlay-title__Bookstore">-Bookstore-</p>
-              <p class="p-hero__overlay-subtitle__end">創業1922年</p>
+            <div class="p-hero__content">
+              <p class="p-hero__lead">大正から時代を超えて<br>今も愛され続ける街の本屋</p>
+              <h2 class="p-hero__title">信濃屋書店</h2>
+              <p class="p-hero__subtitle">-Bookstore-</p>
+              <p class="p-hero__founded">創業1922年</p>
             </div>
           </div>
-          <section id="latest_infomation" class="p-section">
+          <section id="latest-information" class="p-section">
             <div class="p-section__heading">
               <h2 class="p-section__title">
-                <span class="p-section__title-first">・</span><span>最</span><span>新</span><span>情</span><span>報</span>
+                <span>・</span><span>最</span><span>新</span><span>情</span><span>報</span>
               </h2>
             </div>
             <div class="p-info__list">
               <?php foreach ($postList as $post): ?>
                 <article class="p-info__item">
                   <?php if (!empty($post['img'])): ?>
-                    <img src="<?= htmlspecialchars($post['img']) ?>" alt="" class="c-info__item-img">
-                    <div class="c-modal-img">
-                      <img src="" class="c-modal-targetImg-for-index">
+                    <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-info__item-image">
+                    <div class="c-image-modal">
+                      <img src="" alt="投稿画像の拡大" class="c-image-modal__image">
                     </div>
                   <?php endif; ?>
                   <div class="p-info__item-detail">
@@ -168,80 +162,74 @@
                       <?= nl2br(htmlspecialchars($post['text'])) ?>
                     </div>
                     <?php if (mb_strlen($post['text']) > 117): ?>
-                      <div class="c-read-more">
-                        <button class="c-read-more__button">続きを読む</button>
-                      </div>
+                      <button type="button" class="c-read-more">続きを読む</button>
                     <?php endif; ?>
                   </div>
                 </article>
               <?php endforeach; ?>
             </div>
           </section>
-          <section id="textbook_store" class="p-section p-section__bgc-brown">
+          <section id="textbook-store" class="p-section u-bg-brown">
             <div class="p-section__heading">
               <h2 class="p-section__title">
-                <span class="p-section__title-first">・</span><span>教</span><span>科</span><span>書</span><span>取</span><span>扱</span><span>い</span><span>店</span>
+                <span>・</span><span>教</span><span>科</span><span>書</span><span>取</span><span>扱</span><span>い</span><span>店</span>
               </h2>
             </div>
-            <div class="l-textbook">
-              <div class="p-textbook__store-about">
-                <p class="p-textbook__store-about__text">
+            <div class="p-textbook">
+              <div class="p-textbook__content">
+                <p class="p-textbook__content-text">
                   当店では市内の小学校から高等学校まで、幅広い教科書を取り扱っており、お取り置き・お取り寄せが可能です。<br><br>
                   各種ご注文方法や詳細については、以下リンクからご確認ください。
                 </p>
-                <a href="./page/about-textbook.html" class="p-textbook__store-about__link">詳細はこちら >></a>
+                <a href="./page/about-textbook.html" class="p-textbook__content-link">詳細はこちら >></a>
               </div>
-              <div class="p-work__textbook-image">
-                <img class="p-img-zoom" src="./img/text-book.jpg" alt="教科書画像">
+              <div class="p-textbook__image">
+                <img class="p-textbook__image-item" src="./img/text-book.jpg" alt="教科書画像">
               </div>
             </div>
           </section>
           <section id="map" class="p-section">
             <div class="p-section__heading">
               <h2 class="p-section__title">
-                <span class="p-section__title-first">・</span><span>ア</span><span>ク</span><span>セ</span><span>ス</span><span>マ</span><span>ッ</span><span>プ</span>
+                <span>・</span><span>ア</span><span>ク</span><span>セ</span><span>ス</span><span>マ</span><span>ッ</span><span>プ</span>
               </h2>
             </div>
             <div class="l-map">
               <div class="p-map">
-                <div class="p-company__map">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3257.09302387103!2d139.66920247454942!3d35.278813351977114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60183ff53dd1dbf5%3A0x29f2034b0b8e9910!2z44CSMjM4LTAwMDcg56We5aWI5bed55yM5qiq6aCI6LOA5biC6Iul5p2-55S677yT5LiB55uu77yR77yS!5e0!3m2!1sja!2sjp!4v1781149770647!5m2!1sja!2sjp" 
-                    class="p-map__iframe"
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                  </iframe>
-                </div>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3257.09302387103!2d139.66920247454942!3d35.278813351977114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60183ff53dd1dbf5%3A0x29f2034b0b8e9910!2z44CSMjM4LTAwMDcg56We5aWI5bed55yM5qiq6aCI6LOA5biC6Iul5p2-55S677yT5LiB55uu77yR77yS!5e0!3m2!1sja!2sjp!4v1781149770647!5m2!1sja!2sjp" 
+                  class="p-map__iframe"
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
               </div>
-              <div class="p-map__text">
-                <p id="mapTextWalk" class="c-access-info">横須賀中央駅 東口 徒歩1分</p>
-                <p id="mapTextPlace" class="c-access-info">Yデッキ りそな銀行の隣</p>
+              <div class="p-map__info">
+                <p id="map-text-walk" class="p-map__info-text">横須賀中央駅 東口 徒歩1分</p>
+                <p id="map-text-place" class="p-map__info-text">Yデッキ りそな銀行の隣</p>
               </div>
             </div>
           </section>
         </main>
 
-        <footer class="l-footer">
-          <div class="p-footer-info">
-            <div class="p-footer-details">
-              <h2 class="p-footer-info-name">有限会社　信濃屋書店</h2>
-              <address class="p-footer-info-address">〒238-0007　神奈川県横須賀市若松町３－１２</address>
-              <p class="p-footer-info-tel">TEL：046-822-0405</p>
-              <p class="p-footer-info-hours">営業時間：10:00～19:00</p>
-              <p class="p-footer-info-holiday">休業日：日曜・祝日</p>
+        <footer class="p-footer">
+          <div class="p-footer__info">
+            <div class="p-footer__info-details">
+              <h2 class="p-footer__info-name">有限会社　信濃屋書店</h2>
+              <address class="p-footer__info-address">〒238-0007　神奈川県横須賀市若松町３－１２</address>
+              <p class="p-footer__info-tel">TEL：046-822-0405</p>
+              <p class="p-footer__info-hours">営業時間：10:00～19:00</p>
+              <p class="p-footer__info-holiday">休業日：日曜・祝日</p>
             </div>
-            <div class="p-footer-social">
-              <a href="https://twitter.com/ExGmz?ref_src=twsrc%5Etfw" class="p-footer-social-link">
-                <img src="./img/x-logo.png" alt="Xロゴ" class="p-footer-social-img">
+            <div class="p-footer__social">
+              <a href="https://twitter.com/ExGmz?ref_src=twsrc%5Etfw" class="p-footer__social-link">
+                <img src="./img/x-logo.png" alt="Xロゴ" class="p-footer__social-image">
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61569472234993&mibextid=wwXIfr" class="p-footer-social-link">
-                <img src="./img/facebook-logo.png" alt="フェイスブックロゴ" class="p-footer-social-img">
+              <a href="https://www.facebook.com/profile.php?id=61569472234993&mibextid=wwXIfr" class="p-footer__social-link">
+                <img src="./img/facebook-logo.png" alt="フェイスブックロゴ" class="p-footer__social-image">
               </a>  
             </div>
           </div>
-          <div>
-            <p class="p-footer-copylight">&copy; 2024 信濃屋書店. All Rights Reserved.</p>
-          </div>
+          <p class="p-footer__copyright">&copy; 2024 信濃屋書店. All Rights Reserved.</p>
         </footer>
       </div>
     </div>

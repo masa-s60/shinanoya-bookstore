@@ -1,290 +1,403 @@
+html,
 body {
-  background-color: #f4f4f4;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-primary);
 }
 
 /* コンテナ */
-.l-container {
-  box-sizing: border-box;
-  max-width: 80%;
-  margin: 3% auto;
-  background-color: var(--color-white);
-  padding: 2% 4%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+.p-post {
   display: flex;
-  justify-content: space-between;
-}
-
-/* 左側（フォーム部分） */
-.l-left {
-  width: 70%;
-  padding-right: 10%;
-}
-
-/* 右側（最新情報表示） */
-.l-right {
-  width: 28%;
-  background: #e3fffe;
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  background-color: var(--color-white);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  padding: 2%;
-  max-height: 70vh;
+  padding: 2vw;
+}
+
+/* 投稿 */
+.p-upload {
+  box-sizing: border-box;
+  width: 70%;
+  height: 100%;
+  padding-right: 7vw;
+}
+
+.p-current-post {
+  box-sizing: border-box;
+  width: 28%;
+  max-height: 80vh;
   overflow-y: auto;
+  background: #c5fffd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 2vw;
 }
 
-.c-title {
+.p-post__title {
   text-align: center;
-  font-size: 1.8rem;
-  letter-spacing: 1.3px;
-  margin-bottom: 5%;
+  font-size: 2.6vw;
+  letter-spacing: .1vw;
+  margin-bottom: 2.2vw;
 }
 
-.c-form {
+.p-form {
   box-sizing: border-box;
   line-height: 1.1;
 }
 
-.c-form-label {
-  font-size: 1.2rem;
+.p-form__label {
+  display: inline-block;
+  font-size: 1.6vw;
   font-weight: bold;
   cursor: pointer;
 }
 
-.p-img-group {
+.p-form__file {
   display: flex;
+  min-width: 0;
+  margin-top: .4vw;
+  margin-bottom: 2.6vw;
 }
 
-.p-form-img {
-  display: block;
+.p-form__image {
+  box-sizing: border-box;
+  width: 60%;
+  min-width: 0;
+  max-width: 100%;
+  font-size: 1.2vw;
   border: 1px solid #ccc;
   border-radius: 3px;
   cursor: pointer;
   background-color: white;
-  padding: 1%;
+  padding: .4vw;
 }
 
-.u-form-input {
-  margin-top: 1%;
-  margin-bottom: 4%;
+.p-form__title {
+  height: 2.6vw;
 }
 
-.c-form-title {
-  height: 3vw;
-  line-height: 1.2;
-}
-
-.c-form-textarea {
-  width: 30%;
-  height: 7rem;
+.p-form__content {
+  height: 8.2vw;
   resize: vertical;
-  margin-top: 1%;
-  margin-bottom: 5%;
 }
 
-.c-form-title,
-.c-form-textarea {
+.p-form__title,
+.p-form__content {
+  display: block;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 3px;
   line-height: 1.2;
-  font-size: 1rem;
+  font-size: 1.6vw;
+  margin-top: .4vw;
+  margin-bottom: 2.6vw;
 }
 
-.p-submit {
+.p-form__submit {
   text-align: center;
 }
 
-.p-form-button {
+.p-form__submit-button {
   width: 50%;
-  padding: 2%; 
+  padding: 1vw; 
   background: #28a745;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.6vw;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: .3s;
 }
 
-.p-form-button:hover {
+.p-form__submit-button:hover {
   background: #94f9aa;
   color: black;
 }
 
-/* 投稿情報 */
-.c-info-item {
+/* 現在の投稿 */
+.p-current-post__item {
   background: white;
-  padding: 4%;
-  margin-bottom: 2%;
+  padding: 1vw;
+  margin-bottom: .4vw;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   line-height: 1.2;
 }
 
-.c-info-title {
+.p-current-post__title {
   width: 100%;
   overflow-wrap: break-word;
-  margin-bottom: 3%;
+  margin-bottom: .6vw;
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.4vw;
   font-weight: bold;
 }
 
-.c-info-date {
-  font-size: .8rem;
-  margin-bottom: 5%;
+.p-current-post__date {
+  font-size: 1vw;
+  margin-bottom: .8vw;
   color: #414141;
 }
 
-.c-info-item__flex {
+.p-current-post__body {
   display: flex;
-  margin-bottom: 3%;
+  margin-bottom: .8vw;
 }
 
-.c-info-image {
+.p-current-post__body-image {
   width: 25%;
   height: auto;
   cursor: pointer;
   border-radius: 5px;
-  margin-right: 5%;
+  margin-right: 1.4vw;
 }
 
-.c-info-text {
-  font-size: .6rem;
+.p-current-post__body-text {
+  font-size: 1vw;
   color: #414141;
   overflow-wrap: break-word;
-  word-break: break-all; /* ← 追加 */
-  white-space: normal;   /* ← 念のため追加 */
+  word-break: break-all;
+  white-space: normal; 
 }
 
-.p-delete-form {
+.p-current-post__delete {
   text-align: right;
 }
 
-.c-delete-button {
+.p-current-post__delete-button {
   background-color: #dc3545;
   color: white;
-  font-size: 1rem;
+  font-size: 1.2vw;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  padding: 1% 3%;
-  margin-right: 2%;
+  padding: .2vw .8vw;
 }
 
-.c-delete-button:hover {
+.p-current-post__delete-button:hover {
   background-color: #c82333;
 }
 
-/* レスポンシブ対応 */
 @media (max-width: 768px) {
-  .l-container {
-    flex-direction: column;
-    align-items: center;
+
+  body {
+    display: block;
+    min-height: auto;
   }
 
-  .l-left, .l-right {
+  .p-post {
+    display: block;
+    box-sizing: border-box;
     width: 100%;
-    margin-bottom: 2%;  /* marginを%単位に変更 */
+    max-width: none;
+    max-height: none;
+    height: auto;
+    padding: 3vw 6vw;
+    border-radius: 0;
+    background-color: var(--color-primary);
   }
 
-  .c-title {
-    font-size: 1.5rem;
+  /* 投稿 */
+  .p-upload {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 12vw;
+  }
+
+  .p-post__title {
+    font-size: 5vw;
+    border-bottom: 1.5px solid rgb(147, 147, 147);
+    padding-bottom: 2vw;
+    margin-bottom: 5vw;
+  }
+
+  .p-form__label {
+    font-size: 2.8vw;
+  }
+
+  .p-form__file {
+    width: 70%;
+  }
+
+  .p-form__image {
+    width: 100%;
+  }
+
+  .p-form__title {
+    height: 3.6vw;
+  }
+
+  .p-form__content {
+    height: 14vw;
+  }
+
+  .p-form__file,
+  .p-form__title,
+  .p-form__content {
+    font-size: 2.4vw;
+    margin-top: .8vw;
+    margin-bottom: 6vw;
+  }
+
+  .p-form__submit-button {
+    font-size: 3vw;
+    padding: 2vw 4vw;
+    border-radius: 10px;
+  }
+
+  /* 現在の投稿 */
+  .p-current-post {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 3vw;
+  }
+
+  .p-current-post__list {
+    padding: 0 2vw 1vw 2vw;
+  }
+
+  .p-current-post__item {
+    margin-bottom: 6vw;
+    line-height: 1.1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 2vw;
+  }
+  
+  .p-current-post__title {
+    width: 100%;
+    overflow-wrap: break-word;
+    font-size: 3vw;
+    margin-bottom: 1.2vw;
+  }
+  
+  .p-current-post__date {
+    font-size: 2vw;
+    color: #434343;
+    margin-bottom: 1.4vw;
+  }
+  
+  .p-current-post__body-image {
+    width: 20%;
+    margin-right: 3vw;
+  }
+  
+  .p-current-post__body-text {
+    font-size: 2.4vw;
+    color: black;
+  }
+  
+  .p-current-post__delete-button {
+    font-size: 2.6vw;
   }
 }
 
 @media (max-width: 430px) {
 
-  .l-container {
-    display: block;
-    max-width: none;
-    width: 100%;
-    border-radius: 0;
-    margin: auto;
-    padding: 5% 8%;
-    background-color: #fef6ee;
+  .p-post {
+    padding: 5vw 8vw;
   }
 
-/* 左側（フォーム部分） */
-  .l-left {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0%;
-    margin-bottom: 15%;
+  /* 投稿 */
+  .p-upload {
+    margin-bottom: 4.6rem;
   }
 
-  .c-title {
+  .p-post__title {
     font-size: 2rem;
-    border-bottom: 1.5px solid rgb(147, 147, 147);
-    padding-bottom: 5%;
-    margin-top: 3%;
-    margin-bottom: 12%;
+    padding-bottom: 1.4rem;
+    margin-bottom: 1.8rem;
   }
 
-  .c-form-title {
-    width: 95%;
-    height: 10vw;
+  .p-form__label {
+    font-size: 1.4rem;
   }
 
-  .u-form-input {
-    margin-bottom: 10%;
-  }
-
-  .c-form-textarea {
-    width: 95%;
-    height: 10rem;
-    margin-bottom: 10%;
-  }
-
-  .p-form-button {
-    padding: 4% 6%;
-    border-radius: 10px;
-  }
-
-  /* 右側（最新情報表示） */
-  .l-right {
-    box-sizing: border-box;
+  .p-form__file {
     width: 100%;
-    border-radius: 10px;
-    height: 80vh;
-    background-color: #f1ffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    padding: 2%;
   }
 
-  /* 投稿情報 */
-  .c-info {
-    padding: 0 5% 3% 5%;
+  .p-form__image {
+    font-size: .9rem;
   }
 
-  .c-info-item {
-    margin-bottom: 10%;
+  .p-form__title {
+    height: 30px;
+  }
+
+  .p-form__content {
+    height: 200px;
+  }
+
+  .p-form__file,
+  .p-form__title,
+  .p-form__content {
+    font-size: 1rem;
+    margin-top: .2rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .p-form__submit-button {
+    width: 220px;
+    font-size: 1.4rem;
+    padding: .8rem 2rem;
+    border-radius: 5px;
+  }
+
+  /* 現在の投稿 */
+  .p-current-post {
+    padding: 1.2rem;
+  }
+
+  .p-post__title {
+    margin-bottom: 1.4rem;
+  }
+
+  .p-current-post__list {
+    padding: 0;
+  }
+
+  .p-current-post__item {
+    margin-bottom: 1.4rem;
     line-height: 1.1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: .4rem;
   }
   
-  .c-info-title {
-    width: 100%;
-    overflow-wrap: break-word;
-    font-size: 1.5em;
-  }
-  
-  .c-info-date {
-    font-size: .9rem;
-    color: #434343;
-  }
-  
-  .c-info-image {
-    width: 30%;
-  }
-  
-  .c-info-text {
-    font-size: 1rem;
-    color: black;
-  }
-  
-  .c-delete-button {
+  .p-current-post__title {
     font-size: 1.2rem;
+    margin-bottom: .4rem;
+  }
+  
+  .p-current-post__date {
+    font-size: .9rem;
+    margin-bottom: .6rem;
+  }
+  
+  .p-current-post__body-image {
+    width: 80px;
+    height: 120px;
+  }
+  
+  .p-current-post__body-text {
+    font-size: 1rem;
+  }
+  
+  .p-current-post__delete-button {
+    font-size: 1rem;
+    padding: .2rem .6rem;
   }
 }
