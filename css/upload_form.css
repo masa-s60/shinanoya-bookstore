@@ -62,18 +62,33 @@ body {
   cursor: pointer;
 }
 
+.p-form__file,
+.p-form__image,
+.p-form__title,
+.p-form__content {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.p-form__title,
+.p-form__content {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1.4vw;
+  line-height: 1.2;
+  margin-top: .4vw;
+  margin-bottom: 2.6vw;
+}
+
 .p-form__file {
   display: flex;
-  min-width: 0;
   margin-top: .4vw;
   margin-bottom: 2.6vw;
 }
 
 .p-form__image {
-  box-sizing: border-box;
-  width: 60%;
   min-width: 0;
-  max-width: 100%;
   font-size: 1.2vw;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -88,19 +103,7 @@ body {
 
 .p-form__content {
   height: 8.2vw;
-  resize: vertical;
-}
-
-.p-form__title,
-.p-form__content {
-  display: block;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  line-height: 1.2;
-  font-size: 1.6vw;
-  margin-top: .4vw;
-  margin-bottom: 2.6vw;
+  resize: none;
 }
 
 .p-form__submit {
@@ -108,7 +111,7 @@ body {
 }
 
 .p-form__submit-button {
-  width: 50%;
+  width: 40%;
   padding: 1vw; 
   background: #28a745;
   color: white;
@@ -227,12 +230,12 @@ body {
     font-size: 2.8vw;
   }
 
-  .p-form__file {
-    width: 70%;
-  }
-
-  .p-form__image {
-    width: 100%;
+  .p-form__file,
+  .p-form__title,
+  .p-form__content {
+    font-size: 2.4vw;
+    margin-top: .8vw;
+    margin-bottom: 6vw;
   }
 
   .p-form__title {
@@ -241,14 +244,6 @@ body {
 
   .p-form__content {
     height: 14vw;
-  }
-
-  .p-form__file,
-  .p-form__title,
-  .p-form__content {
-    font-size: 2.4vw;
-    margin-top: .8vw;
-    margin-bottom: 6vw;
   }
 
   .p-form__submit-button {
@@ -326,8 +321,12 @@ body {
     font-size: 1.4rem;
   }
 
-  .p-form__file {
-    width: 100%;
+  .p-form__file,
+  .p-form__title,
+  .p-form__content {
+    font-size: 1rem;
+    margin-top: .2rem;
+    margin-bottom: 2.6rem;
   }
 
   .p-form__image {
@@ -340,14 +339,6 @@ body {
 
   .p-form__content {
     height: 200px;
-  }
-
-  .p-form__file,
-  .p-form__title,
-  .p-form__content {
-    font-size: 1rem;
-    margin-top: .2rem;
-    margin-bottom: 2.6rem;
   }
 
   .p-form__submit-button {

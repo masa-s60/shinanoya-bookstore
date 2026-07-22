@@ -17,8 +17,8 @@
     <title>最新情報の投稿</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/upload_form.css?v=1">
-    <link rel="stylesheet" href="../css/modal.css?v=1">
+    <link rel="stylesheet" href="../css/upload_form.css?v=2">
+    <link rel="stylesheet" href="../css/modal.css?v=2">
   </head>
 
   <body>
@@ -92,17 +92,19 @@
     </div>
 
     <!-- モーダルウィンドウ -->
-    <div id="confirm-modal" class="c-confirm-modal">
-      <div class="c-confirm-modal__content">
-        <p id="confirm-message" class="c-confirm-modal__message">この内容を投稿しますか？</p>
-        <button id="confirm-yes" class="c-modal__button c-modal__button--yes">はい</button>
-        <button id="confirm-no" class="c-modal__button c-modal__button--no">いいえ</button>
+    <div id="confirm-modal" class="c-modal">
+      <div class="c-modal__dialog c-modal__dialog--confirm">
+        <p id="confirm-message" class="c-modal__message c-modal__message--confirm">この内容を投稿しますか？</p>
+        <div class="c-modal__buttons">
+          <button id="confirm-yes" class="c-modal__button c-modal__button--yes">はい</button>
+          <button id="confirm-no" class="c-modal__button c-modal__button--no">いいえ</button>
+        </div>
       </div>
     </div>
 
-    <div id="status-modal" class="c-status-modal">
-      <div class="c-status-modal__content">
-        <p id="status-message"></p>
+    <div id="status-modal" class="c-modal">
+      <div class="c-modal__dialog c-modal__dialog--result">
+        <p id="status-message" class="c-modal__message"></p>
       </div>
     </div>
 

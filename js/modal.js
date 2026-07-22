@@ -74,17 +74,18 @@ const resultStatus = params.get('status');
 if (['success', 'error', 'deleted'].includes(resultStatus)) {
   const modal = document.getElementById('status-modal');
   const message = document.getElementById('status-message');
-  modal.style.display = 'block';
 
   if (resultStatus === 'success') {
     message.textContent = 'アップロードが完了しました！';
   } else if (resultStatus === 'error') {
-    message.textContent = '処理に失敗しました。';
+    message.textContent = '処理に失敗しました';
   } else if (resultStatus === 'deleted') {
-    message.textContent = '投稿を削除しました。';
+    message.textContent = '投稿を削除しました！';
   }
 
-  setTimeout( () => {
+  modal.classList.add('is-active');
+
+  setTimeout(() => {
     window.location.href = 'upload_form.php';
   }, 1500);
 }

@@ -1,53 +1,66 @@
-/* 投稿 or 削除ボタンクリック時、表示モーダル ----------------------*/
-
-/* モーダルの基本スタイル（初期状態） */
-.c-confirm-modal {
-  display: flex; /* `none` だと `transition` が効かないため `flex` に */
-  opacity: 0; /* 透明にする */
-  visibility: hidden; /* 初期状態では非表示 */
+.c-modal {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
   justify-content: center;
   align-items: center;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0,0,0,.5);
+  transition: opacity .3s ease, visibility .3s ease;
 }
 
-/* モーダルを表示するクラス */
-.c-confirm-modal.is-active {
-  opacity: 1; /* 表示時は透明度を100%に */
-  visibility: visible; /* 表示可能に */
+.c-modal.is-active {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* モーダルのコンテンツ（表示時にアニメーション） */
-.c-confirm-modal__content {
+.c-modal__dialog {
   background: white;
-  padding: 3%;
-  border-radius: 8px;
+  min-width: 100px;
+  font-weight: bold;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  max-width: 300px;
-  width: 90%;
-  transform: scale(0.8); /* 初期状態は少し縮小 */
-  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
-.c-confirm-modal__message {
-  font-size: 1.4rem;
-  margin-bottom: 2vw;
+.c-modal__dialog--confirm {
+  width: 25%;
+  transform: scale(0.5);
+  transition: transform 0.3s ease-in-out;
+  padding: 4vw 2vw;
+}
+
+.c-modal.is-active .c-modal__dialog--confirm {
+  transform: scale(1);
+}
+
+.c-modal__message {
+  font-size: 1.8vw;
+}
+
+.c-modal__message--confirm {
+  margin-bottom: 3vw;
+}
+
+.c-modal__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
 }
 
 .c-modal__button {
-  padding: 5% 10%;
-  margin: 5%;
+  width: 35%;
   border: none;
   border-radius: 10px;
+  font-size: 1.8vw;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 1.4rem;
   transition: .3s;
+  padding: 1vw 0;
 }
 
 .c-modal__button:hover {
@@ -57,60 +70,39 @@
 .c-modal__button--yes {
   background: red;
   color: white;
-  font-weight: bold;
 }
 
 .c-modal__button--no {
   background: #ccc;
   color: black;
-  font-weight: bold;
 }
 
-/* モーダルがアクティブになった時の拡大アニメーション */
-.c-confirm-modal.is-active .c-confirm-modal__content {
-  transform: scale(1);
+.c-modal__dialog--result {
+  padding: 2.6vw;
 }
 
-.c-status-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}
-
-.c-status-modal__content {
-  background: white;
-  padding: 2rem;
-  margin: 15% auto;
-  width: 300px;
-  text-align: center;
-}
-
-/* 投稿画像クリック時、拡大モーダル ---------------------- */
+/* 投稿画像クリック時、拡大モーダル */
 
 .c-image-modal {
   display: flex;
-  visibility: hidden;
-  opacity: 0;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
   cursor: pointer;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .c-image-modal.is-active {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
 }
 
 .c-image-modal__image {
@@ -121,20 +113,62 @@
   transform: translateY(2vw);
 }
 
-@media (max-width: 430px) {
+@media (max-width: 1024px) {
 
-  .c-confirm-modal__content {
-    border-radius: 20px;
-    padding: 3rem 1rem;
+  .c-modal__dialog--confirm {
+    width: 50%;
+    padding: 6vw 1vw;
   }
 
-  .c-confirm-modal__message {
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
+  .c-modal__message {
+    font-size: 2.8vw;
+  }
+
+  .c-modal__message--confirm {
+    margin-bottom: 5vw;
+  }
+
+  .c-modal__buttons {
+    gap: 5vw; 
   }
 
   .c-modal__button {
-    font-size: 1.2rem;
+    width: 30%;
+    font-size: 2.6vw;
+    padding: 1.8vw 0;
+  }
+
+}
+
+@media (max-width: 430px) {
+
+  .c-modal__dialog--confirm {
+    width: 320px;
+    border-radius: 20px;
+    padding: 3.5rem 1rem;
+  }
+
+  .c-modal__message {
+    font-size: 1.4rem;
+  }
+
+  .c-modal__message--confirm {
+    margin-bottom: 3rem;
+  }
+
+  .c-modal__buttons {
+    gap: 2.4rem;
+  }
+
+  .c-modal__button {
+    width: 110px;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+  }
+
+  .c-modal__dialog--result {
+    
+    padding: 2rem 1.4rem;
   }
 
 }
