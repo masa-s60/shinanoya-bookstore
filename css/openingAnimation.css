@@ -1,4 +1,4 @@
-/* ---------- Handwritten SVG ---------- */
+/* 手書きアニメーション SVG */
 
 #sample {
   width: 40%;
@@ -21,7 +21,7 @@
   stroke-linejoin: round; /* 角の形状 */
 }
 
-/* ---------- Opening White Layer ---------- */
+/* 初回アニメーションページ スタイル */
 
 .p-opening {
   position: relative;
@@ -34,17 +34,16 @@
   background-size: 35% 100%;
 }
 
-/* 初期状態：メイン非表示（アニメーション画面表示） */
 .p-page {
   display: none;
 }
 
 .p-opening-white {
   position: fixed;
+  z-index: 9999;
   inset: 0;
-  background: #fff;
-  z-index: 999999;
   pointer-events: none;
+  background: #fff;
   opacity: 1;
   transition: opacity 1s ease;
 }
@@ -53,7 +52,7 @@
   opacity: 0;
 }
 
-/* --------- Book Snap Style ---------- */
+/* 本めくり スタイル */
 
 .booklet .b-counter {
 	display: block;
@@ -101,14 +100,14 @@
 	margin-top: 20%;
 }
 
-/* iPad Pro */
+/* ---------------- Pad ---------------- */
+
 @media (max-width: 1024px) {
   .book_wrapper {
     transform: translate(-50%, -50%) scale(.85);
   }
 }
 
-/* iPad Air */
 @media (max-width: 820px) {
   .book_wrapper {
     transform: translate(-50%, -50%) scale(.65);
@@ -121,7 +120,7 @@
   }
 }
 
-/* Smart Phone */
+/* ---------------- SP ---------------- */
 
 @media(max-width: 430px) {
 

@@ -14,8 +14,12 @@
   background-color: var(--color-primary);
 }
 
+/* ---------------- SP ---------------- */
+
 @media(max-width: 430px) {
+
   .u-list-indent {
     padding: 0 1.2rem;
   }
+  
 }

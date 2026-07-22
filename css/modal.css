@@ -1,3 +1,5 @@
+/* 投稿・削除 確認モーダル */
+
 .c-modal {
   display: flex;
   position: fixed;
@@ -81,7 +83,7 @@
   padding: 2.6vw;
 }
 
-/* 投稿画像クリック時、拡大モーダル */
+/* 投稿画像クリック時 拡大モーダル */
 
 .c-image-modal {
   display: flex;
@@ -113,6 +115,8 @@
   transform: translateY(2vw);
 }
 
+/* ---------------- Pad ----------------- */
+
 @media (max-width: 1024px) {
 
   .c-modal__dialog--confirm {
@@ -137,8 +141,9 @@
     font-size: 2.6vw;
     padding: 1.8vw 0;
   }
-
 }
+
+/* ---------------- SP ----------------- */
 
 @media (max-width: 430px) {
 

@@ -12,6 +12,7 @@ body {
 }
 
 /* コンテナ */
+
 .p-post {
   display: flex;
   box-sizing: border-box;
@@ -24,7 +25,8 @@ body {
   padding: 2vw;
 }
 
-/* 投稿 */
+/* 投稿フォーム */
+
 .p-upload {
   box-sizing: border-box;
   width: 70%;
@@ -129,6 +131,7 @@ body {
 }
 
 /* 現在の投稿 */
+
 .p-current-post__item {
   background: white;
   padding: 1vw;
@@ -192,6 +195,8 @@ body {
   background-color: #c82333;
 }
 
+/* ---------------- Pad ---------------- */
+
 @media (max-width: 768px) {
 
   body {
@@ -211,7 +216,8 @@ body {
     background-color: var(--color-primary);
   }
 
-  /* 投稿 */
+  /* 投稿フォーム */
+
   .p-upload {
     box-sizing: border-box;
     width: 100%;
@@ -253,6 +259,7 @@ body {
   }
 
   /* 現在の投稿 */
+
   .p-current-post {
     box-sizing: border-box;
     width: 100%;
@@ -300,13 +307,16 @@ body {
   }
 }
 
+/* ---------------- SP ---------------- */
+
 @media (max-width: 430px) {
 
   .p-post {
     padding: 5vw 8vw;
   }
 
-  /* 投稿 */
+  /* 投稿フォーム */
+
   .p-upload {
     margin-bottom: 4.6rem;
   }
@@ -349,6 +359,7 @@ body {
   }
 
   /* 現在の投稿 */
+  
   .p-current-post {
     padding: 1.2rem;
   }

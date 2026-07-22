@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* 背景を背面に配置 */
+  z-index: -1;
   width: 100%;
   height: 300%;
   background-image: url('../img/body-bgi1.jpg');
@@ -24,7 +24,7 @@
   padding-top: 7vw;
 }
 
-/* ---------hero----------- */
+/* hero */
 
 .p-hero {
   position: relative;
@@ -105,7 +105,7 @@
   }
 }
 
-/* ------------section privacy policy--------------- */
+/* section */
 
 .p-priv-pol {
   width: 85%;
@@ -155,7 +155,7 @@
   margin: 0;
 }
 
-/* ============= sp ============== */
+/* ---------------- SP ---------------- */
 
 @media(max-width: 430px){
 
@@ -185,7 +185,7 @@
     letter-spacing: 2px;
   }
 
-  /* contents */
+  /* section */
 
   .p-priv-pol {
     font-size: .8rem;

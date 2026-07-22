@@ -24,7 +24,7 @@
   padding-top: 7vw;
 }
 
-/* ---------hero----------- */
+/* hero */
 
 .p-hero {
   position: relative;
@@ -105,7 +105,7 @@
   }
 } 
 
-/* ------------section textbook--------------- */
+/* section */
 
 .p-order {
   width: 85%;
@@ -182,7 +182,7 @@
   margin-bottom: .6vw;
 }
 
-/* ============= sp ============== */
+/* ---------------- SP ---------------- */
 
 @media(max-width: 430px) {
 
@@ -201,6 +201,8 @@
     padding-top: 87px;
   }
 
+  /* hero */
+
   .p-hero {
     height: 100px;
     margin-bottom: 3rem;
@@ -212,7 +214,7 @@
     letter-spacing: 2px;
   }
 
-  /* contents */
+  /* section */
 
   .p-order {
     letter-spacing: .8px;
