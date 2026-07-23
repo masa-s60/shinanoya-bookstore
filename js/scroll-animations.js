@@ -1,89 +1,65 @@
+// ============================================================
+// セクションタイトルの文字出現アニメーション
+// ============================================================
+
+// セクションタイトルを取得
+const sectionTitles = document.querySelectorAll('.p-section__title');
+
+// セクションタイトルを一文字ずつ表示
+const animateSectionTitle = (sectionTitle, windowHeight) => {
+  if (!sectionTitle || sectionTitle.classList.contains('is-animated')) return;
+
+  const rectTop = sectionTitle.getBoundingClientRect().top;
+
+  if (rectTop - windowHeight > -100) return;
+
+  const characters = sectionTitle.querySelectorAll('span:not(:first-child)');
+
+  if (!characters.length) return;
+
+  sectionTitle.classList.add('is-animated');
+
+  characters.forEach((character, index) => {
+    setTimeout(() => {
+      character.classList.add('is-active__first-char');
+    }, 150 * index);
+  });
+};
+
+
+// ============================================================
+// マップ説明文の下線アニメーション
+// ============================================================
+
+// マップ説明文を取得
+const mapTextWalk = document.getElementById('map-text-walk');
+const mapTextPlace = document.getElementById('map-text-place');
+
+// 下線アニメーション
+const activateMapText = (element, windowHeight, offset) => {
+  if (!element || element.classList.contains('active')) return;
+
+  const rectTop = element.getBoundingClientRect().top;
+
+  if (rectTop - windowHeight <= offset) {
+    element.classList.add('active');
+  }
+};
+
+
+// ============================================================
+// スクロール監視
+// ============================================================
+
 window.addEventListener('scroll', () => {
-  const sectionTitles = document.querySelectorAll('.p-section__title');
   const windowHeight = window.innerHeight;
 
-  // 最新情報
-  const titleInfoCharacters = sectionTitles[0].querySelectorAll('span:not(:first-child)');
-  let infoFirst = true;
-  const titleInfoRectTop = sectionTitles[0].getBoundingClientRect().top;
-  const titleInfoActiveHeight = titleInfoRectTop - windowHeight; 
+  // セクションタイトル
+  sectionTitles.forEach((sectionTitle) => {
+    animateSectionTitle(sectionTitle, windowHeight);
+  });
 
-  if (titleInfoActiveHeight <= -100 ) {
-    if(!titleInfoCharacters[1].classList.contains("is-active__first-char")) {
-      if(infoFirst === true) {
-        infoFirst = false;
-        titleInfoCharacters.forEach((character, index) => {
-          setTimeout( () => {
-            character.classList.add('is-active__first-char');
-          }, 150 * index);
-        });  
-      }
-    }
-  }
-
-  // 教科書取扱い店
-  const titleWorkCharacters = sectionTitles[1].querySelectorAll('span:not(:first-child)');
-  let workFirst = true;
-  const titleWorkRectTop = sectionTitles[1].getBoundingClientRect().top;
-  const titleWorkActiveHeight = titleWorkRectTop - windowHeight;
-
-  if (titleWorkActiveHeight <= -100 ) {
-    if(!titleWorkCharacters[1].classList.contains("is-active__first-char")) {
-      if(workFirst === true) {
-        workFirst = false;
-        titleWorkCharacters.forEach((character, index) => {
-          setTimeout( () => {
-            character.classList.add('is-active__first-char');
-          }, 150 * index);
-        });  
-      }
-    }
-  }
-
-    // アクセスマップ
-    const titleMapCharacters = sectionTitles[2].querySelectorAll('span:not(:first-child)');
-    let mapFirst = true;
-    const titleMapRectTop = sectionTitles[2].getBoundingClientRect().top;
-    const titleMapActiveHeight = titleMapRectTop - windowHeight;
-
-    if (titleMapActiveHeight <= -100 ) {
-      if(!titleMapCharacters[2].classList.contains("is-active__first-char")) {
-        if(mapFirst === true) {
-          mapFirst = false;
-          titleMapCharacters.forEach((character, index) => {
-            setTimeout( () => {
-              character.classList.add('is-active__first-char');
-            }, 150 * index);
-          });  
-        }
-      }
-    }
-
-    // map-text-walk
-    const mapTextWalk = document.getElementById('map-text-walk');
-    let firstMapTextWalkTrigger = true;
-    const mapTextWalkRectTop = mapTextWalk.getBoundingClientRect().top;
-    const mapTextWalkActiveHeight = mapTextWalkRectTop - windowHeight;
-    if (mapTextWalkActiveHeight <= -120 ) {
-      if(!mapTextWalk.classList.contains("active")) {
-        if(firstMapTextWalkTrigger === true) {
-          firstMapTextWalkTrigger = false;
-          mapTextWalk.classList.add('active');
-        }
-      }
-    }
-
-    // map-text-place
-    const mapTextPlace = document.getElementById('map-text-place');
-    let firstMapTextPlaceTrigger = true;
-    const mapTextPlaceRectTop = mapTextPlace.getBoundingClientRect().top;
-    const mapTextPlaceActiveHeight = mapTextPlaceRectTop - windowHeight;
-    if (mapTextPlaceActiveHeight <= -150 ) {
-      if(!mapTextPlace.classList.contains("active")) {
-        if(firstMapTextPlaceTrigger === true) {
-          firstMapTextPlaceTrigger = false;
-          mapTextPlace.classList.add('active');
-        }
-      }
-    }
+  // マップ説明文
+  activateMapText(mapTextWalk, windowHeight, -120);
+  activateMapText(mapTextPlace, windowHeight, -150);
 });

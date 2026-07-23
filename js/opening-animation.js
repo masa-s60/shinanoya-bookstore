@@ -1,3 +1,7 @@
+// ============================================================
+// オープニングアニメーション（初回訪問時のみ）
+// ============================================================
+
 const nextButton = document.getElementById('next_page_button');
 const whiteLayer = document.querySelector('.p-opening-white');
 const opening = document.querySelector('.p-opening');
@@ -10,7 +14,7 @@ const wait = (ms) => {
 };
 
 // "Since 1922" 手書きアニメーション
-const since1922 = new Vivus( 'sample', { // svgに指定するid名
+const since1922 = new Vivus('sample', { // svgに指定するid名
   type: 'oneByOne',
   start: 'manual',
   duration: 400, // アニメーションの長さ
@@ -44,6 +48,11 @@ window.addEventListener('load', async () => {
   localStorage.setItem('visited', 'true');
   whiteLayer.classList.add('is-hide');
 });
+
+
+// ============================================================
+// index.php メインページ ヒーローアニメーション
+// ============================================================
 
 window.addEventListener('load', () => {
   document.querySelector('.p-hero__overlay').classList.add('is-active');

@@ -1,4 +1,6 @@
-// 投稿 or 削除ボタンクリック時、表示モーダル ----------------------------
+// ============================================================
+// 確認モーダル（投稿・削除）
+// ============================================================
 
 document.addEventListener("DOMContentLoaded", () => {
   const openModalButton = document.getElementById("open-confirm-modal");
@@ -20,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.classList.add("is-active");
     });
 
-    // 削除用：各削除ボタンにイベントを付ける（.js-open-delete-modal はあとでHTMLにつける）
     deleteButtons.forEach((deleteButton) => {
       deleteButton.addEventListener("click", (e) => {
         const form = e.currentTarget.closest(".p-current-post__delete");
@@ -61,12 +62,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // モーダル背景クリックで閉じる
     modal.addEventListener("click", (e) => {
-      if(e.target === modal) {
+      if (e.target === modal) {
         modal.classList.remove("is-active");
       }
     });
   }
 });
+
+
+// ============================================================
+// 結果モーダル（投稿完了・削除完了・エラー）
+// ============================================================
   
 const params = new URLSearchParams(window.location.search);
 const resultStatus = params.get('status');
@@ -75,21 +81,29 @@ if (['success', 'error', 'deleted'].includes(resultStatus)) {
   const modal = document.getElementById('status-modal');
   const message = document.getElementById('status-message');
 
-  if (resultStatus === 'success') {
-    message.textContent = 'アップロードが完了しました！';
-  } else if (resultStatus === 'error') {
-    message.textContent = '処理に失敗しました';
-  } else if (resultStatus === 'deleted') {
-    message.textContent = '投稿を削除しました！';
+  if (modal && message) {
+    if (resultStatus === 'success') {
+      message.textContent = 'アップロードが完了しました！';
+    } else if (resultStatus === 'error') {
+      message.textContent = '処理に失敗しました';
+    } else if (resultStatus === 'deleted') {
+      message.textContent = '投稿を削除しました！';
+    }
+
+    modal.classList.add('is-active');
+
+    setTimeout(() => {
+      window.location.href = 'upload_form.php';
+    }, 1500);
   }
-
-  modal.classList.add('is-active');
-
-  setTimeout(() => {
-    window.location.href = 'upload_form.php';
-  }, 1500);
 }
 
+
+// ============================================================
+// 画像拡大モーダル
+// ============================================================
+
+// 画像クリックでモーダルを開く
 document.querySelectorAll('.p-info__item-image').forEach(img => {
   img.addEventListener('click', () => {
     const infoItem = img.closest('.p-info__item');
@@ -103,6 +117,7 @@ document.querySelectorAll('.p-info__item-image').forEach(img => {
   });
 });
 
+// モーダルクリックで閉じる
 document.querySelectorAll('.c-image-modal').forEach(modal => {
   modal.addEventListener('click', () => {
     modal.classList.remove('is-active');

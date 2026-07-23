@@ -205,6 +205,12 @@
   margin-bottom: 3vw;
 }
 
+#latest-information,
+#textbook-store,
+#map {
+  scroll-margin-top: 5vw;
+}
+
 #latest-information .p-section__title:first-of-type::after,
 #textbook-store .p-section__title:first-of-type::after,
 #map .p-section__title:first-of-type::after {

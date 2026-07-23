@@ -33,9 +33,9 @@
     <link rel="stylesheet" href="./css/base.css?v=4">
     <link rel="stylesheet" href="./css/header.css?v=4">
     <link rel="stylesheet" href="./css/footer.css?v=4">
-    <link rel="stylesheet" href="./css/index.css?v=5">
+    <link rel="stylesheet" href="./css/index.css?v=6">
     <link rel="stylesheet" href="./css/utility.css?v=4">
-    <link rel="stylesheet" href="./css/openingAnimation.css?v=4">
+    <link rel="stylesheet" href="./css/opening-animation.css?v=5">
     <link rel="stylesheet" href="./css/modal.css?v=5">
   </head>
 	
@@ -239,7 +239,7 @@
 		<script src="./js/jquery.easing.1.3.js" type="text/javascript"></script>
 		<script src="./js/jquery.booklet.1.1.0.js" type="text/javascript"></script>
 		<script src="./js/snap.js"></script>
-    <script src="./js/openingAnimation.js"></script>
+    <script src="./js/opening-animation.js"></script>
     <script src="./js/scroll-animations.js"></script>
     <script src="./js/parallax.js"></script>
     <script src="./js/accordion.js"></script>
