@@ -33,10 +33,10 @@
     <link rel="stylesheet" href="./css/base.css?v=4">
     <link rel="stylesheet" href="./css/header.css?v=4">
     <link rel="stylesheet" href="./css/footer.css?v=4">
-    <link rel="stylesheet" href="./css/index.css?v=4">
+    <link rel="stylesheet" href="./css/index.css?v=5">
     <link rel="stylesheet" href="./css/utility.css?v=4">
     <link rel="stylesheet" href="./css/openingAnimation.css?v=4">
-    <link rel="stylesheet" href="./css/modal.css?v=4">
+    <link rel="stylesheet" href="./css/modal.css?v=5">
   </head>
 	
   <body>
@@ -150,7 +150,9 @@
               <?php foreach ($postList as $post): ?>
                 <article class="p-info__item">
                   <?php if (!empty($post['img'])): ?>
-                    <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-info__item-image">
+                    <div class="p-info__item-image-wrap">
+                      <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-info__item-image">
+                    </div>
                     <div class="c-image-modal">
                       <img src="" alt="投稿画像の拡大" class="c-image-modal__image">
                     </div>
@@ -161,9 +163,7 @@
                     <div class="p-info__item-text">
                       <?= nl2br(htmlspecialchars($post['text'])) ?>
                     </div>
-                    <?php if (mb_strlen($post['text']) > 117): ?>
-                      <button type="button" class="c-read-more">続きを読む</button>
-                    <?php endif; ?>
+                    <button type="button" class="c-read-more">続きを読む</button>
                   </div>
                 </article>
               <?php endforeach; ?>

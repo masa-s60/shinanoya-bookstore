@@ -1,18 +1,38 @@
-document.querySelectorAll('.c-read-more').forEach(button => {
+const readMoreItems = document.querySelectorAll('.p-info__item');
+
+const updateReadMoreButtons = () => {
+  readMoreItems.forEach(infoItem => {
+    const textDetail = infoItem.querySelector('.p-info__item-text');
+    const button = infoItem.querySelector('.c-read-more');
+
+    if (!textDetail || !button) return;
+
+    if (textDetail.classList.contains('is-open')) {
+      button.hidden = false;
+      return;
+    }
+    const isOverflowing = textDetail.scrollHeight > textDetail.clientHeight + 1;
+    button.hidden = !isOverflowing;
+  });
+};
+
+readMoreItems.forEach(infoItem => {
+  const textDetail = infoItem.querySelector('.p-info__item-text');
+  const button = infoItem.querySelector('.c-read-more');
+
+  if (!textDetail || !button) return;
+
   button.addEventListener('click', () => {
-    const infoItem = button.closest('.p-info__item');
-    const textDetail = infoItem?.querySelector('.p-info__item-text');
+    const isOpen = textDetail.classList.toggle('is-open');
 
-    if (!textDetail) return;
+    button.classList.toggle('is-open', isOpen);
+    button.textContent = isOpen ? '閉じる' : '続きを読む';
 
-    if (button.classList.contains('is-open')) {
-      button.classList.remove('is-open');
-      textDetail.style.maxHeight = 'calc(1.3em * 3)';
-      button.textContent = '続きを読む';
-    } else {
-      button.classList.add('is-open');
-      textDetail.style.maxHeight = '500px';
-      button.textContent = '閉じる';
+    if (!isOpen) {
+      updateReadMoreButtons();
     }
   });
 });
+
+window.addEventListener('load', updateReadMoreButtons);
+window.addEventListener('resize', updateReadMoreButtons);

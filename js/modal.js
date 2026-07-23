@@ -90,12 +90,14 @@ if (['success', 'error', 'deleted'].includes(resultStatus)) {
   }, 1500);
 }
 
-// 投稿画像クリック時、拡大モーダル -------------------------------------
-
-document.querySelectorAll('.p-info__item-image, .p-current-post__body-image').forEach(img => {
+document.querySelectorAll('.p-info__item-image').forEach(img => {
   img.addEventListener('click', () => {
-    const modal = img.nextElementSibling;
-    const modalImg = modal.querySelector('.c-image-modal__image');
+    const infoItem = img.closest('.p-info__item');
+    const modal = infoItem?.querySelector('.c-image-modal');
+    const modalImg = modal?.querySelector('.c-image-modal__image');
+
+    if (!modal || !modalImg) return;
+
     modalImg.src = img.src;
     modal.classList.add('is-active');
   });
