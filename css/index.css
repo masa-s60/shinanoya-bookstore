@@ -294,7 +294,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%;
   font-size: 1.6vw;
   color: #5f2d1e;
   letter-spacing: 1px;
@@ -644,7 +643,6 @@
   /* 最新情報 */
 
   .p-info__error {
-    width: 280px;
     font-size: 1rem;
   }
   

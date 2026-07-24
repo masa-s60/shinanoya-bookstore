@@ -40,10 +40,10 @@
     <link rel="stylesheet" href="./css/base.css?v=4">
     <link rel="stylesheet" href="./css/header.css?v=4">
     <link rel="stylesheet" href="./css/footer.css?v=4">
-    <link rel="stylesheet" href="./css/index.css?v=6">
+    <link rel="stylesheet" href="./css/index.css?v=7">
     <link rel="stylesheet" href="./css/utility.css?v=4">
     <link rel="stylesheet" href="./css/opening-animation.css?v=5">
-    <link rel="stylesheet" href="./css/modal.css?v=5">
+    <link rel="stylesheet" href="./css/modal.css?v=7">
   </head>
 	
   <body>

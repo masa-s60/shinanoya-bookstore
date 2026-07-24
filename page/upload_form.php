@@ -24,8 +24,8 @@
     <title>最新情報の投稿</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/upload_form.css?v=2">
-    <link rel="stylesheet" href="../css/modal.css?v=2">
+    <link rel="stylesheet" href="../css/upload_form.css?v=3">
+    <link rel="stylesheet" href="../css/modal.css?v=3">
   </head>
 
   <body>

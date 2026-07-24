@@ -81,7 +81,7 @@ if (typeof dataReadError !== 'undefined' && dataReadError) {
   resultStatus = 'data_read_error';
 }
 
-if (['success', 'error', 'deleted', 'data_read_error'].includes(resultStatus)) {
+if (['success', 'error', 'deleted', 'data_read_error', 'data_write_error'].includes(resultStatus)) {
   const modal = document.getElementById('status-modal');
   const message = document.getElementById('status-message');
 
@@ -94,13 +94,16 @@ if (['success', 'error', 'deleted', 'data_read_error'].includes(resultStatus)) {
       message.textContent = '投稿を削除しました！';
     } else if (resultStatus === 'data_read_error') {
       message.textContent = '投稿データの読み込みに失敗しました';
+    } else if (resultStatus === 'data_write_error') {
+      message.textContent = '投稿データの更新に失敗しました';
     }
 
     modal.classList.add('is-active');
 
     setTimeout(() => {
-      if (resultStatus === 'data_read_error') {
+      if (resultStatus === 'data_read_error' || resultStatus === 'data_write_error') {
         modal.classList.remove('is-active');
+        history.replaceState(null, '', 'upload_form.php');
       } else {
         window.location.href = 'upload_form.php';
       }
@@ -114,10 +117,10 @@ if (['success', 'error', 'deleted', 'data_read_error'].includes(resultStatus)) {
 // ============================================================
 
 // 画像クリックでモーダルを開く
-document.querySelectorAll('.p-info__item-image').forEach(img => {
+document.querySelectorAll('.p-info__item-image, .p-current-post__body-image').forEach(img => {
   img.addEventListener('click', () => {
-    const infoItem = img.closest('.p-info__item');
-    const modal = infoItem?.querySelector('.c-image-modal');
+    const item = img.closest('.p-info__item, .p-current-post__item');
+    const modal = item?.querySelector('.c-image-modal');
     const modalImg = modal?.querySelector('.c-image-modal__image');
 
     if (!modal || !modalImg) return;
