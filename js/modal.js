@@ -75,9 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // ============================================================
   
 const params = new URLSearchParams(window.location.search);
-const resultStatus = params.get('status');
+let resultStatus = params.get('status');
 
-if (['success', 'error', 'deleted'].includes(resultStatus)) {
+if (typeof dataReadError !== 'undefined' && dataReadError) {
+  resultStatus = 'data_read_error';
+}
+
+if (['success', 'error', 'deleted', 'data_read_error'].includes(resultStatus)) {
   const modal = document.getElementById('status-modal');
   const message = document.getElementById('status-message');
 
@@ -88,12 +92,18 @@ if (['success', 'error', 'deleted'].includes(resultStatus)) {
       message.textContent = '処理に失敗しました';
     } else if (resultStatus === 'deleted') {
       message.textContent = '投稿を削除しました！';
+    } else if (resultStatus === 'data_read_error') {
+      message.textContent = '投稿データの読み込みに失敗しました';
     }
 
     modal.classList.add('is-active');
 
     setTimeout(() => {
-      window.location.href = 'upload_form.php';
+      if (resultStatus === 'data_read_error') {
+        modal.classList.remove('is-active');
+      } else {
+        window.location.href = 'upload_form.php';
+      }
     }, 1500);
   }
 }

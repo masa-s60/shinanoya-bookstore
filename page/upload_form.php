@@ -2,6 +2,13 @@
   $postsJsonText = file_get_contents('../data/data-books.json');
   $postList = json_decode($postsJsonText, true);
 
+  $dataReadError = false;
+
+  if (!is_array($postList)) {
+    $postList = [];
+    $dataReadError = true;
+  }
+
   usort($postList, function($a, $b) {
     return strtotime($b['created_at']) - strtotime($a['created_at']);
   });
@@ -108,6 +115,7 @@
       </div>
     </div>
 
+    <script>const dataReadError = <?= $dataReadError ? 'true' : 'false' ?>;</script>
     <script src="../js/modal.js"></script>
   </body>
 </html>

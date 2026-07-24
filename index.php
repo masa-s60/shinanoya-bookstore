@@ -2,6 +2,13 @@
   $postsJsonText = file_get_contents('./data/data-books.json');
   $postList = json_decode($postsJsonText, true);
 
+  $dataReadError = false;
+
+  if (!is_array($postList)) {
+    $postList = [];
+    $dataReadError = true;
+  }
+
   usort($postList, function($a, $b) {
     return strtotime($b['created_at']) - strtotime($a['created_at']);
   });
@@ -146,28 +153,32 @@
                 <span>・</span><span>最</span><span>新</span><span>情</span><span>報</span>
               </h2>
             </div>
-            <div class="p-info__list">
-              <?php foreach ($postList as $post): ?>
-                <article class="p-info__item">
-                  <?php if (!empty($post['img'])): ?>
-                    <div class="p-info__item-image-wrap">
-                      <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-info__item-image">
+            <?php if ($dataReadError): ?>
+              <p class="p-info__error">『新着情報を取得できませんでした』</p>
+            <?php else: ?>
+              <div class="p-info__list">
+                <?php foreach ($postList as $post): ?>
+                  <article class="p-info__item">
+                    <?php if (!empty($post['img'])): ?>
+                      <div class="p-info__item-image-wrap">
+                        <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-info__item-image">
+                      </div>
+                      <div class="c-image-modal">
+                        <img src="" alt="投稿画像の拡大" class="c-image-modal__image">
+                      </div>
+                    <?php endif; ?>
+                    <div class="p-info__item-detail">
+                      <h3 class="p-info__item-title"><?= htmlspecialchars($post['title']) ?></h3>
+                      <p class="p-info__item-date">投稿日：<?= htmlspecialchars($post['date']) ?></p>
+                      <div class="p-info__item-text">
+                        <?= nl2br(htmlspecialchars($post['text'])) ?>
+                      </div>
+                      <button type="button" class="c-read-more">続きを読む</button>
                     </div>
-                    <div class="c-image-modal">
-                      <img src="" alt="投稿画像の拡大" class="c-image-modal__image">
-                    </div>
-                  <?php endif; ?>
-                  <div class="p-info__item-detail">
-                    <h3 class="p-info__item-title"><?= htmlspecialchars($post['title']) ?></h3>
-                    <p class="p-info__item-date">投稿日：<?= htmlspecialchars($post['date']) ?></p>
-                    <div class="p-info__item-text">
-                      <?= nl2br(htmlspecialchars($post['text'])) ?>
-                    </div>
-                    <button type="button" class="c-read-more">続きを読む</button>
-                  </div>
-                </article>
-              <?php endforeach; ?>
-            </div>
+                  </article>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
           </section>
           <section id="textbook-store" class="p-section u-bg-brown">
             <div class="p-section__heading">

@@ -147,6 +147,10 @@
 
 @media (max-width: 430px) {
 
+  .c-modal__dialog {
+    width: 300px;
+  }
+
   .c-modal__dialog--confirm {
     width: 320px;
     border-radius: 20px;
@@ -155,6 +159,7 @@
 
   .c-modal__message {
     font-size: 1.4rem;
+    line-height: 1.4;
   }
 
   .c-modal__message--confirm {

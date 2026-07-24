@@ -290,6 +290,19 @@
 
 /* 最新情報 */
 
+.p-info__error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  font-size: 1.6vw;
+  color: #5f2d1e;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 2vw;
+  margin: auto;
+}
+
 .p-info__list {
   width: 75%;
   height: 80vh;
@@ -629,6 +642,11 @@
   }
 
   /* 最新情報 */
+
+  .p-info__error {
+    width: 280px;
+    font-size: 1rem;
+  }
   
   .p-info__list {
     width: 80%;
