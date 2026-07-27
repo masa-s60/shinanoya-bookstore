@@ -81,33 +81,71 @@ if (typeof dataReadError !== 'undefined' && dataReadError) {
   resultStatus = 'data_read_error';
 }
 
-if (['success', 'error', 'deleted', 'data_read_error', 'data_write_error'].includes(resultStatus)) {
+if ([
+  'success',
+  'deleted',
+  'config_not_found',
+  'config_error',
+  'ftp_connect_error',
+  'ftp_login_error',
+  'data_not_found',
+  'data_read_error',
+  'validation_error',
+  'post_id_error',
+  'img_directory_error',
+  'unsupported_extension',
+  'img_upload_error',
+  'data_write_error'
+].includes(resultStatus)) {
   const modal = document.getElementById('status-modal');
   const message = document.getElementById('status-message');
 
   if (modal && message) {
     if (resultStatus === 'success') {
       message.textContent = 'アップロードが完了しました！';
-    } else if (resultStatus === 'error') {
-      message.textContent = '処理に失敗しました';
     } else if (resultStatus === 'deleted') {
       message.textContent = '投稿を削除しました！';
+    } else if (resultStatus === 'config_not_found') {
+      message.textContent = '設定ファイルが見つかりません';
+    } else if (resultStatus === 'config_error') {
+      message.textContent = '設定ファイルの読み込みに失敗しました';
+    } else if (resultStatus === 'ftp_connect_error') {
+      message.textContent = 'FTPサーバーへの接続に失敗しました';
+    } else if (resultStatus === 'ftp_login_error') {
+      message.textContent = 'FTPログインに失敗しました';
+    } else if (resultStatus === 'data_not_found') {
+      message.textContent = '投稿データが見つかりません';
     } else if (resultStatus === 'data_read_error') {
-      message.textContent = '投稿データの読み込みに失敗しました';
+      message.textContent = '既存投稿データの読み込みに失敗しました';
+    } else if (resultStatus === 'validation_error') {
+      message.textContent = '入力内容が正しくありません';
+    } else if (resultStatus === 'post_id_error') {
+      message.textContent = '削除対象の投稿IDを取得できませんでした';
+    } else if (resultStatus === 'img_directory_error') {
+      message.textContent = '画像格納フォルダの作成に失敗しました';
+    } else if (resultStatus === 'unsupported_extension') {
+      message.textContent = '画像のデータ形式が正しくないため、アップロードできません';
+    } else if (resultStatus === 'img_upload_error') {
+      message.textContent = '画像の保存に失敗しました';
     } else if (resultStatus === 'data_write_error') {
-      message.textContent = '投稿データの更新に失敗しました';
+      message.textContent = '既存投稿データの更新に失敗しました';
     }
-
+    
     modal.classList.add('is-active');
 
+    if (resultStatus !== 'success') {
+      console.log(location.href);
+      history.replaceState(null, '', window.location.pathname);
+      console.log(location.href);
+    }
+
     setTimeout(() => {
-      if (resultStatus === 'data_read_error' || resultStatus === 'data_write_error') {
-        modal.classList.remove('is-active');
-        history.replaceState(null, '', 'upload_form.php');
-      } else {
+      if (resultStatus === 'success') {
         window.location.href = 'upload_form.php';
+      } else {
+        modal.classList.remove('is-active');
       }
-    }, 1500);
+    }, 1500);  
   }
 }
 

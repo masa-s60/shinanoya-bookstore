@@ -1,18 +1,43 @@
 <?php
-  // FTPログイン --------------------------------------------------------
-  
-  $config = include(__DIR__ . '/../../config/config.php'); // ローカルデバッグ時はディレクトリ変更必須(/../config/config.php)
+  //==================================================
+  // 設定ファイルの読み込み
+  //==================================================
+
+  // 設定ファイルの存在確認
+  $configPath = __DIR__ . '/../../config/config.php';
+
+  if (!file_exists($configPath)) {
+    error_log('設定ファイルが見つかりません: ' . $configPath);
+    header('Location: ../page/upload_form.php?status=config_not_found');
+    exit;
+  }
+
+  // 設定ファイルの読み込み
+  $config = include($configPath);
+
+  if (!is_array($config)) {
+    error_log('設定ファイルの読み込みに失敗しました: ' . $configPath);
+    header('Location: ../page/upload_form.php?status=config_error');
+    exit;
+  }
+
+
+  //==================================================
+  // FTP接続・ログイン認証
+  //==================================================
 
   $ftp_server = $config['ftp_server'];
   $ftp_username = $config['ftp_user'];
   $ftp_password = $config['ftp_pass'];
 
-  // FTP接続の確立
+  // FTP接続確立
   $conn_id = ftp_connect($ftp_server);
 
-  // 接続の確認
+  // 接続確立
   if (!$conn_id) {
-    die("FTP接続に失敗しました。");
+    error_log('FTP接続に失敗しました。サーバー: ' . $ftp_server);
+    header('Location: ../page/upload_form.php?status=ftp_connect_error');
+    exit;
   }
 
   // ログイン認証
@@ -21,43 +46,74 @@
   // ログインの確認
   if (!$login_result) {
     ftp_close($conn_id);
-    die("FTPログインに失敗しました。");
+    error_log('FTPログインに失敗しました。ユーザー: ' . $ftp_username);
+    header('Location: ../page/upload_form.php?status=ftp_login_error');
+    exit;
   }
 
-  // 既存JSONファイル取得 --------------------------------------------------------
+
+  //==================================================
+  // 既存投稿データの取得
+  //==================================================
 
   $dataFile = '../data/data-books.json';
 
   // JSONファイルを読み込む
   if (file_exists($dataFile)) {
     $json = file_get_contents($dataFile);
+
+    if ($json === false) {
+      error_log('JSONファイルの読み込みに失敗しました: ' . $dataFile);
+      header('Location: ../page/upload_form.php?status=data_read_error');
+      exit;
+    }
+      
     $books = json_decode($json, true);
+
+    if (!is_array($books)) {
+      error_log('JSONデータの解析に失敗しました: ' . $dataFile);
+      header('Location: ../page/upload_form.php?status=data_read_error');
+      exit;
+    }
   } else {
     $books = [];
   }
 
-  // ID割り振り
-  $newId = count($books) + 1;
+  
+  //==================================================
+  // フォームデータの取得
+  //==================================================
 
   // フォームから受け取ったデータ
   $title = trim($_POST['title'] ?? '');
   $text = trim($_POST['text'] ?? '');
 
   if ($title === '' || $text === '') {
-    header('Location: ../page/upload_form.php?status=invalid');
+    header('Location: ../page/upload_form.php?status=validation_error');
     exit;
   }
 
+
+  //==================================================
+  // アップロード画像ファイルの保存
+  //==================================================
+
   // imgフォルダがない場合は作成
   $uploadDir = '../img/';
+  
   if (!is_dir($uploadDir)) {
-    mkdir($uploadDir, 0777, true);
-  }
+    $result = mkdir($uploadDir, 0777, true);
 
-  // 画像データの保存 ---------------------------------------------------------------
+    if ($result === false) {
+      error_log('imgフォルダの作成に失敗しました');
+      header('Location: ../page/upload_form.php?status=img_directory_error');
+      exit;
+    }
+  }
 
   $imgPath = '';
 
+  // 画像が送信され、アップロードエラーがない場合に保存処理
   if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $tmpName = $_FILES['image']['tmp_name'];
     $originalName = $_FILES['image']['name'];
@@ -65,64 +121,39 @@
     // 拡張子を取得（小文字）
     $extension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
 
-    // 拡張子のバリデーション（任意）
+    // 対応拡張子の判定
     $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
     if (!in_array($extension, $allowedExtensions)) {
-      header('Location: ../page/upload_form.php?status=invalid');
+      header('Location: ../page/upload_form.php?status=unsupported_extension');
       exit;
     }
 
-    // ユニークなファイル名を生成（拡張子のみ使用）
-    $uniqueName = uniqid('', true) . '.' . $extension;
-    $savePath = $uploadDir . $uniqueName;
+    // 保存用の新しい画像ファイル名を生成（ユニーク）
+    $newImageFileName = uniqid('', true) . '.' . $extension;
+    $savePath = $uploadDir . $newImageFileName;
 
-    // 画像を保存
+    // imgフォルダへの画像保存
     if (move_uploaded_file($tmpName, $savePath)) {
-      $imgPath = '/img/' . $uniqueName; // Webから見たパス
+      $imgPath = '/img/' . $newImageFileName; // JSONへ保存する画像パスを作成
     } else {
-      header('Location: ../page/upload_form.php?status=error');
+      header('Location: ../page/upload_form.php?status=img_upload_error');
       exit;
     }
   }
+
+  //==================================================
+  // 新しい投稿データの生成とJSONデータの更新
+  //==================================================
+
+  // 新しい投稿IDを生成
+  $ids = array_column($books, 'id');
   
-  elseif (isset($_POST['base64image']) && !empty($_POST['base64image'])) {
-    $base64 = $_POST['base64image'];
+  if (empty($ids)) {
+    $newId = 1;
+  } else {
+    $newId = max($ids) + 1;
+  }
 
-    // データURLの形式: data:image/png;base64,xxxxxx
-    if (preg_match('/^data:image\/(\w+);base64,/', $base64, $matches)) {
-        $extension = strtolower($matches[1]); // 拡張子を取得（png, jpeg など）
-        $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
-
-        if (!in_array($extension, $allowedExtensions)) {
-            header('Location: ../page/upload_form.php?status=invalid');
-            exit;
-        }
-
-        $base64 = substr($base64, strpos($base64, ',') + 1);
-        $imageData = base64_decode($base64);
-
-        if ($imageData === false) {
-            header('Location: ../page/upload_form.php?status=invalid');
-            exit;
-        }
-
-        $uniqueName = uniqid('', true) . '.' . $extension;
-        $savePath = $uploadDir . $uniqueName;
-
-        if (file_put_contents($savePath, $imageData)) {
-            $imgPath = '/img/' . $uniqueName;
-        } else {
-            header('Location: ../page/upload_form.php?status=error');
-            exit;
-        }
-    } else {
-        header('Location: ../page/upload_form.php?status=invalid');
-        exit;
-    }
-}
-  // JSONデータの生成 -----------------------------------------------------------
-
-  // データ形成
   $newData = [
     'id' => $newId,
     'img' => $imgPath,
@@ -137,14 +168,24 @@
   // 既存のデータ配列に追加
   $books[] = $newData;
 
-  // JSONにして保存
-  if (file_put_contents($dataFile, json_encode($books, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT))) {
-    // 保存成功
-    header('Location: ../page/upload_form.php?status=success');
-  } else {
-    // 保存失敗
-    header('Location: ../page/upload_form.php?status=error');
+  // 投稿データをJSON形式へ変換
+  $encodedBooks = json_encode($books, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+
+  if ($encodedBooks === false) {
+    error_log('投稿データのJSON変換に失敗しました');
+    header('Location: ../page/upload_form.php?status=data_write_error');
+    exit;
   }
 
+  // JSONファイルへ保存
+  $writeResult = file_put_contents($dataFile, $encodedBooks);
+
+  if ($writeResult === false) {
+    error_log('投稿データの保存に失敗しました: ' . $dataFile);
+    header('Location: ../page/upload_form.php?status=data_write_error');
+    exit;
+  }
+
+  header('Location: ../page/upload_form.php?status=success');
   exit;
 ?>
