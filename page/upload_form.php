@@ -24,7 +24,7 @@
     <title>最新情報の投稿</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/upload_form.css?v=3">
+    <link rel="stylesheet" href="../css/upload_form.css?v=4">
     <link rel="stylesheet" href="../css/modal.css?v=3">
   </head>
 
@@ -44,6 +44,7 @@
               class="p-form__image"
               accept="image/*">
           </div>
+          <button type="button" class="p-form__image-clear">クリア</button>
           <!-- タイトル入力 -->
           <label for="title" class="p-form__label">【タイトル】*</label>
           <input 
@@ -117,5 +118,6 @@
 
     <script>const dataReadError = <?= $dataReadError ? 'true' : 'false' ?>;</script>
     <script src="../js/modal.js"></script>
+    <script src="../js/upload-form.js"></script>
   </body>
 </html>

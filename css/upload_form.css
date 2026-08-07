@@ -85,8 +85,9 @@ body {
 
 .p-form__file {
   display: flex;
+  align-items: center;
   margin-top: .4vw;
-  margin-bottom: 2.6vw;
+  margin-bottom: .4vw;
 }
 
 .p-form__image {
@@ -97,6 +98,35 @@ body {
   cursor: pointer;
   background-color: white;
   padding: .4vw;
+}
+
+.p-form__image-clear,
+.p-current-post__delete-button {
+  display: block;
+  color: white;
+  font-size: 1.2vw;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .3s;
+  margin: .4vw 0 2.6vw auto;
+  padding: .2vw .4vw .2vw .5vw;
+}
+
+@media (hover: hover) {
+  .p-form__image-clear:hover,
+  .p-current-post__delete-button:hover {
+    background: #ff8c8c;
+    color: black;
+  }
+
+  .p-form__submit-button:hover {
+    background: #94f9aa;
+    color: black;
+  }
 }
 
 .p-form__title {
@@ -119,15 +149,11 @@ body {
   color: white;
   font-size: 1.6vw;
   font-weight: bold;
+  letter-spacing: 1px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: .3s;
-}
-
-.p-form__submit-button:hover {
-  background: #94f9aa;
-  color: black;
 }
 
 /* 現在の投稿 */
@@ -182,17 +208,7 @@ body {
 }
 
 .p-current-post__delete-button {
-  background-color: #dc3545;
-  color: white;
-  font-size: 1.2vw;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: .2vw .8vw;
-}
-
-.p-current-post__delete-button:hover {
-  background-color: #c82333;
+  background-color: rgb(188, 0, 0);
 }
 
 /* ---------------- Pad ---------------- */
@@ -236,7 +252,6 @@ body {
     font-size: 2.8vw;
   }
 
-  .p-form__file,
   .p-form__title,
   .p-form__content {
     font-size: 2.4vw;
@@ -244,8 +259,18 @@ body {
     margin-bottom: 6vw;
   }
 
+  .p-form__image {
+    font-size: 2vw;
+  }
+
   .p-form__title {
     height: 3.6vw;
+  }
+
+  .p-form__image-clear,
+  .p-current-post__delete-button {
+    font-size: 2vw;
+    margin: .8vw 0 3vw auto;
   }
 
   .p-form__content {
@@ -331,16 +356,29 @@ body {
     font-size: 1.4rem;
   }
 
-  .p-form__file,
   .p-form__title,
   .p-form__content {
     font-size: 1rem;
-    margin-top: .2rem;
+    margin-top: .4rem;
     margin-bottom: 2.6rem;
   }
 
   .p-form__image {
+    margin-top: .2rem;
     font-size: .9rem;
+  }
+
+  /* iOS Safariではファイル選択ボタンの文字が約2px下にずれるため補正 */
+  .p-form__image::-webkit-file-upload-button {
+    transform: translateY(-2px);
+  }
+
+  .p-form__image-clear,
+  .p-current-post__delete-button {
+    font-size: 1rem;
+    letter-spacing: normal;
+    margin: .4rem 0 1.4rem auto;
+    padding: .15rem .4rem;
   }
 
   .p-form__title {
@@ -398,8 +436,4 @@ body {
     font-size: 1rem;
   }
   
-  .p-current-post__delete-button {
-    font-size: 1rem;
-    padding: .2rem .6rem;
-  }
 }
