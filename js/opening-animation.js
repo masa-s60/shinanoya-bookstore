@@ -14,7 +14,7 @@ const wait = (ms) => {
 };
 
 // "Since 1922" 手書きアニメーション
-const since1922 = new Vivus('sample', { // svgに指定するid名
+const since1922 = new Vivus('opening-since-1922', { // svgに指定するid名
   type: 'oneByOne',
   start: 'manual',
   duration: 400, // アニメーションの長さ
