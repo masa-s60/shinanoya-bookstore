@@ -58,7 +58,7 @@
             <div class="p-book__page2"></div>
             <div class="p-book__page3">
               <img class="p-book__img-sinanoyashoten" src="./img/sinanoyasiten.png" alt="信濃屋書店"/>
-              <svg version="1.1" id="opening-since-1922" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1184.24 224.35">
+              <svg version="1.1" id="opening-since-1922" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1184.24 224.35">
                 <defs>
                   <mask id="svg-mask">
                     <g id="mask">
