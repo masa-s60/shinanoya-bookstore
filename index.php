@@ -210,6 +210,7 @@
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3257.09302387103!2d139.66920247454942!3d35.278813351977114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60183ff53dd1dbf5%3A0x29f2034b0b8e9910!2z44CSMjM4LTAwMDcg56We5aWI5bed55yM5qiq6aCI6LOA5biC6Iul5p2-55S677yT5LiB55uu77yR77yS!5e0!3m2!1sja!2sjp!4v1781149770647!5m2!1sja!2sjp" 
                   class="p-map__iframe"
+                  title="信濃屋書店の所在地を示す地図"
                   loading="lazy" 
                   referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
