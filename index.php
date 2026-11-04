@@ -123,8 +123,8 @@
               <img class="p-hero__image" src="./img/hero-image.jpg" alt="信濃屋書店 ヒーローイメージ" fetchpriority="high">
             </picture>
             <div class="p-hero__overlay"></div>
-            <nav class="p-hero__nav">
-              <p class="p-hero__nav-header">Menu</p>
+            <nav class="p-hero__nav" aria-labelledby="hero-menu-label">
+              <div id="hero-menu-label" class="p-hero__nav-header">Menu</div>
               <ul class="p-hero__nav-list">
                 <li class="p-hero__nav-item">
                   <a href="#latest-information" class="p-hero__nav-link">最新情報</a>
