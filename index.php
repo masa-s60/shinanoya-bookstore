@@ -123,8 +123,8 @@
               <img class="p-hero__image" src="./img/hero-image.jpg" alt="信濃屋書店 ヒーローイメージ" fetchpriority="high">
             </picture>
             <div class="p-hero__overlay"></div>
-            <nav class="p-hero__nav">
-              <p class="p-hero__nav-header">Menu</p>
+            <nav class="p-hero__nav" aria-labelledby="hero-menu-label">
+              <div id="hero-menu-label" class="p-hero__nav-header">Menu</div>
               <ul class="p-hero__nav-list">
                 <li class="p-hero__nav-item">
                   <a href="#latest-information" class="p-hero__nav-link">最新情報</a>
@@ -142,8 +142,8 @@
             </nav>
             <div class="p-hero__content">
               <p class="p-hero__lead">大正から時代を超えて<br>今も愛され続ける街の本屋</p>
-              <h2 class="p-hero__title">信濃屋書店</h2>
-              <p class="p-hero__subtitle">-Bookstore-</p>
+              <div class="p-hero__title">信濃屋書店</div>
+              <div class="p-hero__subtitle" aria-hidden="true">-Bookstore-</div>
               <p class="p-hero__founded">創業1922年</p>
             </div>
           </div>
