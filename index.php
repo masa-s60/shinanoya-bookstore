@@ -142,8 +142,8 @@
             </nav>
             <div class="p-hero__content">
               <p class="p-hero__lead">大正から時代を超えて<br>今も愛され続ける街の本屋</p>
-              <p class="p-hero__title">信濃屋書店</p>
-              <p class="p-hero__subtitle" aria-hidden="true">-Bookstore-</p>
+              <div class="p-hero__title">信濃屋書店</div>
+              <div class="p-hero__subtitle" aria-hidden="true">-Bookstore-</div>
               <p class="p-hero__founded">創業1922年</p>
             </div>
           </div>
