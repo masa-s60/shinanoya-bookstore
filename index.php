@@ -57,7 +57,7 @@
             <div class="p-book__page1"></div>
             <div class="p-book__page2"></div>
             <div class="p-book__page3">
-              <img class="p-book__img-sinanoyashoten" src="./img/sinanoyasiten.png" alt="信濃屋書店"/>
+              <img class="p-book__img-sinanoyashoten" src="./img/sinanoyasiten.png" alt=""/>
               <svg version="1.1" id="opening-since-1922" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1184.24 224.35">
                 <defs>
                   <mask id="svg-mask">
@@ -90,7 +90,7 @@
             </div>
             <div class="p-book__page4"></div>
             <div class="p-book__page5">
-              <img class="p-book__img-TOContents" src="./img/table-of-contents.png" alt="見出し"/>
+              <img class="p-book__img-TOContents" src="./img/table-of-contents.png" alt=""/>
             </div>
             <div class="p-book__page6"></div>
           </div>
@@ -102,7 +102,7 @@
       <div class="p-page__background"></div>
       <header class="p-header">
         <a href="index.php" class="p-header__logo">
-          <img class="p-header__logo-image" src="./img/rogo-sinanoya.png" alt="信濃屋書店ロゴ">
+          <img class="p-header__logo-image" src="./img/rogo-sinanoya.png" alt="">
           <h1 class="p-header__logo-name">信濃屋書店</h1>
         </a>
         <div class="p-header__info">
@@ -120,7 +120,7 @@
           <div class="p-hero">
             <picture>
               <source media="(max-width: 430px)" srcset="./img/hero-image-sp.jpg">
-              <img class="p-hero__image" src="./img/hero-image.jpg" alt="信濃屋書店 ヒーローイメージ" fetchpriority="high">
+              <img class="p-hero__image" src="./img/hero-image.jpg" alt="信濃屋書店の店舗外観" fetchpriority="high">
             </picture>
             <div class="p-hero__overlay"></div>
             <nav class="p-hero__nav" aria-labelledby="hero-menu-label">
@@ -195,7 +195,7 @@
                 <a href="./page/about-textbook.html" class="p-textbook__content-link">詳細はこちら >></a>
               </div>
               <div class="p-textbook__image">
-                <img class="p-textbook__image-item" src="./img/text-book.jpg" alt="教科書画像">
+                <img class="p-textbook__image-item" src="./img/text-book.jpg" alt="教科書が並んでいる写真">
               </div>
             </div>
           </section>
@@ -234,10 +234,10 @@
             </div>
             <div class="p-footer__social">
               <a href="https://twitter.com/ExGmz?ref_src=twsrc%5Etfw" class="p-footer__social-link">
-                <img src="./img/x-logo.png" alt="Xロゴ" class="p-footer__social-image">
+                <img src="./img/x-logo.png" alt="信濃屋書店のX" class="p-footer__social-image">
               </a>
               <a href="https://www.facebook.com/profile.php?id=61569472234993&mibextid=wwXIfr" class="p-footer__social-link">
-                <img src="./img/facebook-logo.png" alt="フェイスブックロゴ" class="p-footer__social-image">
+                <img src="./img/facebook-logo.png" alt="信濃屋書店のFacebook" class="p-footer__social-image">
               </a>  
             </div>
           </div>
