@@ -57,7 +57,7 @@
             <div class="p-book__page1"></div>
             <div class="p-book__page2"></div>
             <div class="p-book__page3">
-              <img class="p-book__img-sinanoyashoten" src="./img/sinanoyasiten.png" alt="信濃屋書店"/>
+              <img class="p-book__img-sinanoyashoten" src="./img/sinanoyasiten.png" alt=""/>
               <svg version="1.1" id="opening-since-1922" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1184.24 224.35">
                 <defs>
                   <mask id="svg-mask">
@@ -90,7 +90,7 @@
             </div>
             <div class="p-book__page4"></div>
             <div class="p-book__page5">
-              <img class="p-book__img-TOContents" src="./img/table-of-contents.png" alt="見出し"/>
+              <img class="p-book__img-TOContents" src="./img/table-of-contents.png" alt=""/>
             </div>
             <div class="p-book__page6"></div>
           </div>
