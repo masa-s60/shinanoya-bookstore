@@ -85,6 +85,11 @@
 
 /* 投稿画像クリック時 拡大モーダル */
 
+body.is-modal-open,
+body.is-modal-open .p-info__list {
+  overflow: hidden;
+}
+
 .c-image-modal {
   display: flex;
   justify-content: center;
