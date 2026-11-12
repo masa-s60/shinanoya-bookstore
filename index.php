@@ -161,7 +161,9 @@
                   <article class="p-info__item">
                     <?php if (!empty($post['img'])): ?>
                       <div class="p-info__item-image-wrap">
-                        <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-info__item-image">
+                        <button type="button" class="p-info__item-image-button" aria-label="投稿画像を拡大する">
+                          <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-info__item-image">
+                        </button>
                       </div>
                       <div class="c-image-modal">
                         <img src="" alt="投稿画像の拡大" class="c-image-modal__image">

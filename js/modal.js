@@ -155,15 +155,17 @@ if ([
 // ============================================================
 
 // 画像クリックでモーダルを開く
-document.querySelectorAll('.p-info__item-image, .p-current-post__body-image').forEach(img => {
-  img.addEventListener('click', () => {
-    const item = img.closest('.p-info__item, .p-current-post__item');
+document.querySelectorAll('.p-info__item-image-button, .p-current-post__body-image').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const sourceImg = trigger.matches('img') ? trigger : trigger.querySelector('img');
+    const item = trigger.closest('.p-info__item, .p-current-post__item');
     const modal = item?.querySelector('.c-image-modal');
     const modalImg = modal?.querySelector('.c-image-modal__image');
 
-    if (!modal || !modalImg) return;
+    if (!sourceImg || !modal || !modalImg) return;
 
-    modalImg.src = img.src;
+    modalImg.src = sourceImg.src;
+    modalImg.alt = sourceImg.alt;
     modal.classList.add('is-active');
   });
 });
