@@ -165,7 +165,7 @@
                           <img src="<?= htmlspecialchars($post['img']) ?>" alt="投稿画像" class="p-info__item-image">
                         </button>
                       </div>
-                      <div class="c-image-modal">
+                      <div class="c-image-modal" role="dialog" aria-label="投稿画像の拡大表示" tabindex="-1">
                         <img src="" alt="投稿画像の拡大" class="c-image-modal__image">
                       </div>
                     <?php endif; ?>

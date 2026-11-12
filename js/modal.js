@@ -167,6 +167,7 @@ document.querySelectorAll('.p-info__item-image-button, .p-current-post__body-ima
     modalImg.src = sourceImg.src;
     modalImg.alt = sourceImg.alt;
     modal.classList.add('is-active');
+    modal.focus();
   });
 });
 
@@ -175,4 +176,13 @@ document.querySelectorAll('.c-image-modal').forEach(modal => {
   modal.addEventListener('click', () => {
     modal.classList.remove('is-active');
   });
+});
+
+// Escapeキーでモーダルを閉じる
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+
+  const activeModal = document.querySelector('.c-image-modal.is-active');
+  activeModal?.classList.remove('is-active');
+  
 });
