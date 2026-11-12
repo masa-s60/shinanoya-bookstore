@@ -190,11 +190,15 @@
             </div>
             <div class="p-textbook">
               <div class="p-textbook__content">
-                <p class="p-textbook__content-text">
-                  当店では市内の小学校から高等学校まで、幅広い教科書を取り扱っており、お取り置き・お取り寄せが可能です。<br><br>
-                  各種ご注文方法や詳細については、以下リンクからご確認ください。
-                </p>
-                <a href="./page/about-textbook.html" class="p-textbook__content-link">詳細はこちら >></a>
+              <p class="p-textbook__content-text">
+                当店では市内の小学校から高等学校まで、幅広い教科書を取り扱っており、お取り置き・お取り寄せが可能です。
+              </p>
+              <p class="p-textbook__content-text">
+                各種ご注文方法や詳細については、こちらのリンクからご確認ください。
+              </p>
+              <a href="./page/about-textbook.html" class="p-textbook__content-link">
+                教科書取扱店ページへ<span aria-hidden="true">&emsp;&gt;&gt;</span>
+              </a>
               </div>
               <div class="p-textbook__image">
                 <img class="p-textbook__image-item" src="./img/text-book.jpg" alt="教科書が並んでいる写真">
