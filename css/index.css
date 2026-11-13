@@ -243,7 +243,7 @@
   display: inline-block;
 }
 
-.p-section__title-visual span:not(:first-child) {
+.p-section__title-visual > span:not(:first-child) {
   opacity: 0;
 }
 
