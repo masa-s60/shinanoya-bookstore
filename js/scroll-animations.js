@@ -13,7 +13,7 @@ const animateSectionTitle = (sectionTitle, windowHeight) => {
 
   if (rectTop - windowHeight > -100) return;
 
-  const characters = sectionTitle.querySelectorAll('span:not(:first-child)');
+  const characters = sectionTitle.querySelectorAll('.p-section__title-visual > span:not(:first-child)');
 
   if (!characters.length) return;
 
