@@ -211,9 +211,9 @@
   scroll-margin-top: 5vw;
 }
 
-#latest-information .p-section__title:first-of-type::after,
-#textbook-store .p-section__title:first-of-type::after,
-#map .p-section__title:first-of-type::after {
+#latest-information .p-section__title-visual::after,
+#textbook-store .p-section__title-visual::after,
+#map .p-section__title-visual::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -224,26 +224,26 @@
   transform-origin: left bottom;
 }
 
-#latest-information .p-section__title:first-of-type::after {
+#latest-information .p-section__title-visual::after {
   content: "News";
   color: var(--color-primary);
 }
 
-#textbook-store .p-section__title:first-of-type::after {
+#textbook-store .p-section__title-visual::after {
   content: "Textbook";
   color: #fff;
 }
 
-#map .p-section__title:first-of-type::after {
+#map .p-section__title-visual::after {
   content: "Map";
   color: var(--color-primary);
 }
 
-.p-section__title span {
+.p-section__title-visual > span {
   display: inline-block;
 }
 
-.p-section__title span:not(:first-child) {
+.p-section__title-visual span:not(:first-child) {
   opacity: 0;
 }
 
@@ -645,9 +645,9 @@
     margin-bottom: 35px;
   }
 
-  #latest-information .p-section__title:first-of-type::after,
-  #textbook-store .p-section__title:first-of-type::after,
-  #map .p-section__title:first-of-type::after {
+  #latest-information .p-section__title-visual::after,
+  #textbook-store .p-section__title-visual::after,
+  #map .p-section__title-visual::after {
     top: 50%;
     left: 5px;
     font-size: 3.8rem;

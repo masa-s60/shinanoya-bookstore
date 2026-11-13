@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="./css/header.css?v=4">
     <link rel="stylesheet" href="./css/footer.css?v=4">
     <link rel="stylesheet" href="./css/index.css?v=9">
-    <link rel="stylesheet" href="./css/utility.css?v=4">
+    <link rel="stylesheet" href="./css/utility.css?v=5">
     <link rel="stylesheet" href="./css/opening-animation.css?v=6">
     <link rel="stylesheet" href="./css/modal.css?v=8">
   </head>
@@ -150,7 +150,10 @@
           <section id="latest-information" class="p-section">
             <div class="p-section__heading">
               <h2 class="p-section__title">
-                <span>・</span><span>最</span><span>新</span><span>情</span><span>報</span>
+                <span class="u-visually-hidden">最新情報</span>
+                <span class="p-section__title-visual" aria-hidden="true">
+                  <span>・</span><span>最</span><span>新</span><span>情</span><span>報</span>
+                </span>
               </h2>
             </div>
             <?php if ($dataReadError): ?>
@@ -185,7 +188,10 @@
           <section id="textbook-store" class="p-section u-bg-brown">
             <div class="p-section__heading">
               <h2 class="p-section__title">
-                <span>・</span><span>教</span><span>科</span><span>書</span><span>取</span><span>扱</span><span>い</span><span>店</span>
+                <span class="u-visually-hidden">教科書取扱い店</span>
+                <span class="p-section__title-visual" aria-hidden="true">
+                  <span>・</span><span>教</span><span>科</span><span>書</span><span>取</span><span>扱</span><span>い</span><span>店</span>
+                </span>
               </h2>
             </div>
             <div class="p-textbook">
@@ -208,7 +214,10 @@
           <section id="map" class="p-section">
             <div class="p-section__heading">
               <h2 class="p-section__title">
-                <span>・</span><span>ア</span><span>ク</span><span>セ</span><span>ス</span><span>マ</span><span>ッ</span><span>プ</span>
+                <span class="u-visually-hidden">アクセスマップ</span>
+                <span class="p-section__title-visual" aria-hidden="true">
+                  <span>・</span><span>ア</span><span>ク</span><span>セ</span><span>ス</span><span>マ</span><span>ッ</span><span>プ</span>
+                </span>
               </h2>
             </div>
             <div class="l-map">
